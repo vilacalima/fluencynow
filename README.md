@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Fluency Now
+
+Projeto do terceiro semestre da turma de ADS do Senac.
+Composto pelos integrantes:
+
+Isabela Midore
+Natalia Cerqueira
+Nicolas Marques
+Robson Vilaça
+
+## FIGMA
+
+Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/FluencyNow?t=3hsNA3CDhbPHmmAn-0
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
