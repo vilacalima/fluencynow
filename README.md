@@ -2,6 +2,28 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Commands GIT
+
+Clonando o Projeto:
+
+### git clone https://github.com/vilacalima/fluencynow.git
+
+Adicionando Alterações:
+
+### git add .
+
+Criando comentário:
+
+### git commit -m "resumo"
+
+Criando uma nova Branch:
+
+### git branch -m novaBranch
+
+Subindo alterações:
+
+### git push -u suaBranch
+
 ## Available Scripts
 
 In the project directory, you can run:
