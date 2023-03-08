@@ -1,11 +1,15 @@
 # Fluency Now
 
 Projeto do terceiro semestre da turma de ADS do Senac.
+
 Composto pelos integrantes:
 
-Isabela Midore
+Isabela Midori
+
 Natalia Cerqueira
+
 Nicolas Marques
+
 Robson Vilaça
 
 ## FIGMA
