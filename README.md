@@ -52,6 +52,9 @@ Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/Flue
 ## Prototipação
 
 ![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/HomePage.png)
+
 ![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/Login.png)
+
 ![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/Administracao.png)
+
 ![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/Adicionar.png)
