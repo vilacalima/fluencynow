@@ -14,6 +14,8 @@
 
 - Eduardo Feitosa
 
+- Rennan Rodrigues
+
 # Requisitos do Sistema
 
 ## RF01 - Entrar no portal
