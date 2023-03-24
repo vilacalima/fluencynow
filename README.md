@@ -6,11 +6,11 @@
 
 - Isabela Midori Minami Rodrigues Mesquita
 
-- Natalia Cerqueira
+- Natalia Aldinar Souza Cerqueira
 
 - Nicolas da Cruz Marques
 
-- Robson Vilaça
+- Robson Vilaça Lima
 
 - Eduardo Feitosa
 
