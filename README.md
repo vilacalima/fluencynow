@@ -12,6 +12,8 @@
 
 - Robson Vilaça
 
+- Eduardo Feitosa
+
 # Requisitos do Sistema
 
 ## RF01 - Entrar no portal
