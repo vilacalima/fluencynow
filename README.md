@@ -8,7 +8,7 @@
 
 - Natalia Cerqueira
 
-- Nicolas Marques
+- Nicolas da Cruz Marques
 
 - Robson Vilaça
 
