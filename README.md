@@ -4,7 +4,7 @@
 
 - Composto pelos integrantes:
 
-- Isabela Midori
+- Isabela Midori Minami Rodrigues Mesquita
 
 - Natalia Cerqueira
 
