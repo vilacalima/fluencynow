@@ -47,7 +47,7 @@ Link para o suporte do sistema
 Disponibiliza o formulário para cadastrar novos alunos
 
 ## Modelagem de banco de dados
-![Modelagem de banco de dados](1.Presentation/src/assets/images/modelagem.png)
+![Modelagem de banco de dados](Readme/BancoDeDados.png)
 
 ## FIGMA
 
@@ -55,10 +55,10 @@ Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/Flue
 
 ## Prototipação
 
-![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/HomePage.png)
+![HomePage](Readme/HomePage.png)
 
-![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/Login.png)
+![Login](Readme/Login.png)
 
-![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/Administracao.png)
+![Administrativo](Readme/Administrativo.png)
 
-![Modelagem de banco de dados](1.Presentation/src/assets/images/Prototipacao/Adicionar.png)
+![Administrativo 2](Readme/Administrativo2.png)
