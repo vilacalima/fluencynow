@@ -1,20 +1,21 @@
 package com.br.fluencynow.DAO;
 
-import com.br.fluencynow.model.Login;
+import com.br.fluencynow.model.Aula;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class LoginDAO {
+public class AulaDAO {
 
-    public static boolean salvar(Login login) throws SQLException {
+    public static boolean salvar(Aula aula) throws SQLException {
         Connection conexao = null;
         boolean retorno = false;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexao =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
 
 
         } catch(ClassCastException ex){
