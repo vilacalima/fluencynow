@@ -1,0 +1,10 @@
+com/fluency/model/Aluno.class
+com/fluency/model/Plano.class
+com/fluency/DAO/AlunoDAO.class
+com/fluency/controller/Fluency_now_controller.class
+com/fluency/model/Login.class
+com/fluency/DAO/PlanoDAO.class
+com/fluency/DAO/LoginDAO.class
+com/fluency/DAO/AulaDAO.class
+com/fluency/model/Aula.class
+com/fluency/DAO/ConexaoDAO.class
