@@ -11,10 +11,10 @@ body {
     <br>
     <div style="text-align: center">
         <h2>
-            Fluency Now - 1.0<br> <br>
+            Fluency Now - 1.0 <br> <br>
         </h2>
         <h3>
-            <a href="welcome.html">Click here to See Welcome Message... </a>(to
+            <a href="welcome.html">Click here to See welcome Message... </a>(to
             check Spring MVC Controller... @RequestMapping("/welcome"))
         </h3>
     </div>
