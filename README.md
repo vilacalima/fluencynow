@@ -6,7 +6,7 @@
 
 - Isabela Midori Minami Rodrigues Mesquita
 
-- Natalia Aldinar Souza Cerqueira
+- Nathalia Aldinar Souza Cerqueira
 
 - Nicolas da Cruz Marques
 
