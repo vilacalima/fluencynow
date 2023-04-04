@@ -21,4 +21,9 @@ public class Fluency_now_controller {
 				+ "<br>";
 		return new ModelAndView("welcome", "message", message);
 	}
+		@RequestMapping("/teste")
+		public ModelAndView teste() {
+
+			return new ModelAndView("teste");
+	}
 }
