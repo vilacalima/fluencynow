@@ -39,6 +39,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  opacity: 0.5;
 }
 
 html {

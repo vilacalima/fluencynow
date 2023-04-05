@@ -1,77 +1,117 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de cabeçalho responsivo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css" />
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+<!-- //FONTE NOVA -->
+</head>
+<body>
 
-<html>
-    <head>
-        <title> Página Inicial </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" href="index.css" />
-        <link rel="stylesheet" href="reset.css">
-
-
-    </head>
-
-    <body>
-
-        
-        <header>
-
-
-            <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <img src="assets/images/Logo.png" >
-                  </div>
-                  <div class="col-6">
-                    Fluency Now
-                  </div>
-                  <div class="col-4">
-                    <button type="button" class="btn btn-primary">Administrador</button>
-                  </div>
-                
-                </div>
-              </div>
-
-            <!-- <div class="container">
-                <div class="row">
-                  <div class="col-lg-2">
-                    <img src="assets/images/Logo.png" >
-                  </div>
-                  <div class="col-lg-8">
-                    TEXTO PRINCIPAL
-                  </div>
-                  <div class="col-sm">
-                    BUTTON
-                  </div>
-                </div>
-              </div> -->
-
-
-            <!-- <div class="caixa-header">
-                    <img src="assets/images/Logo.png" class="logo">
-                </div>
-
-                <div class="titulo">
-                <h1>Fluency Now</h1>
+    <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logotipo na parte esquerda -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/Logo.png" alt="Logo" style="height: 150px;">
+            </a>
+            <!-- Nome da página ao meio -->
+            <div class="navbar-text mx-auto">
+                Fluency Now
             </div>
-            
-            </div> -->
+            <!-- Botão de administrador no canto superior direito -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="admin-btn" href="#">Administrador</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Porque escolher a Fluency Now?</h2>
+        <p>
+            A Fluency Now nasceu do amor pela lingua inglesa e pela paixao em ensinar da Helena Carvalho.
+            Após lecionar em escolas particulares por mais de 10 anos, em 2005 Helena decidiu criar seu proprio método de ensino, afinal, cada aluno tem um ritmo de aprendizado diferente, então não é eficaz utilizar o mesmo método para todos. Assim, ela segue
+            ensinando a língua inglesa até hoje, adaptando o ensino aos alunos.
+            A Fluency Now acredita que para o aprendizado não tem limites, então não existe idade certa para iniciar seus estudos, atendemos alunos de todas as idades e todos os niveis, do básico ao avançado.
+            Quer conhecer melhor a Flueny Now? Nos envie uma mensagem que iremos atender e respeitar o seu processo de aprendizado com paciencia e paixão pela língua inglesa.</p>
+      </div>
+      <div class="col-md-6">
+        <form class="formulario-contato">
+          <div class="form-group">
+            <label for="nome"></label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+          </div>
+          <div class="form-group">
+            <label for="email"></label>
+            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+          </div>
+          <div class="form-group">
+            <label for="data-nascimento"></label>
+            <input type="date"  textarea class="form-control" id="data-nascimento" placeholder="Digite sua data data de nascimento"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="endereco"></label>
+            <input type="address" textarea class="form-control" id="endereco"  placeholder="Digite seu endereço"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="telefone"></label>
+            <input type="number" textarea class="form-control" id="telefone" placeholder="Digite seu telefone"></textarea>
+            <a href="https://wa.me/5511945390855" class="btn btn-primary btn-enviar">Enviar WhatsApp <img class="whats" src="assets/images/whatsapp1.png" /></a>
+          </div>
+          <!-- <a href="https://wa.me/5511945390855" class="btn btn-primary btn-enviar" >Enviar WhatsApp <img class="whats" src="assets/images/whatsapp1.png" > -->
+        </form>
+         
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="name-cards-pacote">Pacotes</div>
+  <div class="card-deck">
+  
+    <div class="card">
+      <img src="assets/images/Espanhol.png" class="card-img-top" alt="Imagem do Card 1">
+      <div class="card-body">
+        <h5 class="card-title">Espanhol</h5>
+        <p class="card-text">5x de R$50,00</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/images/Ingles.png" class="card-img-top" alt="Imagem do Card 2">
+      <div class="card-body">
+        <h5 class="card-title">Ingles</h5>
+        <p class="card-text">5x de R$50,00</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="caminho-da-imagem-3" class="card-img-top" alt="Imagem do Card 3">
+      <div class="card-body">
+        <h5 class="card-title">Dois em um | Ingles + Espanhol</h5>
+        <p class="card-text">5x de R$75</p>
+
+      </div>
+    </div>
+  </div>
 
 
-        </header> 
 
-        <img src="assets/images/img-background.jpg" class="img-background"> 
 
-    </body>
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-wiJyZO0jX6hh60ggnIh0YzZU6QIXx4jI0gblZWfD0yE6fr5XhLgB1CxojrbjzlzF"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
-    <footer>
-
-    </footer>
 </html>
