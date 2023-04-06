@@ -26,4 +26,20 @@ public class Fluency_now_controller {
 
 			return new ModelAndView("teste");
 	}
+	@RequestMapping("/adicionar")
+	public ModelAndView adicionar() {
+
+		return new ModelAndView("adicionar");
+	}
+	@RequestMapping("/administrador")
+	public ModelAndView administrador() {
+
+		return new ModelAndView("administrador");
+	}
+	@RequestMapping("/login")
+	public ModelAndView login() {
+
+		return new ModelAndView("login");
+	}
+
 }
