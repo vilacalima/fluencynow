@@ -1,21 +1,21 @@
-package com.br.fluencynow.DAO;
+package com.br.fluencynow.dao;
 
 public class ConexaoDAO {
 
     /**
      * Url para consulta no banco de dados
      */
-    public static String url = "jdbc:mysql://localhost:3306/fluencyNow";
+    public static String url = "jdbc:h2:~/test";
 
     /**
      * Login para acesso ao banco de dados
      */
-    public static String login = "root";
+    public static String login = "sa";
 
     /**
      * Senha para acesso ao banco de dados Senha usada nos computadores do senac - > P@$$w0rd
      */
-    public static String senha = "";
+    public static String senha = "sa";
 
     /**
      * Obter url de conexão
