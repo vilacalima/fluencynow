@@ -1,10 +1,14 @@
-/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Aula.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Adicionar_controller.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/AulaDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Plano.java
-/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Fluency_now_controller.java
-/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/ConexaoDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/LoginDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/AlunoDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Aluno.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Aula.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Login_controller.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/controller/TestDB_controller.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/ConexaoDAO.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Welcome_controller.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Administrador_controller.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Login.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/PlanoDAO.java
