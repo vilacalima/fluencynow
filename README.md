@@ -55,7 +55,7 @@ Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/Flue
 
 ## Prototipação
 
-![HomePage](Readme/HomePage.png)
+![HomePage](Readme/HomePagePreview.png)
 
 ![Login](Readme/Login.png)
 
