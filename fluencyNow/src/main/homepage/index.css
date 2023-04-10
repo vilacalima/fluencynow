@@ -122,3 +122,43 @@ line-height: 47px;
     margin-top: 90px;
     border: 0px;
 }
+
+
+.col-md-4{
+    display: inline-block;
+    margin-left:-10px;
+  }
+  .col-md-4 img{
+    width:100%;
+    height:auto;
+  }
+    
+  body .carousel-control-prev-icon,
+  body .carousel-indicators li,
+  body .carousel-control-next-icon{
+    background-color:#000;
+  }
+  
+  span.carousel-control-prev-icon {
+   position: relative;
+   bottom: 40px;
+   right: 40px;
+  }
+  
+  span.carousel-control-next-icon {
+   position: relative;
+   bottom: 40px;
+  }
+  
+
+  .container-2 h1{
+text-align: center;
+  }
+
+ .carousel-item h5{
+text-align: center;
+ }
+
+ .carousel-item p{
+    text-align: center;
+     }
