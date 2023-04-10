@@ -12,7 +12,7 @@ public class LoginDAO {
 
         String SQL = "INSERT INTO login (email, senha, usuario) VALUES(?,?,?)";
         try {
-            Connection conexao = DriverManager.getConnection(com.br.fluencynow.dao.ConexaoDAO.url, com.br.fluencynow.dao.ConexaoDAO.login, com.br.fluencynow.dao.ConexaoDAO.senha);
+            Connection conexao = DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
 
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
             comandoSQL.setString(1, login.getEmail());
@@ -36,9 +36,9 @@ public class LoginDAO {
 
         boolean retorno = false;
 
-        String SQL = "SELECT * FROM usuario WHERE login = ? AND senha = ?";
+        String SQL = "SELECT * FROM login WHERE login = ? AND senha = ?";
         try {
-            Connection conexao = DriverManager.getConnection(com.br.fluencynow.dao.ConexaoDAO.url, com.br.fluencynow.dao.ConexaoDAO.login, com.br.fluencynow.dao.ConexaoDAO.senha);
+            Connection conexao = DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
 
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
 
