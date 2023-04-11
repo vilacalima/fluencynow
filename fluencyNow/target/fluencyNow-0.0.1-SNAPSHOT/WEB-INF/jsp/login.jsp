@@ -1,26 +1,34 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-<spring:url value="/resources/fluency.css" var="fluencyCSS" />
-
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-  <link href="${fluencyCSS}" rel="stylesheet" />
+	<title>Login</title>
+	<link rel="stylesheet" href="/fluencyNow/WebContent/resources/Login.css">
 </head>
 <body>
-    <div class="page">
-       <form action="efetuaLogin" method="post" class="formLogin">
-        <h1>Login</h1>
-        <p>Digite os seus dados de acesso no campo abaixo.</p>
-        Usuario: <input type="text" name="usuario" placeholder="Digite seu usuario" autofocus="true" /> <br />
-        Senha: <input type="password" name="senha" placeholder="Digite sua senha" /> <br />
-        <input type="submit" value="Entrar" />
-        </form>
-    </div>
+	<div class ="container">
+		<div class='card'>
+		  <h1> Professora, Seja Bem-Vinda ! </h2>
 
+		  <div class='label-float'>
+			<input type='test' id ='usuario' paceholder=''>
+			<label for='usuario'>Email</label>
+			</div>
+		  <div class='label-float'>
+			<input type='password' id ='usuario' paceholder=''>
+			<label for='usuario'>Senha</label>
+			</div>
+
+			<div class='justify-center'>
+			  <button>Entrar</button>
+		   </div>
+
+			<div class='justify-center'>
+			<hr>
+			</div>
+
+		  <p> Continuar Conectado | <a href=''>Troque Sua Senha</a>
+
+		  </div>
+		 </div>
 </body>
 </html>
