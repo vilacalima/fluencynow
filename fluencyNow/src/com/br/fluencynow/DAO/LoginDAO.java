@@ -36,11 +36,12 @@ public class LoginDAO {
 
         boolean retorno = false;
 
-        String SQL = "SELECT * FROM login WHERE login = ? AND senha = ?";
+        String SQL = "SELECT * FROM login WHERE usuario = ? AND senha = ?";
         try {
             Connection conexao = DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
 
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
+
 
             comandoSQL.setString(1, login.getUsuario());
             comandoSQL.setString(2, login.getSenha());
@@ -55,6 +56,7 @@ public class LoginDAO {
 
         } catch (ClassCastException ex) {
             System.out.println(ex.getMessage());
+
         }
         return false;
     }
