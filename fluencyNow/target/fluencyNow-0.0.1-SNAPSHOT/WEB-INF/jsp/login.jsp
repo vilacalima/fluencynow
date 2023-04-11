@@ -2,7 +2,7 @@
 <body>
 <h2>Bem vindo, Professora</h2>
 <form action="efetuaLogin" method="post">
-Login: <input type="text" name="login" /> <br />
+Usuario: <input type="text" name="usuario" /> <br />
 Senha: <input type="password" name="senha" /> <br />
 <input type="submit" value="Entrar" />
 </form>

@@ -54,10 +54,10 @@ public class LoginDAO {
                 retorno = true;
             }
 
-        } catch (ClassCastException ex) {
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
 
         }
-        return false;
+        return retorno;
     }
 }
