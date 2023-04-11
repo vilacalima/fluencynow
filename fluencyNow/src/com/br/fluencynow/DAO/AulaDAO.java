@@ -1,4 +1,4 @@
-package com.br.fluencynow.dao;
+package com.br.fluencynow.DAO;
 
 import com.br.fluencynow.model.Aula;
 
