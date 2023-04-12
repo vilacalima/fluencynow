@@ -10,15 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class Welcome_controller {
-	@RequestMapping("/welcome")
-	public ModelAndView welcome() {
-		String message = "<br>"
-				+ "<div style='text-align:center;'>"
-				+ "<h3>Welcome to  Fluency now"
-				+ "</h3>This message is coming from Fluency_now_controller.java"
-				+ "</div>"
-				+ "<br>"
-				+ "<br>";
-		return new ModelAndView("welcome", "message", message);
+	@RequestMapping("/home")
+	public ModelAndView home() {
+
+		return new ModelAndView("home");
 	}
 }
