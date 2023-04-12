@@ -41,7 +41,7 @@
         <!-- Botão de administrador no canto superior direito -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="admin-btn" href="#">Administrador</a>
+            <a class="admin-btn" href="login">Administrador</a>
           </li>
         </ul>
       </div>
