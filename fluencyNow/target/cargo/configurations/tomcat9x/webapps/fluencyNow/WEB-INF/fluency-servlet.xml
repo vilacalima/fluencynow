@@ -22,6 +22,10 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
+<<<<<<< HEAD
     <mvc:resources mapping="/refer/**" location="/refer/" />
+=======
+    <mvc:resources mapping="/refer/**" location="/resources/" />
+>>>>>>> 04a5adf02395e56b62e6f1c58b5b22981d629692
     <mvc:annotation-driven />
 </beans>

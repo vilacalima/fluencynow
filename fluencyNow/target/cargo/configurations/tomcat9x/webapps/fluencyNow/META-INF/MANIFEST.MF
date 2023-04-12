@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Created-By: Apache Maven 3.8.1
 Built-By: robso
 Build-Jdk: 11.0.18
 
+=======
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.6.3
+Built-By: eduardo
+Build-Jdk: 11.0.18
+
+>>>>>>> 04a5adf02395e56b62e6f1c58b5b22981d629692
