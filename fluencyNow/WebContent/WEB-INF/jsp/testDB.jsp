@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,31 +7,25 @@
     <body>
     <br>
     <div>
+        <br>
         <h1>Teste Salvar</h1>
-        <form method="Post" action="/testeBancodeDadosDB">
-            <label>Nome</label>
-            <input type="text", name="nome", id="nome">
+        <form method="Post" action="fluencyNow/testeBancodeDadosDB">
 
-            <label>CPF</label>
-            <input type="text", name="cpf", id="cpf">
+            <label for="nome">Nome</label><input type="text" name="nome" id="nome">
 
-            <label>Data de Nascimento</label>
-            <input type="text", name="dataNascimento", id="dataNascimento">
-            
-            <label>Email</label>
-            <input type="text", name="email", id="email">
-            
-            <label>Celular</label>
-            <input type="text", name="celular", id="celular">
-            
-            <label>CEP</label>
-            <input type="text", name="cep", id="cep">
-            
-            <label>Endereço</label>
-            <input type="text", name="endereco", id="endereco">
+            <label for="cpf">CPF</label><input type="text" name="cpf" id="cpf">
 
-            <label>Número</label>
-            <input type="text", name="numero", id="numero">
+            <label for="dataNascimento">Data de Nascimento</label><input type="text" name="dataNascimento" id="dataNascimento">
+
+            <label for="email">Email</label><input type="text" name="email" id="email">
+
+            <label for="celular">Celular</label><input type="text" name="celular" id="celular">
+
+            <label for="cep">CEP</label><input type="text" name="cep" id="cep">
+
+            <label for="endereco">Endereço</label><input type="text" name="endereco" id="endereco">
+
+            <label for="numero">Número</label><input type="text" name="numero" id="numero">
 
             <button type="submit">Salvar</button>
         </form>
