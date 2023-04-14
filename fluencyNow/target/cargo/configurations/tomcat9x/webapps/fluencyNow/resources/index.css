@@ -4,7 +4,7 @@ body {
   
   body::before {
     content: "";
-    background-image: url('\images\img-background.jpg');
+    background-image: url(images/img-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.4;
