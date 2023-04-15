@@ -6,38 +6,40 @@
     Projeto Integrador III
 </h1>
 
-<h2>  
-    :construction:  Projeto em construção  :construction:
+<h3>  
+    :construction:  Em construção  :construction:
+</h3>
+
+<h2>
+:notebook: Colaboradores
 </h2>
 
-## Colaboradores:
+<p> 
+    <br>
+    Eduardo Feitosa <br>
+    Isabela Midori Minami Rodrigues Mesquita <br>
+    Nathalia Aldinar Souza Cerqueira <br>
+    Nicolas da Cruz Marques <br>
+    Rennan Rodrigues <br>
+    Robson Vilaça Lima <br>
+</p>
 
-- Isabela Midori Minami Rodrigues Mesquita
-
-- Nathalia Aldinar Souza Cerqueira
-
-- Nicolas da Cruz Marques
-
-- Robson Vilaça Lima
-
-- Eduardo Feitosa
-
-- Rennan Rodrigues
-
-## FIGMA
+<h2>
+:camera: FIGMA
+</h2>
 
 Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/FluencyNow?t=3hsNA3CDhbPHmmAn-0
 
-## [Requisitos do Sistema](./Readme/REQUIREMENTS.md)
+### [Requisitos do Sistema](./Readme/REQUIREMENTS.md)
 
-## [Banco de dados](./Readme/DATABASE.md)
+### [Banco de dados](./Readme/DATABASE.md)
 
-## [Pagina principal](./Readme/HOMEPAGE.md)
+### [Pagina principal](./Readme/HOMEPAGE.md)
 
-## [Pagina de Login](./Readme/LOGINPAGE.md)
+### [Pagina de Login](./Readme/LOGINPAGE.md)
 
-## [Pagina administrativa](./Readme/BUSINESSPAGE.md)
+### [Pagina administrativa](./Readme/BUSINESSPAGE.md)
 
-## [Pagina de Cadastro](./Readme/REGISTERPAGE.md)
+### [Pagina de Cadastro](./Readme/REGISTERPAGE.md)
 
 
