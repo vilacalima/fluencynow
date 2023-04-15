@@ -1,5 +1,6 @@
-package com.br.fluencynow.dao;
+package com.br.fluencynow.DAO;
 
+import com.br.fluencynow.DAO.ConexaoDAO;
 import com.br.fluencynow.model.Aluno;
 
 import java.sql.Connection;
@@ -12,7 +13,7 @@ public class AlunoDAO {
     public static boolean salvar(Aluno aluno) throws SQLException {
         boolean retorno = false;
 
-        String SQL = "INSERT INTO aluno (nome, cpf, dataNascimento, endereco, cep, numero, celular, email) VALUES(?,?,?,?,?,?,?,?)";
+        String SQL = "INSERT INTO aluno (nome, cpf, datanasc, endereco, cep, numero, celular, email) VALUES(?,?,?,?,?,?,?,?)";
         try {
 
             Connection conexao =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);

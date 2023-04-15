@@ -1,3 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: flex;
+    height: flex;
+    background-color: #480ca8;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+.formCadastrar {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 100px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+.areaLogin img {
+    width: 420px;
+}
+
+.formLogin h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.3em;
+}
+
+.formLogin p {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.formLogin input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+.formLogin input:focus {
+    border: 1px solid #f72585;
+}
+
+.formLogin label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.formLogin a {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #555;
+    transition: all linear 160ms;
+}
+
+.formLogin a:hover {
+    color: #f72585;
+}
+
+.btn {
+    background-color: #f72585;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #ff0676;
+
+}
 h2{
     color:#7CFC00;
 }
@@ -86,3 +195,135 @@ footer p{
     font-size: 50px;
     text-align: center;
 }
+*{
+    margin:0;
+    padding:0;
+    font-family: 'sans-serif'
+  }
+
+  body{
+    background-image:url(https://cdn.mos.cms.futurecdn.net/XsbvTN6PRi6PZtgEGvRsiE-970-80.jpg.webp);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+
+  }
+
+  .container{
+    position: center;
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    margin-top: 250px;
+  }
+  .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      width: flex;
+      height: flex;
+      background-image:url("WebContent/resources/images/Login.webp");
+
+
+  .card{
+    background-color:#ffffff80;
+    padding: 30px;
+    border-radius: 4%;
+    box-shadow:3px 3px 1px 0px #00000060;
+  }
+
+  h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color:#272262;
+  }
+
+  .label-float input{
+     width:100%;
+     padding:5px 5px;
+    dispplay:inline-block;
+    border:0;
+    border-bottom:2px solid #272262;
+    background-color:transparent;
+    outline:none;
+    min-width:180px;
+    font-size:16px;
+    transition: all .3s ease-out;
+    border-radius:0;
+  }
+
+  .label-float{
+    position: relative;
+    padding-top:13px;
+    margin-top:5%;
+    margin-bottom;5%;
+  }
+
+  .label-float input:focus{
+    border-bottom:2px solid #4038a0;
+  }
+
+  .label-float label{
+    color:#272262;
+    pointer-event:none;
+    position:absolute;
+    top: 0;
+    left:0;
+    margin-top:13px;
+    transition:all .3s ease-out;
+  }
+
+  .label-float input:focus+label{
+    font-size:13px;
+    margin-top:0;
+    color:#4038a0
+  }
+
+  button{
+  background-color:transparent;
+  border-color:#272262;
+  color:#272262;
+  padding: 7px;
+  font-weight: bold;
+  font-size: 12pt;
+  margin-top:20px;
+  border-radius:4px;
+  cursor: pointer;
+   outline: none;
+  }
+
+  button:hover{
+    background-color:#272262;
+    color:#fff;
+  }
+
+  .justify-center{
+    display: flex;
+    justify-content: center;
+  }
+
+  hr{
+    margin-top:10px;
+    margin-bottom: 10%;
+    width:60%;
+  }
+
+  p{
+    color:#272262;
+    font-size: 14pt;
+    text-align: center;
+
+  }
+
+  a{
+    color:#7a3077;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s ease-out;
+  }
+
+  a:hover{
+    color:#272262;
+  }

@@ -5,9 +5,8 @@
 =======
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
-<html>
 <head>
-<!-- let's add tag srping:url -->
+<!-- let's add tag spring:url -->
 <spring:url value="/resources/fluency.css" var="fluencyCSS" />
 <spring:url value="/resources/fluency.js" var="fluencyJS" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
