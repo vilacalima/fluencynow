@@ -42,7 +42,7 @@ public class TesteDB {
 
         String nomeAluno = req.getParameter("nome");
         String cpfAluno = req.getParameter("cpf");
-//        Date dataNascimentoAluno = req.getParameter("dataNascimento").;
+        String dataNascimentoAluno = req.getParameter("dataNascimento");
         String emailAluno = req.getParameter("email");
         String celularAluno = req.getParameter("celular");
         String cepAluno = req.getParameter("cep");
@@ -51,7 +51,7 @@ public class TesteDB {
 
 
         try {
-            boolean salvar = AlunoDAO.saveStudent(new Aluno(nomeAluno, cpfAluno, new Date("2009-06-31"), enderecoAluno, cepAluno, numeroAluno, celularAluno, emailAluno));
+            boolean salvar = AlunoDAO.saveStudent(new Aluno(nomeAluno, cpfAluno, dataNascimentoAluno, enderecoAluno, cepAluno, numeroAluno, celularAluno, emailAluno));
             if(salvar){
                 System.out.println("Salvo com sucesso");
             }
