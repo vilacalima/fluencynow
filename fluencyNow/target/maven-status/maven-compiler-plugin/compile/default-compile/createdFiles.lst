@@ -1,4 +1,5 @@
 com/br/fluencynow/model/Plano.class
+com/br/fluencynow/DAO/AdministradorDAO.class
 com/br/fluencynow/controller/TestDB_controller.class
 com/br/fluencynow/DAO/ConexaoDAO.class
 com/br/fluencynow/DAO/LoginDAO.class
@@ -8,6 +9,7 @@ com/br/fluencynow/DAO/AulaDAO.class
 com/br/fluencynow/model/Aula.class
 com/br/fluencynow/DAO/PlanoDAO.class
 com/br/fluencynow/controller/Administrador_controller.class
+com/br/fluencynow/model/Lista_Conteiner.class
 com/br/fluencynow/controller/Cadastrar_controller.class
 com/br/fluencynow/model/Aluno.class
 com/br/fluencynow/controller/Welcome_controller.class

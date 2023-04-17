@@ -1,6 +1,8 @@
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Login_controller.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/AdministradorDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Welcome_controller.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/ConexaoDAO.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/model/Lista_Conteiner.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/PlanoDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/controller/TestDB_controller.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencynow/fluencyNow/src/com/br/fluencynow/DAO/AulaDAO.java

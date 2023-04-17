@@ -1,6 +1,5 @@
 package com.br.fluencynow.DAO;
 
-import com.br.fluencynow.DAO.ConexaoDAO;
 import com.br.fluencynow.model.Aluno;
 
 import java.sql.Connection;
@@ -21,12 +20,12 @@ public class AlunoDAO {
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
             comandoSQL.setString(1, aluno.getNome());
             comandoSQL.setString(2, aluno.getCpf());
-            comandoSQL.setDate(3, new java.sql.Date(aluno.getDataNascimento().getTime()));
+            comandoSQL.setString(3, aluno.getDataNasc());
             comandoSQL.setString(4, aluno.getEndereco());
             comandoSQL.setString(5, aluno.getCep());
             comandoSQL.setString(6, aluno.getNumero());
-            comandoSQL.setString(6, aluno.getCelular());
-            comandoSQL.setString(7, aluno.getEmail());
+            comandoSQL.setString(7, aluno.getCelular());
+            comandoSQL.setString(8, aluno.getEmail());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 

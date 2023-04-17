@@ -1,13 +1,11 @@
 package com.br.fluencynow.model;
 
-import java.util.Date;
-
 public class Aluno {
 
     public int id;
     public String nome;
     public String cpf;
-    public Date dataNascimento;
+    public String dataNasc;
     public String endereco;
     public String cep;
     public String numero;
@@ -26,18 +24,18 @@ public class Aluno {
      * @param id
      * @param nome
      * @param cpf
-     * @param dataNascimento
+     * @param dataNasc
      * @param endereco
      * @param cep
      * @param numero
      * @param celular
      * @param email
      * */
-    public Aluno(int id, String nome, String cpf, Date dataNascimento, String endereco, String cep, String numero, String celular, String email) {
+    public Aluno(int id, String nome, String cpf, String dataNasc, String endereco, String cep, String numero, String celular, String email) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
+        this.dataNasc = dataNasc;
         this.endereco = endereco;
         this.cep = cep;
         this.numero = numero;
@@ -49,17 +47,17 @@ public class Aluno {
      * Construtor da classe Aluno
      * @param nome
      * @param cpf
-     * @param dataNascimento
+     * @param dataNasc
      * @param endereco
      * @param cep
      * @param numero
      * @param celular
      * @param email
      * */
-    public Aluno(String nome, String cpf, Date dataNascimento, String endereco, String cep, String numero, String celular, String email) {
+    public Aluno(String nome, String cpf, String dataNasc, String endereco, String cep, String numero, String celular, String email) {
         this.nome = nome;
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
+        this.dataNasc = dataNasc;
         this.endereco = endereco;
         this.cep = cep;
         this.numero = numero;
@@ -76,8 +74,8 @@ public class Aluno {
     public void setNome(String nome) { this.nome = nome; }
     public String getCpf() { return cpf; }
     public void setCpf(String cpf) { this.cpf = cpf; }
-    public Date getDataNascimento() { return dataNascimento; }
-    public void setDataNascimento(Date dataNascimento) { this.dataNascimento = dataNascimento; }
+    public String getDataNasc() { return dataNasc; }
+    public void setDataNasc(String dataNasc) { this.dataNasc = dataNasc; }
     public String getEndereco() { return endereco; }
     public void setEndereco(String endereco) { this.endereco = endereco; }
     public String getCep() { return cep; }
