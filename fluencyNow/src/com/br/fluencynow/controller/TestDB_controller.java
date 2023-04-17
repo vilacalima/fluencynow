@@ -19,7 +19,7 @@ public class TestDB_controller {
 
     @RequestMapping("/adicionaLogin")
     public String adicionaLogin(Login login, HttpSession session) throws SQLException {
-        if(new com.br.fluencynow.DAO.LoginDAO().salvar(login)) {
+        if(new com.br.fluencynow.dao.LoginDAO().salvar(login)) {
             session.setAttribute("usuarioAdicionado", login);
             return "welcome";
         }

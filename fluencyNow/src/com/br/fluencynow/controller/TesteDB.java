@@ -51,7 +51,7 @@ public class TesteDB {
 
 
         try {
-            boolean salvar = AlunoDAO.salvar(new Aluno(nomeAluno, cpfAluno, new Date("2009-06-31"), enderecoAluno, cepAluno, numeroAluno, celularAluno, emailAluno));
+            boolean salvar = AlunoDAO.saveStudent(new Aluno(nomeAluno, cpfAluno, new Date("2009-06-31"), enderecoAluno, cepAluno, numeroAluno, celularAluno, emailAluno));
             if(salvar){
                 System.out.println("Salvo com sucesso");
             }
