@@ -10,21 +10,22 @@ public class AlunoDAO {
 
         String SQL = "INSERT INTO aluno (nome, cpf, datanasc, endereco, cep, numero, celular, email) VALUES(?,?,?,?,?,?,?,?)";
         try {
-            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
 
-            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            Connection conexao =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
             comandoSQL.setString(1, aluno.getNome());
             comandoSQL.setString(2, aluno.getCpf());
-            comandoSQL.setDate(3, new java.sql.Date(aluno.getDataNascimento().getTime()));
+            comandoSQL.setString(3, aluno.getDataNasc());
             comandoSQL.setString(4, aluno.getEndereco());
             comandoSQL.setString(5, aluno.getCep());
             comandoSQL.setString(6, aluno.getNumero());
-            comandoSQL.setString(6, aluno.getCelular());
-            comandoSQL.setString(7, aluno.getEmail());
+            comandoSQL.setString(7, aluno.getCelular());
+            comandoSQL.setString(8, aluno.getEmail());
 
-            int success = comandoSQL.executeUpdate();
+            int linhasAfetadas = comandoSQL.executeUpdate();
 
-            if(success > 0){
+            if(linhasAfetadas > 0){
                 System.out.println("Success Connection");
                 retorno = true;
             }
@@ -34,6 +35,8 @@ public class AlunoDAO {
         }
         return retorno;
     }
+
+
 
     public static boolean updateStudent(Aluno aluno) throws SQLException {
         boolean retorno = false;
@@ -45,7 +48,7 @@ public class AlunoDAO {
             PreparedStatement comandoSQL = connection.prepareStatement(SQL);
             comandoSQL.setString(1, aluno.getNome());
             comandoSQL.setString(2, aluno.getCpf());
-            comandoSQL.setDate(3, new java.sql.Date(aluno.getDataNascimento().getTime()));
+            comandoSQL.setString(3, aluno.getDataNasc());
             comandoSQL.setString(4, aluno.getEndereco());
             comandoSQL.setString(5, aluno.getCep());
             comandoSQL.setString(6, aluno.getNumero());
@@ -107,7 +110,7 @@ public class AlunoDAO {
                     aluno = new Aluno();
                     aluno.setNome(rs.getString("nome"));
                     aluno.setCep("cpf");
-                    aluno.setDataNascimento(rs.getDate("datanasc"));
+                    aluno.setDataNasc(rs.getString("datanasc"));
                     aluno.setEndereco(rs.getString("endereco"));
                     aluno.setCep(rs.getString("cep"));
                     aluno.setCelular(rs.getString("celular"));
@@ -137,7 +140,7 @@ public class AlunoDAO {
                     aluno = new Aluno();
                     aluno.setNome(rs.getString("nome"));
                     aluno.setCep("cpf");
-                    aluno.setDataNascimento(rs.getDate("datanasc"));
+                    aluno.setDataNasc(rs.getString("datanasc"));
                     aluno.setEndereco(rs.getString("endereco"));
                     aluno.setCep(rs.getString("cep"));
                     aluno.setCelular(rs.getString("celular"));

@@ -13,25 +13,20 @@ import java.util.Date;
 @Controller
 public class Cadastrar_controller {
 
-    @RequestMapping("/cadastrar")
-    public ModelAndView cadastrar() {
+        @RequestMapping("/cadastrar")
+        public ModelAndView cadastrar() {
 
-        return new ModelAndView("cadastrarAluno");
-    }
-
-    @RequestMapping("/cadastrarAluno")
-    public String adicionaLogin(Aluno aluno, HttpSession session) throws SQLException {
-
-        AlunoDAO alunoDAO = new AlunoDAO();
-
-        if(aluno.dataNascimento == null)
-            aluno.dataNascimento = new Date();
-
-        if(alunoDAO.saveStudent(aluno)) {
-            session.setAttribute("alunoCadastrado", aluno);
-            return "welcome";
+            return new ModelAndView("cadastrarAluno");
         }
-        return "redirect:cadastrar";
+
+        @RequestMapping("/cadastrarAluno")
+        public String adicionaLogin(Aluno aluno, HttpSession session) throws SQLException {
+            if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)) {
+                session.setAttribute("alunoCadastrado", aluno);
+                return "welcome";
+            }
+            return "redirect:cadastrar";
+        }
+
     }
 
-}
