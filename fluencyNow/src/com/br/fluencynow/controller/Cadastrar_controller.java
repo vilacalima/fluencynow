@@ -1,15 +1,13 @@
 package com.br.fluencynow.controller;
 
-import com.br.fluencynow.DAO.AlunoDAO;
+import com.br.fluencynow.dao.AlunoDAO;
 import com.br.fluencynow.model.Aluno;
-import com.br.fluencynow.model.Login;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
@@ -29,7 +27,7 @@ public class Cadastrar_controller {
         if(aluno.dataNascimento == null)
             aluno.dataNascimento = new Date();
 
-        if(alunoDAO.salvar(aluno)) {
+        if(alunoDAO.saveStudent(aluno)) {
             session.setAttribute("alunoCadastrado", aluno);
             return "welcome";
         }

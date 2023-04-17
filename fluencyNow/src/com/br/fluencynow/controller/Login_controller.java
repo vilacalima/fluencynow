@@ -19,7 +19,7 @@ public class Login_controller {
 
     @RequestMapping("/efetuaLogin")
     public String efetuaLogin(Login login, HttpSession session) throws SQLException {
-        if(new com.br.fluencynow.DAO.LoginDAO().exists(login)) {
+        if(new com.br.fluencynow.dao.LoginDAO().exists(login)) {
             session.setAttribute("usuarioLogado", login);
             return "welcome";
         }
