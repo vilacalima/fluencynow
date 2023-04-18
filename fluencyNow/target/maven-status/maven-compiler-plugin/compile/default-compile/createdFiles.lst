@@ -5,6 +5,7 @@ com/br/fluencynow/controller/TesteDB.class
 com/br/fluencynow/controller/Login_controller.class
 com/br/fluencynow/model/Lista_container.class
 com/br/fluencynow/model/Aula.class
+com/br/fluencynow/dao/AdministradorDAO.class
 com/br/fluencynow/dao/PlanoDAO.class
 com/br/fluencynow/dao/LoginDAO.class
 com/br/fluencynow/dao/AulaDAO.class

@@ -2,6 +2,7 @@
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/dao/PlanoDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Plano.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/controller/Cadastrar_controller.java
+/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/dao/AdministradorDAO.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Aluno.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/model/Aula.java
 /home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow/src/com/br/fluencynow/dao/LoginDAO.java
