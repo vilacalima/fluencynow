@@ -3,6 +3,8 @@ package com.br.fluencynow.dao;
 import com.br.fluencynow.model.Aluno;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AlunoDAO {
     public static boolean saveStudent(Aluno aluno) throws SQLException {
@@ -137,7 +139,7 @@ public class AlunoDAO {
                 while(rs.next()){
                     aluno = new Aluno();
                     aluno.setNome(rs.getString("nome"));
-                    aluno.setCep("cpf");
+                    aluno.setCep(rs.getString("cpf"));
                     aluno.setDataNasc(rs.getDate("datanasc"));
                     aluno.setEndereco(rs.getString("endereco"));
                     aluno.setCep(rs.getString("cep"));
@@ -149,5 +151,61 @@ public class AlunoDAO {
             System.out.println(ex.getMessage());
         }
         return aluno;
+    }
+
+    public static List<Aluno> getAllStundent() throws SQLException {
+        List<Aluno> listaAluno = new ArrayList<>();
+        String SQL = "SELECT nome, cpf, datanasc, endereco, cep, numero, celular, email FROM aluno";
+
+        try{
+            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            ResultSet rs = comandoSQL.executeQuery();
+
+            if(rs!=null){
+                while(rs.next()){
+                    Aluno aluno = new Aluno();
+                    aluno.setNome(rs.getString("nome"));
+                    aluno.setCep(rs.getString("cpf"));
+                    aluno.setDataNasc(rs.getDate("datanasc"));
+                    aluno.setEndereco(rs.getString("endereco"));
+                    aluno.setCep(rs.getString("cep"));
+                    aluno.setCelular(rs.getString("celular"));
+                    aluno.setEmail(rs.getString("email"));
+
+                    listaAluno.add(aluno);
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return listaAluno;
+    }
+
+    public static List<Aluno> getStundent() throws SQLException {
+        List<Aluno> listaAluno = new ArrayList<>();
+        String SQL = "SELECT nome, cpf, email FROM aluno";
+
+        try{
+            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            ResultSet rs = comandoSQL.executeQuery();
+
+            if(rs!=null){
+                while(rs.next()){
+                    Aluno aluno = new Aluno();
+                    aluno.setNome(rs.getString("nome"));
+                    aluno.setCep(rs.getString("cpf"));
+                    aluno.setEmail(rs.getString("email"));
+
+                    listaAluno.add(aluno);
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return listaAluno;
     }
 }
