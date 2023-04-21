@@ -33,7 +33,7 @@
         <a class="navbar-brand" href="#">
           <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
         </a>
- 
+
         <!-- Botão de administrador no canto superior direito -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -73,7 +73,7 @@
       <td> Quinta - feira </td>
 
     </tr>
-    
+
     <tr>
       <th scope="row">2</th>
       <td>Miguel Pereira</td>
@@ -100,7 +100,7 @@
       <td> Sexta - feira </td
     </tr>
         <tr>
-          
+
       <th scope="row">5</th>
       <td colspan="2"> Ana Beatriz</td>
       <td>879.984.875-86</td>
@@ -108,7 +108,7 @@
        <td>15h as 16h</td>
       <td> Quarta - feira </td
     </tr>
-        
+
   </tbody>
 </table>
       </div>
@@ -150,7 +150,7 @@
             <input type="emailcadastro" textarea class="form-control" id="cadastroemail"
               placeholder="fluency@now.com.br"</textarea>
           </div>
-    
+
           <div class="form-group">
             <label for="telefone"></label>
             <input type="number" textarea class="form-control" id="cadastrotelefone"
@@ -168,7 +168,7 @@
     <div class="row">
 
      <table class="table">
-       
+
   <thead>
     <tr>
       <th scope="col">#Id</th>
@@ -192,27 +192,27 @@
     <tr>
       <th scope="row">3</th>
    <td>Mexico 2 dias da semana</td>
-      <td>teste@gmail.com</td> 
+      <td>teste@gmail.com</td>
     </tr>
     <th scope="row">3</th>
    <td>EUA 1 dia da semana - Grupo</td>
-      <td>teste@gmail.com</td> 
+      <td>teste@gmail.com</td>
     </tr>
        <th scope="row">3</th>
    <td>Espanha 1 dia da semana - Grupo</td>
-      <td>teste@gmail.com</td> 
+      <td>teste@gmail.com</td>
     </tr>
      <th scope="row">3</th>
    <td>Inglaterra 1 dia da semana - Grupo</td>
-      <td>teste@gmail.com</td> 
+      <td>teste@gmail.com</td>
     </tr>
   </tbody>
 </table>
 
-      
+
   <div class="container-2">
     <h1>Cadastro Plano</h1>
-    
+
     <div class="row">
   <div class="col">
     <input type="text" class="form-control" placeholder="Eua - 1 dia da semana" aria-label="First name">
@@ -220,14 +220,14 @@
   <div class="col">
     <input type="text" class="form-control" placeholder="R4160,00" aria-label="Last name">
       <div class="btn btn-primary btn-cadastraraula"> Cadastrar Plano <div class="botaocadastraraula">
-          
+
         </div>
         </div>
               <a>
     </div>
-    
+
   </div>
-</div>      
+</div>
     </div>
       </div>
       </div>
@@ -274,9 +274,9 @@
 
 body {
     position: relative;
-  
+
   }
-  
+
   body::before {
     content: "";
     background-image: url('\images\img-background.jpg');
@@ -318,7 +318,7 @@ body {
     background-color:   #3C22DC;
     font-size: 15px ;
     padding: 5px 10px;
-  
+
 
 
   }
@@ -335,13 +335,13 @@ body {
 }
 .container h2{
     text-align: center;
-   
+
 }
 
 .container p{
     text-align: justify;
 
-  
+
 }
 
 
@@ -352,8 +352,8 @@ body {
     padding: 20px;
     text-aling: center;
     width: 200px;
-  
-    
+
+
 }
 .form-control {
     display: flex;
@@ -406,9 +406,9 @@ margin-bottom: 20px;
 color:#fff ;
 
 
- }    
+ }
 .col{
-margin-left: 500px 50px 50px;  
+margin-left: 500px 50px 50px;
 
 }
  .container h1{
@@ -432,29 +432,29 @@ margin-left: 500px 50px 50px;
     color: #fff;
     padding: 40px 0;
   }
-  
+
   .footer img {
     max-width: 100%;
   }
-  
-  
-  
+
+
+
   .footer a:hover i {
     color: #2413be;
   }
-  
+
   .footer hr {
     border-top: 1px solid #fff;
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  
+
   .footer p {
     font-size: 20px;
     margin-bottom: 0;
     text-align: center;
   }
- 
+
 
   @media (max-width: 991px) {
     .card-box {
