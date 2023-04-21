@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -27,6 +29,15 @@ public class Administrador_controller {
         alunoList.setAlunos(alunos);
         model.addAttribute("Alunos", alunoList);
         return "administrador";
+    }
+
+    @RequestMapping("/cadastrarAluno")
+    public String adicionaLogin(Aluno aluno, HttpSession session) throws SQLException {
+        if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)) {
+            session.setAttribute("alunoCadastrado", aluno);
+            return "welcome";
+        }
+        return "redirect:cadastrar";
     }
 
 }
