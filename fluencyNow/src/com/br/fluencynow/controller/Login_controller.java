@@ -21,7 +21,7 @@ public class Login_controller {
     public String efetuaLogin(Login login, HttpSession session) throws SQLException {
         if(new com.br.fluencynow.dao.LoginDAO().exists(login)) {
             session.setAttribute("usuarioLogado", login);
-            return "welcome";
+            return "home";
         }
         return "redirect:login";
     }
