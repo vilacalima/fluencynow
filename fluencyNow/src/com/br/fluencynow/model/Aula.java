@@ -6,6 +6,9 @@ public class Aula {
     public int id;
     public Date data;
     public String horario;
+    public int idAluno;
+    public int idAula;
+
 
     /**
      * Construtor da classe Aula
@@ -16,24 +19,14 @@ public class Aula {
 
     /**
      * Construtor da classe Aula
-     * @param id
      * @param data
      * @param horario
      * */
-    public Aula(int id, Date data, String horario) {
-        this.id = id;
+    public Aula(Date data, String horario, int idAluno, int idAula) {
         this.data = data;
         this.horario = horario;
-    }
-
-    /**
-     * Construtor da classe Aula
-     * @param data
-     * @param horario
-     * */
-    public Aula(Date data, String horario) {
-        this.data = data;
-        this.horario = horario;
+        this.idAluno = idAluno;
+        this.idAula = idAula;
     }
 
     /**
@@ -45,4 +38,8 @@ public class Aula {
     public void setData(Date data) { this.data = data; }
     public String getHorario() { return horario; }
     public void setHorario(String horario) { this.horario = horario; }
+    public int getIdAluno() { return idAluno; }
+    public void setIdAluno(int idAluno) { this.idAluno = idAluno; }
+    public int getIdAula() { return idAula; }
+    public void setIdAula(int idAula) { this.idAula = idAula; }
 }
