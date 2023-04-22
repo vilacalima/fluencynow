@@ -1,5 +1,8 @@
 package com.br.fluencynow.model;
 
+import java.util.Date;
+import java.util.List;
+
 public class Aluno {
 
     public int id;
@@ -86,4 +89,18 @@ public class Aluno {
     public void setCelular(String celular) { this.celular = celular; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public static class Lista_container {
+
+        private List<Aluno> alunos;
+        public List<Aluno> getAlunos(){
+
+            return alunos;
+        }
+
+        public void setAlunos(List<Aluno>alunos){
+            this.alunos = alunos;
+        }
+    }
+
 }
