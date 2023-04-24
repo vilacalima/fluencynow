@@ -21,17 +21,9 @@ public class Administrador_controller {
         return new ModelAndView("administrador");
     }
 
-    @RequestMapping(value = "/getAlunos", method = RequestMethod.GET)
-    public String getUsers(Model model) throws Exception{
 
-        List<Aluno> alunos = AlunoDAO.getStundent();
-        Aluno.Lista_container alunoList = new Aluno.Lista_container();
-        alunoList.setAlunos(alunos);
-        model.addAttribute("Alunos", alunoList);
-        return "administrador";
-    }
 
-    @RequestMapping("/cadastrarAluno")
+    /*@RequestMapping("/cadastrarAluno")
     public String adicionaLogin(Aluno aluno, HttpSession session) throws SQLException {
         if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)) {
             session.setAttribute("alunoCadastrado", aluno);
@@ -39,5 +31,5 @@ public class Administrador_controller {
         }
         return "redirect:cadastrar";
     }
-
+*/
 }
