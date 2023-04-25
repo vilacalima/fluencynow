@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,10 +14,11 @@
 
 <head>
 
+<meta charset="utf-8"/>
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fluency Now</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="${allminCSS}">
 
@@ -54,14 +58,14 @@
         <h2>Porque escolher a Fluency Now?</h2>
         <p>
             <br>A Fluency Now nasceu do amor pela lingua inglesa e pela paixao em ensinar da Helena Carvalho.
-          Apos lecionar em escolas particulares por mais de 10 anos, em 2005 Helena decidiu criar seu proprio metodo de
-          ensino, afinal, cada aluno tem um ritmo de aprendizado diferente, entao nao e eficaz utilizar o mesmo metodo
-          para todos. Assim, ela segue
-          ensinando a lingua inglesa ate hoje, adaptando o ensino aos alunos.
-          A Fluency Now acredita que para o aprendizado nao tem limites, entao nao existe idade certa para iniciar seus
-          estudos, atendemos alunos de todas as idades e todos os niveis, do basico ao avancado.
-          Quer conhecer melhor a Flueny Now? Nos envie uma mensagem que iremos atender e respeitar o seu processo de
-          aprendizado com paciencia e paixao pela lingua inglesa.</p>
+                          Após lecionar em escolas particulares por mais de 10 anos, em 2005 Helena decidiu criar seu proprio método de
+                          ensino, afinal, cada aluno tem um ritmo de aprendizado diferente, então não é eficaz utilizar o mesmo método
+                          para todos. Assim, ela segue
+                          ensinando a língua inglesa até hoje, adaptando o ensino aos alunos.
+                          A Fluency Now acredita que para o aprendizado não tem limites, então não existe idade certa para iniciar seus
+                          estudos, atendemos alunos de todas as idades e todos os niveis, do básico ao avançado.
+                          Quer conhecer melhor a Flueny Now? Nos envie uma mensagem que iremos atender e respeitar o seu processo de
+                          aprendizado com paciencia e paixão pela língua inglesa.</p>
       </div>
       <div class="col-md-6">
         <form class="formulario-contato">
