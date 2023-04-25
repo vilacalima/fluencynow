@@ -30,6 +30,7 @@ padding: 0%;
 .container-fluid {
     background-color: #8CB3FD;
     height: 200px;
+    /* margin: 0px; */
 
 
 }
@@ -49,7 +50,7 @@ padding: 0%;
 
 
 .admin-btn {
-    color: #fff; 
+    color: #fff; /* Define a cor do texto como branco */
     background-color:   #3C22DC;
     font-size: 15px ;
     padding: 5px 10px;
@@ -63,6 +64,11 @@ padding: 0%;
     margin-left: 30%;
 }
 
+/* h1{
+    width: 100%;
+    margin-left: 700px;
+    padding-top: 20px;
+} */
 
 h6{
     margin-top: 10px;
@@ -186,7 +192,7 @@ h6{
 
 }
 
-.container3 h1{
+.container3 h1 {
     text-align: center;
   }
 
@@ -200,5 +206,4 @@ footer{
     .card-box {
       margin-bottom: 30px;
     }
-
   }

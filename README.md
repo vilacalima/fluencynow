@@ -30,11 +30,9 @@
 
 Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/FluencyNow?t=3hsNA3CDhbPHmmAn-0
 
-### [Requisitos do Sistema](./Readme/REQUIREMENTS.md)
+### [Inicializando o Projeto](./Readme/ACCESSPAGE.md)
 
-### [Banco de dados](./Readme/DATABASE.md)
-
-### [Pagina principal](./Readme/HOMEPAGE.md)
+### [Home Page](./Readme/HOMEPAGE.md)
 
 ### [Pagina de Login](./Readme/LOGINPAGE.md)
 
@@ -42,4 +40,7 @@ Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/Flue
 
 ### [Pagina de Cadastro](./Readme/REGISTERPAGE.md)
 
+### [Requisitos do Sistema](./Readme/REQUIREMENTS.md)
+
+### [Banco de dados](./Readme/DATABASE.md)
 

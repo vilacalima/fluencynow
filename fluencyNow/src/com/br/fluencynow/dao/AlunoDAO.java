@@ -18,7 +18,7 @@ public class AlunoDAO {
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
             comandoSQL.setString(1, aluno.getNome());
             comandoSQL.setString(2, aluno.getCpf());
-            comandoSQL.setDate(3, new java.sql.Date(aluno.getDataNasc().getTime()));
+            comandoSQL.setString(3, aluno.getDataNasc());
             comandoSQL.setString(4, aluno.getEndereco());
             comandoSQL.setString(5, aluno.getCep());
             comandoSQL.setString(6, aluno.getNumero());
@@ -48,7 +48,7 @@ public class AlunoDAO {
             PreparedStatement comandoSQL = connection.prepareStatement(SQL);
             comandoSQL.setString(1, aluno.getNome());
             comandoSQL.setString(2, aluno.getCpf());
-            comandoSQL.setDate(3, new java.sql.Date(aluno.getDataNasc().getTime()));
+            comandoSQL.setString(3, aluno.getDataNasc());
             comandoSQL.setString(4, aluno.getEndereco());
             comandoSQL.setString(5, aluno.getCep());
             comandoSQL.setString(6, aluno.getNumero());
@@ -110,7 +110,7 @@ public class AlunoDAO {
                     aluno = new Aluno();
                     aluno.setNome(rs.getString("nome"));
                     aluno.setCep("cpf");
-                    aluno.setDataNasc(rs.getDate("datanasc"));
+                    aluno.setDataNasc(rs.getString("datanasc"));
                     aluno.setEndereco(rs.getString("endereco"));
                     aluno.setCep(rs.getString("cep"));
                     aluno.setCelular(rs.getString("celular"));
@@ -140,7 +140,7 @@ public class AlunoDAO {
                     aluno = new Aluno();
                     aluno.setNome(rs.getString("nome"));
                     aluno.setCep(rs.getString("cpf"));
-                    aluno.setDataNasc(rs.getDate("datanasc"));
+                    aluno.setDataNasc(rs.getString("datanasc"));
                     aluno.setEndereco(rs.getString("endereco"));
                     aluno.setCep(rs.getString("cep"));
                     aluno.setCelular(rs.getString("celular"));
@@ -168,7 +168,7 @@ public class AlunoDAO {
                     Aluno aluno = new Aluno();
                     aluno.setNome(rs.getString("nome"));
                     aluno.setCep(rs.getString("cpf"));
-                    aluno.setDataNasc(rs.getDate("datanasc"));
+                    aluno.setDataNasc(rs.getString("datanasc"));
                     aluno.setEndereco(rs.getString("endereco"));
                     aluno.setCep(rs.getString("cep"));
                     aluno.setCelular(rs.getString("celular"));

@@ -1,6 +1,5 @@
 package com.br.fluencynow.model;
 
-import java.sql.Date;
 import java.util.List;
 
 public class Aluno {
@@ -8,7 +7,7 @@ public class Aluno {
     public int id;
     public String nome;
     public String cpf;
-    public Date dataNasc;
+    public String dataNasc;
     public String endereco;
     public String cep;
     public String numero;
@@ -33,7 +32,7 @@ public class Aluno {
      * @param celular
      * @param email
      * */
-    public Aluno(String nome, String cpf, Date dataNasc, String endereco, String cep, String numero, String celular, String email) {
+    public Aluno(String nome, String cpf, String dataNasc, String endereco, String cep, String numero, String celular, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNasc = dataNasc;
@@ -53,8 +52,8 @@ public class Aluno {
     public void setNome(String nome) { this.nome = nome; }
     public String getCpf() { return cpf; }
     public void setCpf(String cpf) { this.cpf = cpf; }
-    public Date getDataNasc() { return dataNasc; }
-    public void setDataNasc(Date dataNasc) { this.dataNasc = dataNasc; }
+    public String getDataNasc() { return dataNasc; }
+    public void setDataNasc(String dataNasc) { this.dataNasc = dataNasc; }
     public String getEndereco() { return endereco; }
     public void setEndereco(String endereco) { this.endereco = endereco; }
     public String getCep() { return cep; }
