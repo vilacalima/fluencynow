@@ -132,7 +132,7 @@
                         <input type="celular" textarea class="form-control" id="cadastrocelular"
                             placeholder="(11)1234-4567"> </textarea>
                     </div>
-                    <button type="button" class="btn btn4">Cadastrar Aula +
+                    <button type="button" class="btn btn4">Cadastrar Aluno +
 
                     </button>
 
@@ -186,51 +186,43 @@
                 </div>
 
                 </div>
-                <div class="row">
+                    <div class="row">
 
                     <table class="table">
 
                         <thead>
                             <tr>
-                                <th scope="col">#Id</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Valor</th>
+                              <th>nome</th>
+<th>CPF  </th>
+<th>Data Nascimento  </th>
+<th>Endereço  </th>
+<th>CEP  </th>
+<th>Numero  </th>
+<th>Celular  </th>
+<th>Email  </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
 
                                     <table class="table table-bordered">
-                                        <th scope="row">1</th>
-                                        <td>Canada 2 dias da semana</td>
-                                        <td>teste@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Mexico 2 dias da semana</td>
-                                <td>teste@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Mexico 2 dias da semana</td>
-                                <td>teste@gmail.com</td>
-                            </tr>
-                            <th scope="row">4</th>
-                            <td>EUA 1 dia da semana - Grupo</td>
-                            <td>teste@gmail.com</td>
-                            </tr>
-                            <th scope="row">5</th>
-                            <td>Espanha 1 dia da semana - Grupo</td>
-                            <td>teste@gmail.com</td>
-                            </tr>
-                            <th scope="row">6</th>
-                            <td>Inglaterra 1 dia da semana - Grupo</td>
-                            <td>teste@gmail.com</td>
-                            </tr>
+                          <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
+  <tr>
+    <td>${aluno.nome}</td>
+    <td>${aluno.cpf}</td>
+    <td>${aluno.dataNasc}</td>
+    <td>${aluno.endereco}</td>
+    <td>${aluno.cep}</td>
+    <td>${aluno.numero}</td>
+    <td>${aluno.celular}</td>
+    <td>${aluno.email}</td>
+  </tr>
+</c:forEach>
                         </tbody>
                     </table>
 
                 </div>
+
 
                     <h1>Procurar Plano</h1>
                     <div class="container1">
