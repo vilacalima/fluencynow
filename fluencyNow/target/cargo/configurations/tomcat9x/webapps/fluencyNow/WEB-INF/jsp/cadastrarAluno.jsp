@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -18,10 +20,10 @@
         <p>Digite os seus dados de acesso no campo abaixo.</p>
         Nome: <input type="text" name="nome" placeholder="Digite seu nome" autofocus="true" /> <br />
         CPF: <input type="text" name="cpf" placeholder="Digite seu CPF" /> <br />
-        DataNasc: <input type="text" name="dataNasc" placeholder="Digite sua data de nascimento" /> <br />
-        Endereco: <input type="text" name="endereco" placeholder="Digite seu endereço" /> <br />
+        DataNascimento: <input type="text" name="dataNasc" placeholder="Digite sua data de nascimento" /> <br />
+        Endereço: <input type="text" name="endereco" placeholder="Digite seu endereço" /> <br />
         CEP: <input type="text" name="cep" placeholder="Digite seu CEP" /> <br />
-        Numero: <input type="text" name="numero" placeholder="Digite seu numero" /> <br />
+        Número: <input type="text" name="numero" placeholder="Digite seu numero" /> <br />
         Celular: <input type="text" name="celular" placeholder="Digite seu celular" /> <br />
         Email: <input type="text" name="email" placeholder="Digite seu email" /> <br />
 
