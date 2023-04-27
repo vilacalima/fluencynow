@@ -1,5 +1,6 @@
 package com.br.fluencynow.controller;
 
+import com.br.fluencynow.dao.AdministradorDAO;
 import com.br.fluencynow.dao.AlunoDAO;
 import com.br.fluencynow.model.Aluno;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,15 @@ import java.util.List;
 @Controller
 public class Administrador_controller {
 
-    @RequestMapping("/administrador")
-    public ModelAndView administrador() {
 
-        return new ModelAndView("administrador");
+    @RequestMapping(value = "/administrador", method = RequestMethod.GET)
+    public String getUsers(Model model) throws Exception{
+
+        List<Aluno> alunos = new AdministradorDAO().getAluno();
+        Aluno.Lista_container alunoList = new Aluno.Lista_container();
+        alunoList.setAlunos(alunos);
+        model.addAttribute("Alunos", alunoList);
+        return "administrador";
     }
 
 
