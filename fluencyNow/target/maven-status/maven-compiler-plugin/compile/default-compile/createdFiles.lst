@@ -12,6 +12,5 @@ com/br/fluencynow/model/Lista_Conteiner.class
 com/br/fluencynow/controller/Cadastrar_controller.class
 com/br/fluencynow/model/Aluno.class
 com/br/fluencynow/controller/Welcome_controller.class
-com/br/fluencynow/controller/Aluno_controller.class
 com/br/fluencynow/model/Login.class
 com/br/fluencynow/dao/AlunoDAO.class

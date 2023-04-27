@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -57,41 +58,35 @@
                 <button type="button" class="btn btn2">Editar Aluno</button>
                 <button type="button" class="btn btn3">Novo aluno +</button>
             </div>
-
-
-        </div>
-        </div>
         </div>
 
+                        <div class="conteiner">
+                                          <table class="table table-striped">
+                                              <tr>
+                                                  <th>Nome</th>
+                                                  <th>CPF</th>
+                                                  <th>Data Nascimento</th>
+                                                  <th>Endereço</th>
+                                                  <th>CEP</th>
+                                                  <th>Numero</th>
+                                                  <th>Celular</th>
+                                                  <th>Email</th>
+                                              </tr>
+                                              <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
+                                                  <tr>
+                                                      <td>${aluno.nome}</td>
+                                                      <td>${aluno.cpf}</td>
+                                                      <td>${aluno.dataNasc}</td>
+                                                      <td>${aluno.endereco}</td>
+                                                      <td>${aluno.cep}</td>
+                                                      <td>${aluno.numero}</td>
+                                                      <td>${aluno.celular}</td>
+                                                      <td>${aluno.email}</td>
+                                                  </tr>
+                                              </c:forEach>
+                                          </table>
+                                  </div>
 
-        <form class="row row-cols-lg-auto g-3 align-items-center">
-            <table class="table">
-                <tbody>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col"> Nome </th>
-                            <th scope="col"> CPF </th>
-                            <th scope="col"> E-mail </th>
-                            <th scope="col"> Horario </th>
-                            <th scope="col"> Semanal </th>
-                        </tr>
-                    </thead>
-                <tbody>
-                    <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>${aluno.nome}</td>
-                            <td>${aluno.cpf}</td>
-                            <td>${aluno.email}</td>
-                            <td>07h as 08h</td>
-                            <td> Quinta - feira </td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-        </form>
-        </div>
 
         <h1>Cadastro</h1>
         <div class="container2">
@@ -178,48 +173,11 @@
                     <div class="bnt-group" aria-label="arial">
                         <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
                             style="border-right: none;">
-                        <button type="button" class="btn btn1">Excluir aluno</button>
-                        <button type="button" class="btn btn2">Editar Aluno</button>
-                        <button type="button" class="btn btn3">Novo aluno +</button>
+
+
                     </div>
 
                 </div>
-
-                </div>
-                    <div class="row">
-
-                    <table class="table">
-
-                        <thead>
-                            <tr>
-                              <th>nome</th>
-<th>CPF  </th>
-<th>Data Nascimento  </th>
-<th>Endereço  </th>
-<th>CEP  </th>
-<th>Numero  </th>
-<th>Celular  </th>
-<th>Email  </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-
-                                    <table class="table table-bordered">
-                          <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
-  <tr>
-    <td>${aluno.nome}</td>
-    <td>${aluno.cpf}</td>
-    <td>${aluno.dataNasc}</td>
-    <td>${aluno.endereco}</td>
-    <td>${aluno.cep}</td>
-    <td>${aluno.numero}</td>
-    <td>${aluno.celular}</td>
-    <td>${aluno.email}</td>
-  </tr>
-</c:forEach>
-                        </tbody>
-                    </table>
 
                 </div>
 
