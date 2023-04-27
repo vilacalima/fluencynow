@@ -14,10 +14,9 @@
 
 <head>
 
-<meta charset="utf-8"/>
-
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="${allminCSS}">
 
@@ -30,243 +29,249 @@
 
 <body>
 
-  <header>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-      <div class="container-fluid">
-        <!-- Logotipo na parte esquerda -->
-        <a class="navbar-brand" href="#">
-          <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
-        </a>
-        <!-- Nome da página ao meio -->
-        <div class="navbar-text mx-auto">
-          Fluency Now
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">
+                    <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
+                </a>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="admin-btn">Pagina Inicial</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <body>
+        <h1>Procurar Alunos</h1>
+        <div class="container1">
+
+            <div class="bnt-group" aria-label="arial">
+                <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
+                    style="border-right: none;">
+                <button type="button" class="btn btn1">Excluir aluno</button>
+                <button type="button" class="btn btn2">Editar Aluno</button>
+                <button type="button" class="btn btn3">Novo aluno +</button>
+            </div>
+
+
         </div>
-        <!-- Botão de administrador no canto superior direito -->
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="admin-btn" href="#">Administrador</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Porque escolher a Fluency Now?</h2>
-        <p>
-            <br>A Fluency Now nasceu do amor pela lingua inglesa e pela paixao em ensinar da Helena Carvalho.
-          Após lecionar em escolas particulares por mais de 10 anos, em 2005 Helena decidiu criar seu proprio método de
-          ensino, afinal, cada aluno tem um ritmo de aprendizado diferente, então não é eficaz utilizar o mesmo método
-          para todos. Assim, ela segue
-          ensinando a língua inglesa até hoje, adaptando o ensino aos alunos.
-          A Fluency Now acredita que para o aprendizado não tem limites, então não existe idade certa para iniciar seus
-          estudos, atendemos alunos de todas as idades e todos os niveis, do básico ao avançado.
-          Quer conhecer melhor a Flueny Now? Nos envie uma mensagem que iremos atender e respeitar o seu processo de
-          aprendizado com paciencia e paixão pela língua inglesa.</p>
-      </div>
-      <div class="col-md-6">
-        <form class="formulario-contato">
-          <div class="form-group">
-            <label for="nome"></label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
-          </div>
-          <div class="form-group">
-            <label for="email"></label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
-          </div>
-          <div class="form-group">
-            <label for="data-nascimento"></label>
-            <input type="date" textarea class="form-control" id="data-nascimento"
-              placeholder="Digite sua data data de nascimento"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="endereco"></label>
-            <input type="address" textarea class="form-control" id="endereco"
-              placeholder="Digite seu endereço"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="telefone"></label>
-            <input type="number" textarea class="form-control" id="telefone"
-              placeholder="Digite seu telefone"></textarea>
-            <a href="https://wa.me/5511945390855" class="btn btn-primary btn-enviar">Enviar WhatsApp <img class="whats"
-                src="resources/images/whatsapp1.png" /></a>
-          </div>
-          <!-- <a href="https://wa.me/5511945390855" class="btn btn-primary btn-enviar" >Enviar WhatsApp <img class="whats" src="resources/images/whatsapp1.png" > -->
+        </div>
+        </div>
+
+
+        <form class="row row-cols-lg-auto g-3 align-items-center">
+            <table class="table">
+                <tbody>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"> Nome </th>
+                            <th scope="col"> CPF </th>
+                            <th scope="col"> E-mail </th>
+                            <th scope="col"> Horario </th>
+                            <th scope="col"> Semanal </th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>${aluno.nome}</td>
+                            <td>${aluno.cpf}</td>
+                            <td>${aluno.email}</td>
+                            <td>07h as 08h</td>
+                            <td> Quinta - feira </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
         </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="container-2">
-    <h1>Pacotes</h1>
-
-    <div id="demo" class="carousel slide" data-ride="carousel">
-
-      <!-- Indicators -->
-      <ul class="carousel-indicators mb-0 pb-0">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-
-      </ul>
-
-      <!-- The slideshow -->
-      <div class="carousel-inner no-padding my-5">
-        <div class="carousel-item active">
-          <div class="col-xs-4 col-sm-4 col-md-4">
-            <img src="resources/images/Ingles.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Inglês | Individual</h5>
-            <p class="card-text">5x de R$50,00</p>
-            </a>
-            <p>Duas aulas de 60 minutos por semana</p>
-
-          </div>
-
-          <div class="col-xs-4 col-sm-4 col-md-4">
-            <img src="resources/images/Ingles.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Inglês | Grupo</h5>
-            <p class="card-text">5x de R$50,00</p>
-            </a>
-            <p>Duas aulas de 60 minutos por semana</p>
-
-          </div>
-          <div class="col-xs-4 col-sm-4 col-md-4">
-            <img src="resources/images/Ingles.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Inglês | Intensivo</h5>
-            <p class="card-text">5x de R$70,00</p>
-            </a>
-            <p>Quatro aulas de 60 minutos por semana</p>
-
-          </div>
         </div>
 
+        <h1>Cadastro</h1>
+        <div class="container2">
 
-        <div class="carousel-item">
-          <div class="col-xs-4 col-sm-4 col-md-4">
-            <img src="resources/images/Espanhol.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Espanhol | Individual </h5>
-            <p class="card-text">5x de R$50,00</p>
-            </a>
-            <p>Duas aulas de 60 minutos por semana</p>
+            <div class="col-md-6">
+                <form class="formulario-contato">
+                    <div class="form-group">
+                        <label for="nome"></label>
+                        <input type="text" class="form-control" id="cadastronome" placeholder="Nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="CPF"></label>
+                        <input type="cpf" class="form-control" id="cadastroCPF" placeholder="468-787-898-85">
+                    </div>
+                    <div class="form-group">
+                        <label for="data-nascimento"></label>
+                        <input type="date" textarea class="form-control" id="cadastrodata-nascimento"
+                            placeholder="00/00/00"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco"></label>
+                        <input type="address" textarea class="form-control" id="cadastroendereco"
+                            placeholder="Rua FluencyNow"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero"></label>
+                        <input type="addressnumber" textarea class="form-control" id="cadastronumendereco"
+                            placeholder="01"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="emailcadastro" textarea class="form-control" id="cadastroemail"
+                            placeholder="fluency@now.com.br"> </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular"></label>
+                        <input type="celular" textarea class="form-control" id="cadastrocelular"
+                            placeholder="(11)1234-4567"> </textarea>
+                    </div>
+                    <button type="button" class="btn btn4">Cadastrar Aluno +
+
+                    </button>
+
+                    <h6>Plano</h6>
+
+                    <select class="form-select" aria-label="Default select example">
+
+                        <option selected>Canadá 2 dias da sermana</option>
+                        <option value="1">Mexico 2 dias da semana</option>
+                        <option value="2">EUA 1 dia da semana - Grupo</option>
+                        <option value="3">Espanha 1 dia da semana - Grupo</option>
+                    </select>
+
+                    <h6>Dia</h6>
+
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected> Segunda-Feira</option>
+                        <option value="1">Terça-Feira</option>
+                        <option value="2">Quarta-feira</option>
+                        <option value="3">Quinta-Feira</option>
+                        <option value="3">Sexta-Feira</option>
+
+                    </select>
+
+                    <h6>Horário</h6>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected> 08:00 </option>
+                        <option value="1">10:00</option>
+                        <option value="2">12:00</option>
+                        <option value="3">14:00</option>
+                        <option value="3">16:00</option>
+                        <option value="3">18:00</option>
+                    </select>
+
+                    <button type="button" class="btn btn5">Salvar
+
+                    </button>
+
+                </form>
+                </div>
+                <h1>Cadastro Plano</h1>
+                <div class="container1">
+                    <div class="bnt-group" aria-label="arial">
+                        <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
+                            style="border-right: none;">
+                        <button type="button" class="btn btn1">Excluir aluno</button>
+                        <button type="button" class="btn btn2">Editar Aluno</button>
+                        <button type="button" class="btn btn3">Novo aluno +</button>
+                    </div>
+
+                </div>
+
+                </div>
+                    <div class="row">
+
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                              <th>nome</th>
+<th>CPF  </th>
+<th>Data Nascimento  </th>
+<th>Endereço  </th>
+<th>CEP  </th>
+<th>Numero  </th>
+<th>Celular  </th>
+<th>Email  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                    <table class="table table-bordered">
+                          <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
+  <tr>
+    <td>${aluno.nome}</td>
+    <td>${aluno.cpf}</td>
+    <td>${aluno.dataNasc}</td>
+    <td>${aluno.endereco}</td>
+    <td>${aluno.cep}</td>
+    <td>${aluno.numero}</td>
+    <td>${aluno.celular}</td>
+    <td>${aluno.email}</td>
+  </tr>
+</c:forEach>
+                        </tbody>
+                    </table>
+
+                </div>
 
 
-          </div>
-          <div class="col-xs-4 col-sm-4 col-md-4">
-            <img src="resources/images/Espanhol.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Espanhol | Grupo</h5>
-            <p class="card-text">5x de R$50,00</p>
-            </a>
-            <p>Duas aulas de 60 minutos por semana</p>
+                    <h1>Procurar Plano</h1>
+                    <div class="container1">
 
-          </div>
-          <div class="col-xs-4 col-sm-4 col-md-4">
 
-            <img src="resources/images/Espanhol.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Espanhol | Intensivo</h5>
-            <p class="card-text">5x de R$70,00</p>
-            </a>
-            <p>Quatro aulas de 60 minutos por semana</p>
+                        <div class="row">
+                            <div class="campoNome">
+                                Nome <input type="text" class="form-control" placeholder="Eua - 1 dia da semana"
+                                    aria-label="First name">
+                            </div>
+                            <div class="campoValor">
+                                Valor<input type="text" class="form-control" placeholder="R$160,00" aria-label="Last name">
 
-          </div>
+                                </div>
+                                <button type="button" class="btn btn5">Salvar
+
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
 
-      </div>
+        <!-- Scripts do Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-wiJyZO0jX6hh60ggnIh0YzZU6QIXx4jI0gblZWfD0yE6fr5XhLgB1CxojrbjzlzF"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    <footer class="footer" style="background-color: #8CB3FD;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
+                </div>
 
-      <!-- Left and right controls -->
-      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon sp"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon sp"></span>
-      </a>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <h1>Depoimentos</h1>
-    <div class="row">
-
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card-box">
-          <div class="card-title">
-            <h2>Julia Andrade, 12 anos:
-            </h2>
-            <p>A professora Helena é incrivel! <br>
-              Com as aulas online dela consegui melhorar minhas notas na escola, ela tem muita paciencia! </p>
-          </div>
-
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2023 Todos os direitos reservados.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card-box">
-          <div class="card-title">
-            <h2>Junior Ferreira, 45 anos:</h2>
-            <p>
-              Tive um grande avanço em meu ingles! <br> A Helena seguiu um plano de aulas personalizado focando
-              em gramatica. Dentro de 5 meses consegui uma oportunidade de emprego que pedia ingles.
-              A Helena é uma grande profissional que tem muito conhecimento e experiencia. </p>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="card-box">
-          <div class="card-title">
-            <h2>Maria Souza, 33 anos:</h2>
-            <p>
-              Meu sonho sempre foi ir para Disney! <br>Mas eu não sabia nada de ingles, entao, comecei as aulas com a
-              Helena, que criou um plano personalizado focando no ingles para o dia a dia.
-              Depois de alguns meses de aula realizei o meu sonho de viajar para a Disney e consegui me comunicar com
-              todos!</p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <footer class="footer" style="background-color: #8CB3FD;">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-3">
-          <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
-        </div>
-        <div class="col-md-6 text-center">
-          <p class="mb-0">Baixe nosso aplicativo</p>
-          <a href="#"><i class="fab fa-android fa-2x"></i></a>
-          <a href="#"><i class="fab fa-apple fa-2x"></i></a>
-
-        </div>
-        <div class="col-md-3 text-right">
-          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-          <a href="#"><i class="fab fa-whatsapp fa-2x"></i></a>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p>&copy; 2023 Todos os direitos reservados.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-
-
-  <!-- Scripts do Bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-    integrity="sha384-wiJyZO0jX6hh60ggnIh0YzZU6QIXx4jI0gblZWfD0yE6fr5XhLgB1CxojrbjzlzF"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    </footer>
 
 </html>

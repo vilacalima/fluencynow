@@ -1,49 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<html>
-<head>
-<spring:url value="/resources/fluency.css" var="fluencyCSS" />
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<meta charset="UTF-8">
+
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Spring MVC List of objects display</title>
+<head>
 
-  <link href="${fluencyCSS}" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${allminCSS}">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="page">
-  <form class="formCadastrar">
-
-<table>
-<tr>
-<th>nome</th>
-<th>cpf</th>
-<th>datanasc</th>
-<th>endereco</th>
-<th>cep</th>
-<th>numero</th>
-<th>celular</th>
-<th>email</th>
-</tr>
-<c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
-  <tr>
-    <td>${aluno.nome}</td>
-    <td>${aluno.cpf}</td>
-    <td>${aluno.dataNasc}</td>
-    <td>${aluno.endereco}</td>
-    <td>${aluno.cep}</td>
-    <td>${aluno.numero}</td>
-    <td>${aluno.celular}</td>
-    <td>${aluno.email}</td>
-  </tr>
-</c:forEach>
-</table>
-</form>
-</div>
+    <div class="conteiner">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Data Nascimento</th>
+                    <th>Endereço</th>
+                    <th>CEP</th>
+                    <th>Numero</th>
+                    <th>Celular</th>
+                    <th>Email</th>
+                </tr>
+                <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
+                    <tr>
+                        <td>${aluno.nome}</td>
+                        <td>${aluno.cpf}</td>
+                        <td>${aluno.dataNasc}</td>
+                        <td>${aluno.endereco}</td>
+                        <td>${aluno.cep}</td>
+                        <td>${aluno.numero}</td>
+                        <td>${aluno.celular}</td>
+                        <td>${aluno.email}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+    </div>
 </body>
+
 </html>
