@@ -38,17 +38,4 @@ public class Administrador_controller {
 
             return "redirect:administrador";
     }
-
-
-
-
-    /*@RequestMapping("/cadastrarAluno")
-    public String adicionaLogin(Aluno aluno, HttpSession session) throws SQLException {
-        if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)) {
-            session.setAttribute("alunoCadastrado", aluno);
-            return "welcome";
-        }
-        return "redirect:cadastrar";
-    }
-*/
 }

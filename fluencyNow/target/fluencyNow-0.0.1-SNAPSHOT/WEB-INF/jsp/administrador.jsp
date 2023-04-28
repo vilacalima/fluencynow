@@ -48,15 +48,14 @@
     </header>
 
     <body>
-        <h1>Procurar Alunos</h1>
+        <h1>Alunos</h1>
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">
 
-                <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
+                <input class="pesquisa" type="search" placeholder="Pesquisar por CPF" aria-label="Search"
                     style="border-right: none;">
-                <button type="button" class="btn btn1">Excluir aluno</button>
-                <button type="button" class="btn btn2">Editar Aluno</button>
+
                 <a class="btn btn3" href="cadastrar">Novo aluno +</a>
             </div>
         </div>

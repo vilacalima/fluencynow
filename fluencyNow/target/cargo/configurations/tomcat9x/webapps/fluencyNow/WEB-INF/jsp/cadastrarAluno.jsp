@@ -94,7 +94,7 @@
                         <input type="text" name="celular" placeholder="Celular" />
                     </div>
                     <input type="submit" value="Cadastrar" class="btn btn7" />
->>>>>>> master
+
         </form>
 
 
