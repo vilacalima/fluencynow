@@ -99,7 +99,7 @@ h6{
 
 
 .formulario-contato{
-    width: 500px;
+    width: 800px;
     margin-left: 50%;
 }
 
@@ -109,7 +109,7 @@ h6{
     border-radius: 5px;
     width: 300px;
     margin-top: 10px;
-    
+
 }
 
 .btn5{
@@ -118,8 +118,18 @@ h6{
     border-radius: 5px;
     width: 500px;
     margin-top: 10px;
-    
+
 }
+.btn7{
+    color: #ffffff;
+    background-color: rgb(113, 161, 216);
+    border-radius: 5px;
+    width: 300px;
+    margin-left: -40px;
+
+}
+
+
 
 .form-select{
     width: 300px;
@@ -169,11 +179,26 @@ h6{
 }
 
 .container2 h1{
-    /* width: 400px; */
-    /* margin-left: 500px;
-    padding-bottom: 0px;
-    padding-top: 20px; */
+width: 900px;
+text-align:center;
 }
+
+.container2 p{
+margin-left: -400px;
+text-align:center;
+
+}
+
+.container2{
+width: 1000px;
+margin-left: 40%;
+}
+
+.form-group{
+width: 1000px;
+
+}
+
 
 .container3 h1{
     /* width: 400px; */
@@ -200,6 +225,10 @@ h6{
 
 footer{
     margin-top: 10px;
+}
+
+.footer_principal{
+
 }
 
 @media (max-width: 991px) {

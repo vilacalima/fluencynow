@@ -39,7 +39,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="admin-btn">Pagina Inicial</a>
+                        <a class="admin-btn" href="administrador">Administrador</a>
                     </li>
                 </ul>
             </div>
