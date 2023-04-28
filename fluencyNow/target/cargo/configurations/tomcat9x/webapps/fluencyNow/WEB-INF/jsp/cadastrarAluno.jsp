@@ -29,10 +29,6 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-
-        <input type="submit" value="Cadastrar" />
-=======
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
@@ -43,7 +39,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="admin-btn">Pagina Inicial</a>
+                        <a class="admin-btn" href="administrador">Administrador</a>
                     </li>
                 </ul>
             </div>
@@ -94,7 +90,6 @@
                         <input type="text" name="celular" placeholder="Celular" />
                     </div>
                     <input type="submit" value="Cadastrar" class="btn btn7" />
-
         </form>
 
 

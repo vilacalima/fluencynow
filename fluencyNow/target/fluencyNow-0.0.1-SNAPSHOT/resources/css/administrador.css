@@ -227,6 +227,10 @@ footer{
     margin-top: 10px;
 }
 
+.footer_principal{
+
+}
+
 @media (max-width: 991px) {
     .card-box {
       margin-bottom: 30px;

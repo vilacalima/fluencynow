@@ -4,14 +4,14 @@ Use fluencyNow;
 desc aluno;
 create table aluno(
 	id int primary key auto_increment,
-    nome varchar(50) not null,
+    nome varchar(50),
     cpf varchar(11) not null unique,
-    dataNasc date not null,
-    endereco varchar(50) not null,
-    cep varchar(8) not null,
-    numero varchar(10) not null,
-    celular varchar(11) not null unique,
-    email varchar(50) not null unique
+    dataNasc varchar(10) not null,
+    endereco varchar(50),
+    cep varchar(8),
+    numero varchar(10),
+    celular varchar(11) unique,
+    email varchar(50) unique
 );
 
 create table aula(
@@ -36,3 +36,5 @@ create table login(
     senha varchar(12),
     usuario varchar(30) unique
 );
+
+INSERT INTO Login (email, senha, usuario) VALUES('teste@fluencynow', 'sa', 'sa')
