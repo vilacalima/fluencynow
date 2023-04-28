@@ -36,19 +36,6 @@ public class Administrador_controller {
 
         new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
 
-            return "administrador";
+            return "redirect:administrador";
     }
-
-
-
-
-    /*@RequestMapping("/cadastrarAluno")
-    public String adicionaLogin(Aluno aluno, HttpSession session) throws SQLException {
-        if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)) {
-            session.setAttribute("alunoCadastrado", aluno);
-            return "welcome";
-        }
-        return "redirect:cadastrar";
-    }
-*/
 }
