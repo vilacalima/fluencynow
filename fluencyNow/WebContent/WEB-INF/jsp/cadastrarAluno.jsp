@@ -46,22 +46,56 @@
         </nav>
     </header>
 
-    <div class="page">
-       <form action="cadastrarAluno" method="post" class="formCadastrar">
-        <h1>Cadastrar Aluno</h1>
-        <p>Digite os seus dados de acesso no campo abaixo.</p>
-        Nome: <input type="text" name="nome" placeholder="Digite seu nome" autofocus="true" /> <br />
-        CPF: <input type="text" name="cpf" placeholder="Digite seu CPF" /> <br />
-        DataNascimento: <input type="text" name="dataNasc" placeholder="Digite sua data de nascimento" /> <br />
-        Endereço: <input type="text" name="endereco" placeholder="Digite seu endereço" /> <br />
-        CEP: <input type="text" name="cep" placeholder="Digite seu CEP" /> <br />
-        Número: <input type="text" name="numero" placeholder="Digite seu numero" /> <br />
-        Celular: <input type="text" name="celular" placeholder="Digite seu celular" /> <br />
-        Email: <input type="text" name="email" placeholder="Digite seu email" /> <br />
+<h1>Cadastro</h1>
+        <div class="container2">
+        <form action="cadastrarAluno" method="post" class="formCadastrar">
 
+            <div class="col-md-8">
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
 
-        <input type="submit" value="Cadastrar" />
+                <form class="formulario-contato2">
+                    <div class="form-group">
+                        <label for="nome"></label>
+                        <input type="text" name="nome" placeholder="Nome" autofocus="true" />
+                    </div>
+                    <div class="form-group">
+                    <label for="cpf"></label>
+                        <input type="text" name="cpf" placeholder="CPF" />
+                    </div>
+                    <div class="form-group">
+                        <label for="data-nascimento"></label>
+                        <input type="text" name="dataNasc" placeholder="Data de nascimento" />
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco"></label>
+                        <input type="text" name="endereco" placeholder="Endereço" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cep"></label>
+                        <input type="text" name="cep" placeholder="CEP" /> <br />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero"></label>
+                        <input type="text" name="numero" placeholder="Numero da casa" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="text" name="email" placeholder="E-mail" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular"></label>
+                        <input type="text" name="celular" placeholder="Celular" />
+                    </div>
+                    <input type="submit" value="Cadastrar" class="btn btn7" />
         </form>
+
+
+
+
+    </div>
     </div>
 
     <footer class="footer" style="background-color: #8CB3FD;">
