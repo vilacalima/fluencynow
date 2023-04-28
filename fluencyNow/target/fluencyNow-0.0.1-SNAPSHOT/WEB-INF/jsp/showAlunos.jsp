@@ -47,7 +47,14 @@
                         <td>${aluno.numero}</td>
                         <td>${aluno.celular}</td>
                         <td>${aluno.email}</td>
+                         <td>
+                                        <form action="/deletarAluno" method="post">
+                                            <input type="hidden" id="cpf" name="cpf" value="${aluno.cpf}">
+                                            <button type="submit">Delete</button>
+                                            <span> | </span>
+                                            <a href="index.jsp?id=${aluno.nome}&name=${aluno.cpf}">Update</a>
                     </tr>
+                    </td>
                 </c:forEach>
             </table>
     </div>

@@ -20,10 +20,10 @@ public class Cadastrar_controller {
         }
 
         @RequestMapping("/cadastrarAluno")
-        public String adicionaLogin(Aluno aluno, HttpSession session) throws SQLException {
+        public String adicionaAluno(Aluno aluno, HttpSession session) throws SQLException {
             if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)) {
                 session.setAttribute("alunoCadastrado", aluno);
-                return "welcome";
+                return "administrador";
             }
             return "redirect:home";
         }

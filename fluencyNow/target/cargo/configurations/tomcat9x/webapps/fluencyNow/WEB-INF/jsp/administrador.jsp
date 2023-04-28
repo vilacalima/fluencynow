@@ -52,6 +52,7 @@
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">
+
                 <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
                     style="border-right: none;">
                 <button type="button" class="btn btn1">Excluir aluno</button>
@@ -82,6 +83,15 @@
                                                       <td>${aluno.numero}</td>
                                                       <td>${aluno.celular}</td>
                                                       <td>${aluno.email}</td>
+                                                             <td>
+                                                                                              <form action="deletarAluno" method="post">
+                                                                                                  <input type="hidden" id="cpf" name="cpf" value="${aluno.cpf}">
+                                                                                                  <button type="submit">Delete</button>
+                                                                                                  <span> | </span>
+                                                                                                  <a href="index.jsp?id=${aluno.nome}&name=${aluno.cpf}">Update</a>
+                                                                          </tr>
+                                                                          </td>
+
                                                   </tr>
                                               </c:forEach>
                                           </table>
