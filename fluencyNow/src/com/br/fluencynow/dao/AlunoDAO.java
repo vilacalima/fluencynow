@@ -208,4 +208,33 @@ public class AlunoDAO {
         }
         return listaAluno;
     }
+
+    public static boolean deleteStudent(Aluno aluno) throws SQLException {
+        boolean retorno = false;
+
+        String SQL = "DELETE from aluno where cpf = ?";
+        try {
+
+            Connection conexao =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+
+
+            PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
+            comandoSQL.setString(1, aluno.getCpf());
+            comandoSQL.execute();
+
+
+
+            int linhasAfetadas = comandoSQL.executeUpdate();
+
+            if(linhasAfetadas > 0){
+                System.out.println("Success Connection");
+                retorno = true;
+            }
+
+        } catch(ClassCastException ex){
+            System.out.println(ex.getMessage());
+        }
+        return retorno;
+    }
 }

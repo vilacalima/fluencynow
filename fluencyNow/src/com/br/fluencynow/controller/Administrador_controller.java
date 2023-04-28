@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.List;
@@ -26,6 +28,17 @@ public class Administrador_controller {
         model.addAttribute("Alunos", alunoList);
         return "administrador";
     }
+
+    @RequestMapping("/deletarAluno")
+    public String deletaAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+
+        String cpf = req.getParameter("cpf");
+
+        new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
+
+            return "administrador";
+    }
+
 
 
 

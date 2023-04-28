@@ -27,6 +27,7 @@
         Celular: <input type="text" name="celular" placeholder="Digite seu celular" /> <br />
         Email: <input type="text" name="email" placeholder="Digite seu email" /> <br />
 
+
         <input type="submit" value="Cadastrar" />
         </form>
     </div>
