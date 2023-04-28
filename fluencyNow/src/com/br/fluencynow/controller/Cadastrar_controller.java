@@ -23,7 +23,7 @@ public class Cadastrar_controller {
         public String adicionaAluno(Aluno aluno, HttpSession session) throws SQLException {
             if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)) {
                 session.setAttribute("alunoCadastrado", aluno);
-                return "administrador";
+                return "redirect:administrador";
             }
             return "redirect:home";
         }
