@@ -57,7 +57,7 @@
                     style="border-right: none;">
                 <button type="button" class="btn btn1">Excluir aluno</button>
                 <button type="button" class="btn btn2">Editar Aluno</button>
-                <button type="button" class="btn btn3">Novo aluno +</button>
+                <a class="btn btn3" href="cadastrar">Novo aluno +</a>
             </div>
         </div>
 
@@ -98,48 +98,7 @@
                                   </div>
 
 
-        <h1>Cadastro</h1>
-        <div class="container2">
 
-            <div class="col-md-6">
-                <form class="formulario-contato">
-                    <div class="form-group">
-                        <label for="nome"></label>
-                        <input type="text" class="form-control" id="cadastronome" placeholder="Nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="CPF"></label>
-                        <input type="cpf" class="form-control" id="cadastroCPF" placeholder="468-787-898-85">
-                    </div>
-                    <div class="form-group">
-                        <label for="data-nascimento"></label>
-                        <input type="date" textarea class="form-control" id="cadastrodata-nascimento"
-                            placeholder="00/00/00"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="endereco"></label>
-                        <input type="address" textarea class="form-control" id="cadastroendereco"
-                            placeholder="Rua FluencyNow"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="numero"></label>
-                        <input type="addressnumber" textarea class="form-control" id="cadastronumendereco"
-                            placeholder="01"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="email"></label>
-                        <input type="emailcadastro" textarea class="form-control" id="cadastroemail"
-                            placeholder="fluency@now.com.br"> </textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="celular"></label>
-                        <input type="celular" textarea class="form-control" id="cadastrocelular"
-                            placeholder="(11)1234-4567"> </textarea>
-                    </div>
-                    <button type="button" class="btn btn4">Cadastrar Aluno +
-
-                    </button>
 
                     <h6>Plano</h6>
 
