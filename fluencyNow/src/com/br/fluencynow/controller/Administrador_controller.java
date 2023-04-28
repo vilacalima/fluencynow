@@ -36,7 +36,7 @@ public class Administrador_controller {
 
         new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
 
-            return "administrador";
+            return "redirect:administrador";
     }
 
 
