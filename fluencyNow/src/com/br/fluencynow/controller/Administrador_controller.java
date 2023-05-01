@@ -2,7 +2,9 @@ package com.br.fluencynow.controller;
 
 import com.br.fluencynow.dao.AdministradorDAO;
 import com.br.fluencynow.dao.AlunoDAO;
+import com.br.fluencynow.dao.PlanoDAO;
 import com.br.fluencynow.model.Aluno;
+import com.br.fluencynow.model.Plano;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,17 @@ public class Administrador_controller {
         Aluno.Lista_container alunoList = new Aluno.Lista_container();
         alunoList.setAlunos(alunos);
         model.addAttribute("Alunos", alunoList);
+
+        getPlano(model);
+        return "administrador";
+    }
+
+    public String getPlano(Model model) throws Exception{
+
+        List<Plano> planos = new PlanoDAO().getPlano();
+        Plano.Lista_container planoList = new Plano.Lista_container();
+        planoList.setPlanos(planos);
+        model.addAttribute("Planos", planoList);
         return "administrador";
     }
 
@@ -37,5 +50,15 @@ public class Administrador_controller {
         new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
 
             return "redirect:administrador";
+    }
+
+    @RequestMapping("/deletarPlano")
+    public String deletarPlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+
+        int id = Integer.parseInt(req.getParameter("id"));
+
+        new com.br.fluencynow.dao.PlanoDAO().deletePlano(id);
+
+        return "redirect:administrador";
     }
 }

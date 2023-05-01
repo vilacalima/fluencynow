@@ -2,6 +2,8 @@ C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\controller\
 C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\dao\AlunoDAO.java
 C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\validadores\ValidaCPF.java
 C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\controller\Login_controller.java
+C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\controller\Plano_Controller.java
+C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\service\PlanoService.java
 C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\controller\Cadastrar_controller.java
 C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\model\Aluno.java
 C:\Users\robso\workspace\fluencynow\fluencyNow\src\com\br\fluencynow\model\Lista_Conteiner.java

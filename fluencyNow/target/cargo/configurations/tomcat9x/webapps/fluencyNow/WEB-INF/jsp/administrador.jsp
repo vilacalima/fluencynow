@@ -55,7 +55,7 @@
 
                 <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
                     style="border-right: none;">
-                <a class="btn btn3" href="cadastrar">Novo aluno +</a>
+                <a class="btn btn3" href="cadastrar">Editar aluno +</a>
             </div>
         </div>
 
@@ -81,21 +81,37 @@
                           <td>${aluno.numero}</td>
                           <td>${aluno.celular}</td>
                           <td>${aluno.email}</td>
-                                 <td>
-                                  <form action="deletarAluno" method="post">
-                                      <input type="hidden" id="cpf" name="cpf" value="${aluno.cpf}">
-                                      <button type="submit" class="btn btn1">Delete</button>
-                                      <span> | </span>
-                                      <a class="btn btn2" href="index.jsp?id=${aluno.nome}&name=${aluno.cpf}">Update</a>
-                                  </tr>
-                          </td>
-
                       </tr>
                   </c:forEach>
               </table>
         </div>
+
+        <h1>Procurar Planos</h1>
+        <div class="container1">
+
+            <div class="bnt-group" aria-label="arial">
+
+                <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
+                    style="border-right: none;">
+                <a class="btn btn3" href="cadastrarPlano">Editar Plano +</a>
+            </div>
         </div>
-        </div>
+
+        <div class="conteiner">
+          <table class="table table-striped">
+              <tr>
+                  <th>ID</th>
+                  <th>Descricao</th>
+                  <th>Valor</th>
+              </tr>
+              <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
+                  <tr>
+                      <td>${plano.id}</td>
+                      <td>${plano.nome}</td>
+                      <td>${plano.valor}</td>
+                  </tr>
+              </c:forEach>
+          </table>
         </div>
 
         <!-- Scripts do Bootstrap -->

@@ -14,8 +14,6 @@ public class AlunoService {
         }
         boolean criarAluno = new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno);
 
-
-
                 //new saveStudent(aluno);
         return criarAluno;
     }
