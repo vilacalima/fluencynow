@@ -139,12 +139,41 @@
                                         <label for="celular"></label>
                                         <input type="text" name="celular" placeholder="Celular" />
                                     </div>
+                                    
+                                    <h6>Cadastrar Aula</h6>
+
+                                    <h6>Plano</h6>
+
+                                    <div class="form-group">
+                                        <select class="form-select" aria-label="Default select example" type="text" name="planoNome">
+                                            <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
+                                                <option>${plano.nome}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                    
+                                    <h6>Dia</h6>
+
+                                    <div class="form-group">
+                                        <select class="form-select" aria-label="Default select example" type="text" name="planoDia">
+                                            <c:forEach items="${diasDaSemana}" var="diasDaSemana" varStatus="tagStatus">
+                                                <option>${diasDaSemana}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+
+                                    <h6>Horário</h6>
+
+                                    <div class="form-group">
+                                        <select class="form-select" aria-label="Default select example" type="text" name="planoHora">
+                                            <c:forEach items="${horaAula}" var="horaAula" varStatus="tagStatus">
+                                                <option>${horaAula}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+
                                     <input type="submit" value="Cadastrar" class="btn btn7" />
                                 </form>
-
-
-
-
                             </div>
                     </div>
 
