@@ -101,7 +101,6 @@
                         <form action="cadastrarAluno" method="post" class="formCadastrar">
 
                             <div class="col-md-8">
-                                <p>Digite os seus dados de acesso no campo abaixo.</p>
 
                                 <form class="formulario-contato2">
                                     <div class="form-group">
@@ -145,7 +144,7 @@
                                     <h6>Plano</h6>
 
                                     <div class="form-group">
-                                        <select class="form-select" aria-label="Default select example" type="text" name="planoNome">
+                                        <select class="form-select" aria-label="Default select example" type="text" name="plano">
                                             <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
                                                 <option>${plano.nome}</option>
                                             </c:forEach>
@@ -155,7 +154,7 @@
                                     <h6>Dia</h6>
 
                                     <div class="form-group">
-                                        <select class="form-select" aria-label="Default select example" type="text" name="planoDia">
+                                        <select class="form-select" aria-label="Default select example" type="text" name="diaAula">
                                             <c:forEach items="${diasDaSemana}" var="diasDaSemana" varStatus="tagStatus">
                                                 <option>${diasDaSemana}</option>
                                             </c:forEach>
@@ -165,7 +164,7 @@
                                     <h6>Horário</h6>
 
                                     <div class="form-group">
-                                        <select class="form-select" aria-label="Default select example" type="text" name="planoHora">
+                                        <select class="form-select" aria-label="Default select example" type="text" name="horarioAula">
                                             <c:forEach items="${horaAula}" var="horaAula" varStatus="tagStatus">
                                                 <option>${horaAula}</option>
                                             </c:forEach>
@@ -175,6 +174,7 @@
                                     <input type="submit" value="Cadastrar" class="btn btn7" />
                                 </form>
                             </div>
+                        </form>
                     </div>
 
                     <footer class="footer" style="background-color: #8CB3FD;">

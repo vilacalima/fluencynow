@@ -82,6 +82,54 @@ public class PlanoDAO {
         return listaPlano;
     }
 
+    public static Plano getPlanoByDescription(String description)  {
+
+        String SQL = "SELECT id FROM plano WHERE nome = ?";
+
+        Connection conexao = null;
+        PreparedStatement comandoSQL = null;
+        ResultSet rset = null;
+
+        Plano plano = null;
+
+        try {
+
+            conexao = DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            comandoSQL = conexao.prepareStatement(SQL);
+            comandoSQL.setString(1, description);
+
+
+            rset = comandoSQL.executeQuery();
+
+            while (rset.next()) {
+                plano = new Plano();
+
+                plano.setId(rset.getInt("id"));
+
+                return plano;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rset != null) {
+                    rset.close();
+                }
+                if (comandoSQL != null) {
+                    comandoSQL.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return plano;
+    }
+
     public static boolean deletePlano(int id) throws SQLException {
 
         boolean retorno = false;

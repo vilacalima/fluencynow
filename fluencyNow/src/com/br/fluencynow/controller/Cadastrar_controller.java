@@ -3,6 +3,7 @@ package com.br.fluencynow.controller;
 import com.br.fluencynow.dao.AdministradorDAO;
 import com.br.fluencynow.dao.AlunoDAO;
 import com.br.fluencynow.dao.PlanoDAO;
+import com.br.fluencynow.dto.AlunoDTO;
 import com.br.fluencynow.model.Aluno;
 import com.br.fluencynow.model.Plano;
 import com.br.fluencynow.service.AlunoService;
@@ -51,7 +52,7 @@ public class Cadastrar_controller {
     }
 
     @RequestMapping("/cadastrarAluno")
-    public String adicionaAluno(Aluno aluno, HttpSession session) throws SQLException {
+    public String adicionaAluno(AlunoDTO aluno, HttpSession session) throws SQLException {
         try{
 
             //continuar daqui esta retornando apenas a exception

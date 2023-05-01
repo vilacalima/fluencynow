@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Aula {
     public int id;
-    public Date data;
+    public String dia;
     public String horario;
     public int idAluno;
-    public int idAula;
+    public int idPlano;
 
 
     /**
@@ -19,14 +19,16 @@ public class Aula {
 
     /**
      * Construtor da classe Aula
-     * @param data
-     * @param horario
+     * @param dia String
+     * @param horario String
+     * @param idAluno int
+     * @param idPlano int
      * */
-    public Aula(Date data, String horario, int idAluno, int idAula) {
-        this.data = data;
+    public Aula(String dia, String horario, int idAluno, int idPlano) {
+        this.dia = dia;
         this.horario = horario;
         this.idAluno = idAluno;
-        this.idAula = idAula;
+        this.idPlano = idPlano;
     }
 
     /**
@@ -34,12 +36,12 @@ public class Aula {
      * */
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
-    public Date getData() { return data; }
-    public void setData(Date data) { this.data = data; }
+    public String getDia() { return dia; }
+    public void setDia(String dia) { this.dia = dia; }
     public String getHorario() { return horario; }
     public void setHorario(String horario) { this.horario = horario; }
     public int getIdAluno() { return idAluno; }
     public void setIdAluno(int idAluno) { this.idAluno = idAluno; }
-    public int getIdAula() { return idAula; }
-    public void setIdAula(int idAula) { this.idAula = idAula; }
+    public int getIdPlano() { return idPlano; }
+    public void setIdPlano(int idPlano) { this.idPlano = idPlano; }
 }

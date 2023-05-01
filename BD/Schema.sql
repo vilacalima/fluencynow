@@ -16,8 +16,8 @@ create table aluno(
 
 create table aula(
 	id int primary key auto_increment,
-    dia date,
-    horario time,
+    dia varchar(15),
+    horario varchar(15),
     idAluno int,
     idPlano int,
     foreign key(idAluno) references aluno(id),
