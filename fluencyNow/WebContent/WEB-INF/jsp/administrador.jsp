@@ -48,7 +48,7 @@
     </header>
 
     <body>
-        <h1>Procurar Alunos</h1>
+        <h3>Contorle de Alunos</h3>
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">
@@ -64,29 +64,23 @@
                   <tr>
                       <th>Nome</th>
                       <th>CPF</th>
-                      <th>Data Nascimento</th>
-                      <th>Endereço</th>
-                      <th>CEP</th>
-                      <th>Numero</th>
-                      <th>Celular</th>
                       <th>Email</th>
+                      <th>Dia da semana</th>
+                      <th>Horario</th>
                   </tr>
                   <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
                       <tr>
                           <td>${aluno.nome}</td>
                           <td>${aluno.cpf}</td>
-                          <td>${aluno.dataNasc}</td>
-                          <td>${aluno.endereco}</td>
-                          <td>${aluno.cep}</td>
-                          <td>${aluno.numero}</td>
-                          <td>${aluno.celular}</td>
                           <td>${aluno.email}</td>
+                          <td>${aluno.diaAula}</td>
+                          <td>${aluno.horarioAula}</td>
                       </tr>
                   </c:forEach>
               </table>
         </div>
 
-        <h1>Procurar Planos</h1>
+        <h1>Controle de Planos</h1>
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">

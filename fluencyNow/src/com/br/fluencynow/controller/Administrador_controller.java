@@ -24,23 +24,13 @@ public class Administrador_controller {
     @RequestMapping(value = "/administrador", method = RequestMethod.GET)
     public String getUsers(Model model) throws Exception{
 
-        List<Aluno> alunos = new AdministradorDAO().getAluno();
-        Aluno.Lista_container alunoList = new Aluno.Lista_container();
-        alunoList.setAlunos(alunos);
-        model.addAttribute("Alunos", alunoList);
+        new com.br.fluencynow.service.AulaService().getAluno(model);
+        new com.br.fluencynow.service.PlanoService().getPlano(model);
 
-        getPlano(model);
         return "administrador";
     }
 
-    public String getPlano(Model model) throws Exception{
 
-        List<Plano> planos = new PlanoDAO().getPlano();
-        Plano.Lista_container planoList = new Plano.Lista_container();
-        planoList.setPlanos(planos);
-        model.addAttribute("Planos", planoList);
-        return "administrador";
-    }
 
     @RequestMapping("/deletarAluno")
     public String deletaAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
