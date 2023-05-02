@@ -1,13 +1,15 @@
 package com.br.fluencynow.dao;
 
+import com.br.fluencynow.dto.AlunoDTO;
 import com.br.fluencynow.model.Aluno;
+import com.br.fluencynow.model.Plano;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AlunoDAO {
-    public static boolean saveStudent(Aluno aluno) throws SQLException {
+    public static boolean saveStudent(AlunoDTO aluno) throws SQLException {
         boolean retorno = false;
 
         String SQL = "INSERT INTO aluno (nome, cpf, datanasc, endereco, cep, numero, celular, email) VALUES(?,?,?,?,?,?,?,?)";
@@ -30,6 +32,17 @@ public class AlunoDAO {
             if(linhasAfetadas > 0){
                 System.out.println("Success Connection");
                 retorno = true;
+
+                Aluno getAluno = searchIdStudentByName(aluno.getNome());
+                Plano plano = PlanoDAO.getPlanoByDescription(aluno.getPlano());
+
+                boolean linhasAfetadasAula = AulaDAO.saveClass(aluno.getDiaAula(), aluno.getHorarioAula(), getAluno.getId(), plano.getId());
+
+                if(linhasAfetadasAula == true){
+                    System.out.println("Success Connection");
+                    retorno = true;
+                }
+
             }
 
         } catch(ClassCastException ex){
@@ -145,6 +158,30 @@ public class AlunoDAO {
                     aluno.setCep(rs.getString("cep"));
                     aluno.setCelular(rs.getString("celular"));
                     aluno.setEmail(rs.getString("email"));
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return aluno;
+    }
+
+    public static Aluno searchIdStudentByName(String nome) throws SQLException {
+        Aluno aluno = null;
+        String SQL = "SELECT id FROM aluno WHERE nome=?";
+
+        try{
+            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            comandoSQL.setString(1, nome);
+
+            ResultSet rs = comandoSQL.executeQuery();
+
+            if(rs!=null){
+                while(rs.next()){
+                    aluno = new Aluno();
+                    aluno.setId(rs.getInt("id"));
                 }
             }
         } catch (SQLException ex) {
