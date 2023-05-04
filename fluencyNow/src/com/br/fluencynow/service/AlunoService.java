@@ -10,9 +10,9 @@ public class AlunoService {
 
     public boolean SalvarAluno(AlunoDTO aluno) throws SQLException {
 
-//        if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.getCpf()) == false){
-//            throw new IllegalArgumentException("CPF Invalido!");
-//        }
+        if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.cpf) == false){
+            throw new IllegalArgumentException("CPF Invalido!");
+        }
         boolean criarAluno = new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno);
 
         return criarAluno;
