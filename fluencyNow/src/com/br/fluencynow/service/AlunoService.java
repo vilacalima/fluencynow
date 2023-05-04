@@ -13,6 +13,9 @@ public class AlunoService {
         if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.cpf) == false){
             throw new IllegalArgumentException("CPF Invalido!");
         }
+        if(new com.br.fluencynow.validadores.ValidaEmail().emailValidator(aluno.email) == false){
+            throw new IllegalArgumentException("Email Invalido!");
+        }
         boolean criarAluno = new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno);
 
         return criarAluno;
