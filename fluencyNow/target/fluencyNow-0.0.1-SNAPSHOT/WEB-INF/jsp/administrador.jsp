@@ -48,7 +48,7 @@
     </header>
 
     <body>
-        <h1>Procurar Alunos</h1>
+        <h3>Contorle de Alunos</h3>
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">
@@ -80,7 +80,7 @@
               </table>
         </div>
 
-        <h1>Procurar Planos</h1>
+        <h1>Controle de Planos</h1>
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">

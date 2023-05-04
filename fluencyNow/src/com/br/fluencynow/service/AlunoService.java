@@ -17,4 +17,17 @@ public class AlunoService {
 
         return criarAluno;
     }
+
+    public boolean DeletarAluno(String cpf) throws SQLException {
+
+        Aluno aluno = new com.br.fluencynow.dao.AlunoDAO().searchIdStudentByCpf(cpf);
+
+        if(aluno.id != 0){
+            new com.br.fluencynow.dao.AulaDAO().deleteClass(aluno.id);
+            new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
+            return true;
+        }
+
+        return false;
+    }
 }
