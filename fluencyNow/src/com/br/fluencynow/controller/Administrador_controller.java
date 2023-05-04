@@ -37,9 +37,10 @@ public class Administrador_controller {
 
         String cpf = req.getParameter("cpf");
 
-        new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
+        new com.br.fluencynow.service.AlunoService().DeletarAluno(cpf);
+        //new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
 
-            return "redirect:administrador";
+        return "redirect:administrador";
     }
 
     @RequestMapping("/deletarPlano")
