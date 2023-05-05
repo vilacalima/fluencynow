@@ -64,11 +64,6 @@ padding: 0%;
     margin-left: 30%;
 }
 
-/* h1{
-    width: 100%;
-    margin-left: 700px;
-    padding-top: 20px;
-} */
 
 h6{
     margin-top: 10px;
@@ -129,6 +124,15 @@ h6{
 
 }
 
+.btn8{
+    color: #ffffff;
+    background-color: rgb(113, 161, 216);
+    border-radius: 5px;
+
+    margin-left: 630px;
+
+}
+
 
 
 .form-select{
@@ -138,16 +142,17 @@ h1 {
     text-align: center;
   }
 
-/* .container h1{
-    width: 400px;
-    margin-left: px;
-    padding-bottom: 0px;
-    padding-top: 20px;
-} */
-
 h6{
     margin-top: 10px;
 }
+
+h3 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
 
 .pesquisa{
     width: 300px;
@@ -200,13 +205,6 @@ width: 1000px;
 }
 
 
-.container3 h1{
-    /* width: 400px; */
-    /* margin-left: -50px;
-    padding-bottom: 0px;
-    padding-top: 20px; */
-}
-
 .campoNome{
     width: 250px;
     margin-right: 10px;
@@ -230,6 +228,39 @@ footer{
 .footer_principal{
 
 }
+
+.calendario{
+    width: 900px;
+    margin-left: 10%;
+
+}
+
+.conteiner{
+    width: 900px;
+    margin-left: 16%;
+    
+
+}
+
+.table th{
+    background-color: #e2e1e1;
+}
+
+.card-body{
+    height: 200px;
+}
+
+
+
+.card-title{
+    text-align: center;
+}
+
+.card-text{
+    text-align: center;
+}
+
+
 
 @media (max-width: 991px) {
     .card-box {

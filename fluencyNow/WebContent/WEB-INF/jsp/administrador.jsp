@@ -21,11 +21,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="${allminCSS}">
 
+    <!-- <link rel="stylesheet" href="../../resources/css/administrador.css"> USAR APENAS COM A EXTENSAO HTML -->
 
     <link rel="stylesheet" href="${administradorCSS}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
@@ -48,64 +53,152 @@
     </header>
 
     <body>
-        <h3>Contorle de Alunos</h3>
+        <h3>Calendário de Aulas</h3>
+        <div class="calendario">
+
+            <table class="table calendario">
+                <tr>
+                    <th>Horários</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                </tr>
+                <tr>
+                    <td>08:00</td>
+
+
+                </tr>
+                <tr>
+                    <td>09:00</td>
+
+
+                </tr>
+                <tr>
+                    <td>10:00</td>
+
+                </tr>
+                <tr>
+                    <td>11:00</td>
+
+
+                </tr>
+                <tr>
+                    <td>12:00</td>
+
+
+
+                </tr>
+                <tr>
+                    <td>13:00</td>
+
+
+                </tr>
+                <tr>
+                    <td>15:00</td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                </tr>
+            </table>
+
+        </div>
+
+
+        <div class="container-cards">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-white ">
+                        <div class="card-body ">
+                            <h5 class="card-title">Total de alunos</h5>
+                            <p class="card-text">Conteúdo do card 1 aqui.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-white ">
+                        <div class="card-body ">
+                            <h5 class="card-title">Horas ministradas</h5>
+                            <p class="card-text">Conteúdo do card 1 aqui.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card bg-white ">
+                        <div class="card-body ">
+                            <h5 class="card-title">Aulas disponiveis</h5>
+                            <p class="card-text">Conteúdo do card 1 aqui.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <h3>Controle de Alunos</h3>
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">
 
-                <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
-                    style="border-right: none;">
-                <a class="btn btn3" href="cadastrar">Editar aluno +</a>
+                <a class="btn btn8" href="cadastrar">Editar aluno +</a>
             </div>
         </div>
 
         <div class="conteiner">
-              <table class="table table-striped">
-                  <tr>
-                      <th>Nome</th>
-                      <th>CPF</th>
-                      <th>Email</th>
-                      <th>Dia da semana</th>
-                      <th>Horario</th>
-                  </tr>
-                  <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
-                      <tr>
-                          <td>${aluno.nome}</td>
-                          <td>${aluno.cpf}</td>
-                          <td>${aluno.email}</td>
-                          <td>${aluno.diaAula}</td>
-                          <td>${aluno.horarioAula}</td>
-                      </tr>
-                  </c:forEach>
-              </table>
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Dia da semana</th>
+                    <th>Horario</th>
+                </tr>
+                <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
+                    <tr>
+                        <td>${aluno.nome}</td>
+                        <td>${aluno.cpf}</td>
+                        <td>${aluno.email}</td>
+                        <td>${aluno.diaAula}</td>
+                        <td>${aluno.horarioAula}</td>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
 
-        <h1>Controle de Planos</h1>
+        <h3>Controle de Planos</h3>
         <div class="container1">
 
             <div class="bnt-group" aria-label="arial">
+
 
                 <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
                     style="border-right: none;">
                 <a class="btn btn3" href="cadastrar">Editar Plano +</a>
+
             </div>
         </div>
 
         <div class="conteiner">
-          <table class="table table-striped">
-              <tr>
-                  <th>ID</th>
-                  <th>Descricao</th>
-                  <th>Valor</th>
-              </tr>
-              <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
-                  <tr>
-                      <td>${plano.id}</td>
-                      <td>${plano.nome}</td>
-                      <td>${plano.valor}</td>
-                  </tr>
-              </c:forEach>
-          </table>
+            <table class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Descricao</th>
+                    <th>Valor</th>
+                </tr>
+                <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
+                    <tr>
+                        <td>${plano.id}</td>
+                        <td>${plano.nome}</td>
+                        <td>${plano.valor}</td>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
 
         <!-- Scripts do Bootstrap -->
