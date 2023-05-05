@@ -33,6 +33,8 @@ public class Cadastrar_controller {
             new com.br.fluencynow.service.PlanoService().getPlano(model);
             new com.br.fluencynow.service.AulaService().getDia(model);
             new com.br.fluencynow.service.AulaService().getHora(model);
+
+            new com.br.fluencynow.service.PlanoService().getPlano(model);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

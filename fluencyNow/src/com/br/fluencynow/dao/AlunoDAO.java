@@ -190,6 +190,30 @@ public class AlunoDAO {
         return aluno;
     }
 
+    public static Aluno searchIdStudentByCpf(String cpf) throws SQLException {
+        Aluno aluno = null;
+        String SQL = "SELECT id FROM aluno WHERE cpf=?";
+
+        try{
+            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            comandoSQL.setString(1, cpf);
+
+            ResultSet rs = comandoSQL.executeQuery();
+
+            if(rs!=null){
+                while(rs.next()){
+                    aluno = new Aluno();
+                    aluno.setId(rs.getInt("id"));
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return aluno;
+    }
+
     public static List<Aluno> getAllStundent() throws SQLException {
         List<Aluno> listaAluno = new ArrayList<>();
         String SQL = "SELECT nome, cpf, datanasc, endereco, cep, numero, celular, email FROM aluno";

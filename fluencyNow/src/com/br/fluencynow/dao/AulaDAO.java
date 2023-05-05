@@ -85,4 +85,29 @@ public class AulaDAO {
         }
         return listaAlunos;
     }
+
+    public static boolean deleteClass(int id) throws SQLException {
+
+        boolean retorno = false;
+
+        String SQL = "DELETE FROM aula WHERE idaluno=?";
+
+        try {
+            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            comandoSQL.setInt(1, id);
+
+            int success = comandoSQL.executeUpdate();
+
+            if(success > 0){
+                System.out.println("Success Connection");
+                retorno = true;
+            }
+
+        } catch(ClassCastException ex){
+            System.out.println(ex.getMessage());
+        }
+        return retorno;
+    }
 }
