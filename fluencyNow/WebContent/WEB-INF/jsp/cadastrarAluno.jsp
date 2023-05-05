@@ -102,46 +102,48 @@
                     
                         <form action="cadastrarAluno" method="post" class="formCadastrar">
                             <div class="form-group">
-                                <label for="nome"></label>
+                                <label for="nome">Nome</label>
                                 <input class="form-control" type="text" name="nome" placeholder="Nome" autofocus="true" />
                             </div>
                             <div class="form-group">
-                                <label for="cpf"></label>
+                                <label for="cpf">CPF</label>
                                 <input class="form-control" type="text" name="cpf" placeholder="CPF" />
                             </div>
                             <div class="form-group">
-                                <label for="data-nascimento"></label>
+                                <label for="data-nascimento">Data de nascimento</label>
                                 <input class="form-control" type="date" name="dataNasc" placeholder="Data de nascimento" />
                             </div>
                             <div class="form-group">
-                                <label for="endereco"></label>
+                                <label for="endereco">Endereco</label>
                                 <input class="form-control" type="text" name="endereco" placeholder="Endereço" />
                             </div>
-
                             <div class="form-group">
-                                <label for="cep"></label>
-                                <input class="form-control" type="text" name="cep" placeholder="CEP" /> <br />
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="cep">CEP</label>
+                                        <input class="form-control" type="text" name="cep" placeholder="CEP" /> <br />
+                                    </div>
+                                    <div class="col">
+                                        <label for="numero">Numero</label>
+                                        <input class="form-control" type="text" name="numero" placeholder="Numero da casa" />
+                                    </div>
+                                </div>
                             </div>
-
                             <div class="form-group">
-                                <label for="numero"></label>
-                                <input class="form-control" type="text" name="numero" placeholder="Numero da casa" />
-                            </div>
-                            <div class="form-group">
-                                <label for="email"></label>
+                                <label for="email">Email</label>
                                 <input class="form-control" type="text" name="email" placeholder="E-mail" />
                             </div>
 
                             <div class="form-group">
-                                <label for="celular"></label>
+                                <label for="celular">Celular</label>
                                 <input class="form-control" type="text" name="celular" placeholder="Celular" />
                             </div>
                             
                             <h6>Cadastrar Aula</h6>
 
-                            <h6>Plano</h6>
-
+                            
                             <div class="form-group">
+                                <h6>Plano</h6>
                                 <select class="form-control" aria-label="Default select example" type="text" name="plano">
                                     <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
                                         <option>${plano.nome}</option>
@@ -149,31 +151,84 @@
                                 </select>
                             </div>
                             
-                            <h6>Dia</h6>
-
                             <div class="form-group">
-                                <select class="form-control" aria-label="Default select example" type="text" name="diaAula">
-                                    <c:forEach items="${diasDaSemana}" var="diasDaSemana" varStatus="tagStatus">
-                                        <option>${diasDaSemana}</option>
-                                    </c:forEach>
-                                </select>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6>Dia</h6>
+                                        <select class="form-control" aria-label="Default select example" type="text" name="diaAula">
+                                            <c:forEach items="${diasDaSemana}" var="diasDaSemana" varStatus="tagStatus">
+                                                <option>${diasDaSemana}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <h6>Horário</h6>
+                                        <select class="form-control" aria-label="Default select example" type="text" name="horarioAula">
+                                            <c:forEach items="${horaAula}" var="horaAula" varStatus="tagStatus">
+                                                <option>${horaAula}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-
-                            <h6>Horário</h6>
-
                             <div class="form-group">
-                                <select class="form-control" aria-label="Default select example" type="text" name="horarioAula">
-                                    <c:forEach items="${horaAula}" var="horaAula" varStatus="tagStatus">
-                                        <option>${horaAula}</option>
-                                    </c:forEach>
-                                </select>
+                                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Cadastrar" class="btn btn7" />
                             </div>
-
-                            <input type="submit" value="Cadastrar" class="btn btn7" />
-                                
-                            
                         </form>
                     </div>
+
+                    <div class="conteiner">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>ID</th>
+                                <th>Descricao</th>
+                                <th>Valor</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
+                                <tr>
+                                    <td>${plano.id}</td>
+                                    <td>${plano.nome}</td>
+                                    <td>${plano.valor}</td>
+                  
+                                   <td>
+                                      <form action="deletarPlano" method="post">
+                                        <input type="hidden" id="id" name="id" value="${plano.id}">
+                                        <button type="submit" class="btn btn1">Delete</button>
+                                        <span> | </span>
+                                      </form>
+                                        <a class="btn btn2" href="index.jsp?id=${aluno.nome}&name=${aluno.cpf}">Update</a>
+                                   </td>
+                  
+                                </tr>
+                            </c:forEach>
+                        </table>
+                      </div>
+                  
+                      
+                        <div class="container">
+
+                            <h1>Cadastrar Plano</h1>
+
+                            <form action="cadastrarPlanos" method="post" class="formCadastrar">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="nome"></label>
+                                            <input class="form-control" type="text" name="nome" placeholder="Nome" autofocus="true" />
+                                        </div>
+                                        <div class="col">
+                                            <label for="cpf"></label>
+                                            <input class="form-control" type="decimal" name="valor" placeholder="valor" />
+                                        </div>
+                                    </div>                        
+                                </div>
+                                <div class="form-group">
+                                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Cadastrar" class="btn btn7" />
+                                </div> 
+                            </form>
+                        </div>
 
                     <footer class="footer" style="background-color: #8CB3FD;">
                         <div class="container">

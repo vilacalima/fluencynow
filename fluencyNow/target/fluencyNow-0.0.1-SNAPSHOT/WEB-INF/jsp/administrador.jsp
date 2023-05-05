@@ -87,7 +87,7 @@
 
                 <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
                     style="border-right: none;">
-                <a class="btn btn3" href="cadastrarPlano">Editar Plano +</a>
+                <a class="btn btn3" href="cadastrarAluno">Editar Plano +</a>
             </div>
         </div>
 
