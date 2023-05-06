@@ -26,6 +26,7 @@ public class Administrador_controller {
 
         new com.br.fluencynow.service.AulaService().getAluno(model);
         new com.br.fluencynow.service.PlanoService().getPlano(model);
+        new com.br.fluencynow.service.AulaService().getAulaEAluno(model);
 
         return "administrador";
     }

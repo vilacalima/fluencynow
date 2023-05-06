@@ -2,14 +2,14 @@ package com.br.fluencynow.service;
 
 public enum HorarioAula {
     Aula_08h00("08h00"),
-    Aula_09h15("09h15"),
-    Aula_10h30("10h30"),
-    Aula_11h45("11h45"),
-    Aula_14h00("14h00"),
-    Aula_15h15("15h15"),
-    Aula_16h30("16h30"),
-    Aula_17h45("17h45"),
-    Aula_18h00("18h00");
+    Aula_09h00("09h00"),
+    Aula_10h00("10h00"),
+    Aula_11h00("11h00"),
+    Aula_12h00("12h00"),
+    Aula_13h00("13h00"),
+    Aula_15h00("15h00"),
+    Aula_16h00("16h00"),
+    Aula_17h00("17h00");
 
     private final String hora;
 

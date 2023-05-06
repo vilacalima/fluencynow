@@ -86,6 +86,58 @@ public class AulaDAO {
         return listaAlunos;
     }
 
+    public String getClassAndStudent(String dia, String horario)  {
+
+        String SQL = "SELECT a.nome FROM aluno a inner join aula au on au.idAluno = a.id where au.dia = ? and au.horario = ?";
+        String studentName = null;
+        Connection conexao = null;
+        PreparedStatement comandoSQL = null;
+        ResultSet rset = null;
+
+        try {
+
+            conexao = DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+            comandoSQL = conexao.prepareStatement(SQL);
+            comandoSQL.setString(1, dia );
+            comandoSQL.setString(2, horario );
+
+            rset = comandoSQL.executeQuery();
+
+            while (rset.next()) {
+
+                AlunoDTO aluno = new AlunoDTO();
+
+                aluno.setNome(rset.getString("nome"));
+
+                String retorno = aluno.nome;
+                if(retorno != null){
+                    int posicaoEspaco = retorno.indexOf(' ');
+                    studentName = retorno.substring(0, posicaoEspaco);
+                } else {
+                    studentName = "-";
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rset != null) {
+                    rset.close();
+                }
+                if (comandoSQL != null) {
+                    comandoSQL.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return studentName;
+    }
+
     public static boolean deleteClass(int id) throws SQLException {
 
         boolean retorno = false;

@@ -66,43 +66,16 @@
                     <th>Sexta</th>
                 </tr>
                 <tr>
-                    <td>08:00</td>
-
-
-                </tr>
-                <tr>
-                    <td>09:00</td>
-
-
-                </tr>
-                <tr>
-                    <td>10:00</td>
-
-                </tr>
-                <tr>
-                    <td>11:00</td>
-
-
-                </tr>
-                <tr>
-                    <td>12:00</td>
-
-
-
-                </tr>
-                <tr>
-                    <td>13:00</td>
-
-
-                </tr>
-                <tr>
-                    <td>15:00</td>
-                </tr>
-                <tr>
-                    <td>16:00</td>
-                </tr>
-                <tr>
-                    <td>16:00</td>
+                    <c:forEach items="${DiaAula.diaAula}" var="diaAula" varStatus="tagStatus">
+                        <tr>
+                            <td>${diaAula.horario}</td>
+                            <td>${diaAula.segunda}</td>
+                            <td>${diaAula.terca}</td>
+                            <td>${diaAula.quarta}</td>
+                            <td>${diaAula.quinta}</td>
+                            <td>${diaAula.sexta}</td>
+                        </tr>
+                    </c:forEach>   
                 </tr>
             </table>
 
