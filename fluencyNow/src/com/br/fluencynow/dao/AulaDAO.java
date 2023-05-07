@@ -10,6 +10,12 @@ import java.util.List;
 
 public class AulaDAO {
 
+    /**
+     * Salva uma aula no banco de dados
+     * @param dia String
+     * @param horario String
+     * @param aluno int
+     * @param plano int*/
     public static boolean saveClass(String dia, String horario, int aluno, int plano) throws SQLException {
         boolean retorno = false;
 
@@ -36,9 +42,12 @@ public class AulaDAO {
         return retorno;
     }
 
+    /**
+     * Inner Join para pegar informações do aluno e Aula
+     * */
     public List<AlunoDTO> getStudentAndClass()  {
 
-        String SQL = "SELECT nome, cpf, email, au.dia, au.horario FROM ALUNO a INNER JOIN aula au WHERE a.id = au.idALUNO";
+        String SQL = "SELECT nome, cpf, email, au.dia, au.horario FROM ALUNO a INNER JOIN aula au WHERE a.id = au.idAluno ORDER BY nome asc";
 
         List<AlunoDTO> listaAlunos = new ArrayList<>();
 
@@ -86,6 +95,11 @@ public class AulaDAO {
         return listaAlunos;
     }
 
+    /**
+     * Retorna Alunos o primeiro nome do aluno pelo dia e horario
+     * @param dia String
+     * @param horario String
+     * */
     public String getClassAndStudent(String dia, String horario)  {
 
         String SQL = "SELECT a.nome FROM aluno a inner join aula au on au.idAluno = a.id where au.dia = ? and au.horario = ?";
@@ -138,6 +152,10 @@ public class AulaDAO {
         return studentName;
     }
 
+    /**
+     * Deleta uma aula pelo id do aluno
+     * @param id int
+     * */
     public static boolean deleteClass(int id) throws SQLException {
 
         boolean retorno = false;

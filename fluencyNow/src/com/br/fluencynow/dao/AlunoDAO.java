@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AlunoDAO {
+
+    /**
+     * Salva um objeto aluno no banco de dados
+     * @param aluno Aluno
+     * */
     public static boolean saveStudent(AlunoDTO aluno) throws SQLException {
         boolean retorno = false;
 
@@ -51,6 +56,69 @@ public class AlunoDAO {
         return retorno;
     }
 
+    /**
+     * Pega um objeto aluno do banco de dados
+     * */
+    public List<Aluno> getStudent()  {
+
+        String SQL = "SELECT * FROM aluno ORDER BY nome asc";
+
+        List<Aluno> listaAlunos = new ArrayList<>();
+
+        Connection conexao = null;
+        PreparedStatement comandoSQL = null;
+        ResultSet  rset = null;
+
+
+        try {
+
+            conexao = DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            comandoSQL = conexao.prepareStatement(SQL);
+
+            rset = comandoSQL.executeQuery();
+
+            while (rset.next()) {
+
+                Aluno aluno = new Aluno();
+
+                aluno.setNome(rset.getString("nome"));
+                aluno.setCpf(rset.getString("cpf"));
+                aluno.setDataNasc(rset.getString("DataNasc"));
+                aluno.setEndereco(rset.getString("endereco"));
+                aluno.setCep(rset.getString("cep"));
+                aluno.setNumero(rset.getString("numero"));
+                aluno.setCelular(rset.getString("celular"));
+                aluno.setEmail(rset.getString("email"));
+
+                listaAlunos.add(aluno);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rset != null) {
+                    rset.close();
+                }
+                if (comandoSQL != null) {
+                    comandoSQL.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return listaAlunos;
+    }
+
+    /**
+     * Realiza o update de um objeto aluno no banco de dados
+     * @param aluno Aluno
+     * */
     public static boolean updateStudent(Aluno aluno) throws SQLException {
         boolean retorno = false;
 
@@ -81,6 +149,11 @@ public class AlunoDAO {
         }
         return retorno;
     }
+
+    /**
+     * Deleta um objeto aluno no banco de dados pelo cpf
+     * @param cpf String
+     * */
     public static boolean deleteStudent(String cpf) throws SQLException {
 
         boolean retorno = false;
@@ -106,66 +179,10 @@ public class AlunoDAO {
         return retorno;
     }
 
-    public static Aluno searchStudentByCPF(String cpf) throws SQLException {
-        Aluno aluno = null;
-        String SQL = "SELECT nome, cpf, datanasc, endereco, cep, numero, celular, email FROM aluno WHERE cpf=?";
-
-        try{
-            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
-
-            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
-            comandoSQL.setString(1, cpf);
-
-            ResultSet rs = comandoSQL.executeQuery();
-
-            if(rs!=null){
-                while(rs.next()){
-                    aluno = new Aluno();
-                    aluno.setNome(rs.getString("nome"));
-                    aluno.setCep("cpf");
-                    aluno.setDataNasc(rs.getString("datanasc"));
-                    aluno.setEndereco(rs.getString("endereco"));
-                    aluno.setCep(rs.getString("cep"));
-                    aluno.setCelular(rs.getString("celular"));
-                    aluno.setEmail(rs.getString("email"));
-                }
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return aluno;
-    }
-
-    public static Aluno searchStudentByName(String nome) throws SQLException {
-        Aluno aluno = null;
-        String SQL = "SELECT nome, cpf, datanasc, endereco, cep, numero, celular, email FROM aluno WHERE nome=?";
-
-        try{
-            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
-
-            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
-            comandoSQL.setString(1, nome);
-
-            ResultSet rs = comandoSQL.executeQuery();
-
-            if(rs!=null){
-                while(rs.next()){
-                    aluno = new Aluno();
-                    aluno.setNome(rs.getString("nome"));
-                    aluno.setCep(rs.getString("cpf"));
-                    aluno.setDataNasc(rs.getString("datanasc"));
-                    aluno.setEndereco(rs.getString("endereco"));
-                    aluno.setCep(rs.getString("cep"));
-                    aluno.setCelular(rs.getString("celular"));
-                    aluno.setEmail(rs.getString("email"));
-                }
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return aluno;
-    }
-
+    /**
+     * Procura um aluno no banco de dados pelo nome
+     * @param nome String
+     * */
     public static Aluno searchIdStudentByName(String nome) throws SQLException {
         Aluno aluno = null;
         String SQL = "SELECT id FROM aluno WHERE nome=?";
@@ -190,6 +207,10 @@ public class AlunoDAO {
         return aluno;
     }
 
+    /**
+     * Procura um aluno no banco de dados pelo cpf
+     * @param cpf String
+     * */
     public static Aluno searchIdStudentByCpf(String cpf) throws SQLException {
         Aluno aluno = null;
         String SQL = "SELECT id FROM aluno WHERE cpf=?";
@@ -214,88 +235,26 @@ public class AlunoDAO {
         return aluno;
     }
 
-    public static List<Aluno> getAllStundent() throws SQLException {
-        List<Aluno> listaAluno = new ArrayList<>();
-        String SQL = "SELECT nome, cpf, datanasc, endereco, cep, numero, celular, email FROM aluno";
+    /**
+     * Retorna a quantidade de alunos cadastrados no banco de dados
+     * */
+    public static int getStudentCount() throws SQLException {
+        int count = 0;
+        String SQL = "SELECT COUNT(*) FROM aluno";
 
         try{
             Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
-
             PreparedStatement comandoSQL = connection.prepareStatement(SQL);
             ResultSet rs = comandoSQL.executeQuery();
 
             if(rs!=null){
                 while(rs.next()){
-                    Aluno aluno = new Aluno();
-                    aluno.setNome(rs.getString("nome"));
-                    aluno.setCep(rs.getString("cpf"));
-                    aluno.setDataNasc(rs.getString("datanasc"));
-                    aluno.setEndereco(rs.getString("endereco"));
-                    aluno.setCep(rs.getString("cep"));
-                    aluno.setCelular(rs.getString("celular"));
-                    aluno.setEmail(rs.getString("email"));
-
-                    listaAluno.add(aluno);
+                    count = rs.getInt(1);
                 }
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return listaAluno;
-    }
-
-    public static List<Aluno> getStundent() throws SQLException {
-        List<Aluno> listaAluno = new ArrayList<>();
-        String SQL = "SELECT nome, cpf, email FROM aluno";
-
-        try{
-            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
-
-            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
-            ResultSet rs = comandoSQL.executeQuery();
-
-            if(rs!=null){
-                while(rs.next()){
-                    Aluno aluno = new Aluno();
-                    aluno.setNome(rs.getString("nome"));
-                    aluno.setCep(rs.getString("cpf"));
-                    aluno.setEmail(rs.getString("email"));
-
-                    listaAluno.add(aluno);
-                }
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return listaAluno;
-    }
-
-    public static boolean deleteStudent(Aluno aluno) throws SQLException {
-        boolean retorno = false;
-
-        String SQL = "DELETE from aluno where cpf = ?";
-        try {
-
-            Connection conexao =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
-
-
-
-            PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
-            comandoSQL.setString(1, aluno.getCpf());
-            comandoSQL.execute();
-
-
-
-            int linhasAfetadas = comandoSQL.executeUpdate();
-
-            if(linhasAfetadas > 0){
-                System.out.println("Success Connection");
-                retorno = true;
-            }
-
-        } catch(ClassCastException ex){
-            System.out.println(ex.getMessage());
-        }
-        return retorno;
+        return count;
     }
 }
