@@ -1,8 +1,6 @@
 package com.br.fluencynow.service;
 
-import com.br.fluencynow.dao.AdministradorDAO;
 import com.br.fluencynow.dao.PlanoDAO;
-import com.br.fluencynow.model.Aluno;
 import com.br.fluencynow.model.Plano;
 import org.springframework.ui.Model;
 

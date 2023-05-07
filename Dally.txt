@@ -1,0 +1,9 @@
+Falta terminar
+
+Desiner
+Botão de Update
+
+Validação de campos
+Alert para possiveis erros
+realizar testes
+Ajuste final no Readme

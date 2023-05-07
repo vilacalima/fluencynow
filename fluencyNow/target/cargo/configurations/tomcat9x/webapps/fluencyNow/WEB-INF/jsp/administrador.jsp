@@ -45,7 +45,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="admin-btn">Pagina Inicial</a>
+                        <a class="admin-btn" href="home">Pagina Inicial</a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@
                     <div class="card bg-white ">
                         <div class="card-body ">
                             <h5 class="card-title">Total de alunos</h5>
-                            <p class="card-text">Conteúdo do card 1 aqui.</p>
+                            <p class="card-text">${quantidadeAluno}</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     <div class="card bg-white ">
                         <div class="card-body ">
                             <h5 class="card-title">Horas ministradas</h5>
-                            <p class="card-text">Conteúdo do card 1 aqui.</p>
+                            <p class="card-text">${horasMinistradas}.</p>
                         </div>
                     </div>
                 </div>
@@ -104,14 +104,11 @@
                     <div class="card bg-white ">
                         <div class="card-body ">
                             <h5 class="card-title">Aulas disponiveis</h5>
-                            <p class="card-text">Conteúdo do card 1 aqui.</p>
+                            <p class="card-text">${aulasDisponiveis}.</p>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
 
         <h3>Controle de Alunos</h3>
