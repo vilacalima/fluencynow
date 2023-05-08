@@ -133,9 +133,9 @@ public class AlunoDAO {
             comandoSQL.setString(4, aluno.getEndereco());
             comandoSQL.setString(5, aluno.getCep());
             comandoSQL.setString(6, aluno.getNumero());
-            comandoSQL.setString(6, aluno.getCelular());
-            comandoSQL.setString(7, aluno.getEmail());
-            comandoSQL.setString(8, aluno.getCpf());
+            comandoSQL.setString(7, aluno.getCelular());
+            comandoSQL.setString(8, aluno.getEmail());
+            comandoSQL.setString(9, aluno.getCpf());
 
             int success = comandoSQL.executeUpdate();
 
