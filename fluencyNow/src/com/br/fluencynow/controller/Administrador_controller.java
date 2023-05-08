@@ -1,5 +1,6 @@
 package com.br.fluencynow.controller;
 
+import com.br.fluencynow.model.Aluno;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,21 @@ public class Administrador_controller {
 
         return "redirect:administrador";
     }
+
+    @RequestMapping("/updateAluno")
+    public String updateAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+
+
+        String cpf = req.getParameter("cpf");
+        Aluno aluno = new Aluno();
+        aluno.setCpf(cpf);
+        new com.br.fluencynow.service.AlunoService().updateStudent(aluno);
+
+        return "redirect:administrador";
+    }
+
+
+
 
     @RequestMapping("/deletarPlano")
     public String deletarPlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException {

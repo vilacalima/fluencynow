@@ -53,6 +53,19 @@ public class AlunoService {
         return false;
     }
 
+    public boolean updateStudent(Aluno aluno) throws SQLException {
+
+         //aluno = new com.br.fluencynow.dao.AlunoDAO().searchIdStudentByCpf(aluno.getCpf());
+
+        if(aluno.getId() != 0){
+
+            new com.br.fluencynow.dao.AlunoDAO().updateStudent(aluno);
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * Pega a quantidade de alunos no banco de dados e mostra na view
      * @param model Model
