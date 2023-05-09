@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="${allminCSS}">
 
-    <!-- <link rel="stylesheet" href="../../resources/css/administrador.css"> USAR APENAS COM A EXTENSAO HTML -->
+    <link rel="stylesheet" href="../../resources/css/administrador.css"> USAR APENAS COM A EXTENSAO HTML
 
     <link rel="stylesheet" href="${administradorCSS}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,12 +43,17 @@
                     <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
                 </a>
 
-                <ul class="navbar-nav ml-auto">
+                <!-- <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="admin-btn" href="home">Pagina Inicial</a>
                     </li>
-                </ul>
+                </ul> -->
+                <div class="text-boasvindas ml-auto text-right">
+                    <p>Cadastro Aluno</p>
+                    <p>Olá, Helena!</p>
+                </div>
             </div>
+            
         </nav>
     </header>
 
@@ -81,35 +86,44 @@
 
         </div>
 
-
         <div class="container-cards">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-white ">
-                        <div class="card-body ">
-                            <h5 class="card-title">Total de alunos</h5>
-                            <p class="card-text">${quantidadeAluno}</p>
-                        </div>
-                    </div>
+            <div class="row justify-content-center">
+              <div class="col-md-3 mb-3">
+                <div class="card bg-white">
+                  <div class="card-body">
+                    <h4 class="card-title"><b>Total de alunos</b></h4>
+                    <p class="card-text">${quantidadeAluno}</p>
+                  </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-white ">
-                        <div class="card-body ">
-                            <h5 class="card-title">Horas ministradas</h5>
-                            <p class="card-text">${horasMinistradas}.</p>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="card bg-white">
+                  <div class="card-body">
+                    <h4 class="card-title"><b>Horas ministradas</b></h4>
+                    <p class="card-text">${horasMinistradas}.</p>
+                  </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card bg-white ">
-                        <div class="card-body ">
-                            <h5 class="card-title">Aulas disponiveis</h5>
-                            <p class="card-text">${aulasDisponiveis}.</p>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="card bg-white">
+                  <div class="card-body">
+                    <h4 class="card-title"><b>Aulas disponiveis</b></h4>
+                    <p class="card-text">${aulasDisponiveis}.</p>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+            <div class="row justify-content-center">
+              <div class="col-md-3 mb-3">
+                <div class="card bg-white">
+                  <div class="card-body">
+                    <h4 class="card-title"><b>Rendimento semanal</b></h4>
+                    <p class="card-text">Conteúdo </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <h3>Controle de Alunos</h3>
         <div class="container1">
