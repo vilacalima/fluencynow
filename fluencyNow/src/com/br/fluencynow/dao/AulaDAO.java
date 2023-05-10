@@ -153,6 +153,52 @@ public class AulaDAO {
     }
 
     /**
+     * Retorna os valores pagos dos alunos
+     * */
+    public List<Double> getPrice()  {
+
+        String SQL = "SELECT p.valor FROM PLANO p inner join aula a where p.id = a.idplano";
+        String studentName = null;
+        Connection conexao = null;
+        PreparedStatement comandoSQL = null;
+        ResultSet rset = null;
+
+        List<Double> priceList = new ArrayList<>();
+
+        try {
+
+            conexao = DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+            comandoSQL = conexao.prepareStatement(SQL);
+
+            rset = comandoSQL.executeQuery();
+
+            while (rset.next()) {
+
+                Double price = rset.getDouble("valor");
+                priceList.add(price);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rset != null) {
+                    rset.close();
+                }
+                if (comandoSQL != null) {
+                    comandoSQL.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return priceList;
+    }
+
+    /**
      * Deleta uma aula pelo id do aluno
      * @param id int
      * */

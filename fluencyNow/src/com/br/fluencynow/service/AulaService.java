@@ -116,4 +116,14 @@ public class AulaService {
         return "administrador";
     }
 
+    public String getRendimento(Model model){
+        double valorRendimento = 0;
+        List<Double> listaRendimento = new AulaDAO().getPrice();
+        for(int i = 0; i <= listaRendimento.size() - 1; i++ ){
+            valorRendimento += listaRendimento.get(i);
+        }
+        
+        model.addAttribute("rendimentoSemanal", valorRendimento);
+        return "administrador";
+    }
 }
