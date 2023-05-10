@@ -154,4 +154,23 @@ public class PlanoDAO {
         }
         return retorno;
     }
-}
+
+    public void updatePlano(Plano plano) {
+
+        String SQL = "UPDATE aluno SET id=?, descricao=?, preco=? WHERE id=?";
+        try{
+            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            comandoSQL.setInt(1, plano.getId());
+            comandoSQL.setString(2, plano.getNome());
+            comandoSQL.setDouble(3, plano.getValor());
+
+            comandoSQL.execute();
+
+        } catch(ClassCastException | SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    }
+

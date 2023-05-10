@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -183,8 +184,7 @@
                                 <th>ID</th>
                                 <th>Descricao</th>
                                 <th>Valor</th>
-                                <th></th>
-                                <th></th>
+
                             </tr>
                             <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
                                 <tr>
@@ -196,9 +196,9 @@
                                       <form action="deletarPlano" method="post">
                                         <input type="hidden" id="id" name="id" value="${plano.id}">
                                         <button type="submit" class="btn btn1">Delete</button>
-                                        <span> | </span>
+
                                       </form>
-                                        <a class="btn btn2" href="index.jsp?id=${aluno.nome}&name=${aluno.cpf}">Update</a>
+                                        <a class="btn btn2" href="updatePlano?id=${plano.id}&nome=${plano.nome}&valor=${plano.valor}">Update</a>
                                    </td>
                   
                                 </tr>

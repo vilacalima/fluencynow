@@ -30,6 +30,17 @@ public class AlunoDTO {
 
     }
 
+    public AlunoDTO(String nome, String cpf, String dataNasc, String endereco, String cep, String numero, String celular, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNasc = dataNasc;
+        this.endereco = endereco;
+        this.cep = cep;
+        this.numero = numero;
+        this.celular = celular;
+        this.email = email;
+    }
+
     /**
      * Região de get e set
      * */
