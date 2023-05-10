@@ -90,6 +90,7 @@ h6{
 .btn3{
     color: #ffffff;
     background-color: rgb(113, 161, 216);
+    
 }
 
 
@@ -128,8 +129,8 @@ h6{
     color: #ffffff;
     background-color: rgb(113, 161, 216);
     border-radius: 5px;
-
-    margin-left: 630px;
+    margin-left: 245px;
+    
 
 }
 
@@ -260,6 +261,13 @@ footer{
     text-align: center;
 }
 
+.container-cards{
+    margin-top: 90px;
+}
+.text-boasvindas{
+    color: #fff;
+
+}
 
 
 @media (max-width: 991px) {

@@ -45,7 +45,28 @@ public class Administrador_controller {
         aluno.setCpf(cpf);
         new com.br.fluencynow.service.AlunoService().updateStudent(aluno);
 
-        return "redirect:administrador";
+        return "updateAluno";
+    }
+
+    @RequestMapping("/SaveUpdateAluno")
+    public String saveUpdate(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+
+
+
+        String nome = req.getParameter("nome");
+        String cpf = req.getParameter("cpf");
+        String datanasc = req.getParameter("datanasc");
+        String endereco = req.getParameter("endereco");
+        String cep = req.getParameter("cep");
+        String numero = req.getParameter("numero");
+        String celular = req.getParameter("celular");
+        String email = req.getParameter("email");
+
+        Aluno aluno = new Aluno(nome,cpf,datanasc,endereco,cep,numero,celular,email);
+
+        new com.br.fluencynow.service.AlunoService().updateStudent(aluno);
+
+        return "redirect:cadastrar";
     }
 
 

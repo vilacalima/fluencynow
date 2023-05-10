@@ -84,10 +84,10 @@
                                         <form action="deletarAluno" method="post">
                                             <input type="hidden" id="cpf" name="cpf" value="${aluno.cpf}">
                                             <button type="submit" class="btn btn1">Delete</button>
-                                            <span> | </span>
+
                                         </form>
                                         <a class="btn btn2"
-                                            href="index.jsp?id=${aluno.nome}&name=${aluno.cpf}">Update</a>
+                                            href="updateAluno?nome=${aluno.nome}&cpf=${aluno.cpf}&datanasc=${aluno.dataNasc}&endereco=${aluno.endereco}&cep=${aluno.cep}&numero=${aluno.numero}&celular=${aluno.celular}&email=${aluno.email}">Update</a>
                                 </tr>
                                 </td>
 
