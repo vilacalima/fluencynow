@@ -21,8 +21,8 @@ public class AlunoDAO {
         try {
 
             Connection conexao =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
-
             PreparedStatement comandoSQL = conexao.prepareStatement(SQL);
+
             comandoSQL.setString(1, aluno.getNome());
             comandoSQL.setString(2, aluno.getCpf());
             comandoSQL.setString(3, aluno.getDataNasc());
@@ -119,8 +119,10 @@ public class AlunoDAO {
      * Realiza o update de um objeto aluno no banco de dados
      * @param aluno Aluno
      * */
-    public static boolean updateStudent(Aluno aluno) throws SQLException {
-        boolean retorno = false;
+    public void updateStudent(Aluno aluno) throws SQLException {
+
+
+
 
         String SQL = "UPDATE aluno SET nome=?, cpf=?, datanasc=?, endereco=?, cep=?, numero=?, celular=?, email=? WHERE cpf=?";
         try{
@@ -137,17 +139,11 @@ public class AlunoDAO {
             comandoSQL.setString(8, aluno.getEmail());
             comandoSQL.setString(9, aluno.getCpf());
 
-            int success = comandoSQL.executeUpdate();
-
-            if(success > 0){
-                System.out.println("Success Connection");
-                retorno = true;
-            }
+            comandoSQL.execute();
 
         } catch(ClassCastException ex){
             System.out.println(ex.getMessage());
         }
-        return retorno;
     }
 
     /**
