@@ -1,8 +1,10 @@
 package com.br.fluencynow.controller;
 
 import com.br.fluencynow.dao.AlunoDAO;
+import com.br.fluencynow.dao.PlanoDAO;
 import com.br.fluencynow.dto.AlunoDTO;
 import com.br.fluencynow.model.Aluno;
+import com.br.fluencynow.model.Plano;
 import com.br.fluencynow.service.AlunoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,6 +47,11 @@ public class Administrador_controller {
         return "updateAluno";
     }
 
+    @RequestMapping("/updatePlano")
+    public String updatePlano() throws SQLException {
+        return "updatePlano";
+    }
+
     @RequestMapping("/saveUpdateAluno")
     public void saveUpdate(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         String nome = req.getParameter("nome");
@@ -60,6 +67,21 @@ public class Administrador_controller {
 
         AlunoDAO alunoService = new AlunoDAO();
         alunoService.updateStudent(alunoAtualizado);
+
+        resp.sendRedirect("cadastrar");
+    }
+
+    @RequestMapping("/saveUpdatePlano")
+    public void saveUpdatePlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+        String id = req.getParameter("id");
+        String descricao = req.getParameter("descricao");
+        String preco = req.getParameter("preco");
+
+
+        Plano planoAtualizado = new Plano(Integer.parseInt(id), descricao, Integer.parseInt(preco));
+
+        PlanoDAO planoService = new PlanoDAO();
+        planoService.updatePlano(planoAtualizado);
 
         resp.sendRedirect("cadastrar");
     }
