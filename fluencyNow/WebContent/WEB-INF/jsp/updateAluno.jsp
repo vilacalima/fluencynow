@@ -18,38 +18,18 @@
 <h2>UPDATE Aluno</h2>
 
 <form action="saveUpdateAluno" method="post">
-
- <label>Aluno Nome</label>
-    <input type="text" name="aluno-nome" id="aluno-nome" value="${param.nome}">
-
-
-
-    <input type="text" name="aluno-cpf" id="aluno-cpf" value="${param.cpf}">
-
-
-
-        <input type="text" name="aluno-datanasc" id="aluno-datanasc" value="${param.datanasc}">
-
-
-
-            <input type="text" name="aluno-endereco" id="aluno-endereco" value="${param.endereco}">
-
-
-
-                <input type="text" name="aluno-cep" id="aluno-cep" value="${param.cep}">
-
-
-
-                    <input type="text" name="aluno-numero" id="aluno-numero" value="${param.numero}">
-
-
-
-    <input type="text" name="aluno-celular" id="aluno-celular" value="${param.celular}">
-
-
-    <input type="text" name="aluno-email" id="aluno-email" value="${param.email}">
+    <label>Aluno Nome</label>
+    <input type="text" name="nome" id="aluno-nome" value="${param.nome}">
+    <input type="hidden" name="cpf" id="aluno-cpf" value="${param.cpf}">
+    <input type="text" name="datanasc" id="aluno-datanasc" value="${param.datanasc}">
+    <input type="text" name="endereco" id="aluno-endereco" value="${param.endereco}">
+    <input type="text" name="cep" id="aluno-cep" value="${param.cep}">
+    <input type="text" name="numero" id="aluno-numero" value="${param.numero}">
+    <input type="text" name="celular" id="aluno-celular" value="${param.celular}">
+    <input type="text" name="email" id="aluno-email" value="${param.email}">
     <button type="submit">Save</button>
 </form>
+
 
 </body>
 </html>

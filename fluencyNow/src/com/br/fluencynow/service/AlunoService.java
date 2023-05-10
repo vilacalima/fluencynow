@@ -16,12 +16,14 @@ public class AlunoService {
      * */
     public boolean SalvarAluno(AlunoDTO aluno) throws SQLException {
 
-        if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.cpf) == false){
+        /*if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.cpf) == false){
             throw new IllegalArgumentException("CPF Invalido!");
-        }
+
         if(new com.br.fluencynow.validadores.ValidaEmail().emailValidator(aluno.email) == false){
             throw new IllegalArgumentException("Email Invalido!");
         }
+        */
+
         boolean criarAluno = new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno);
 
         return criarAluno;
@@ -53,18 +55,6 @@ public class AlunoService {
         return false;
     }
 
-    public boolean updateStudent(Aluno aluno) throws SQLException {
-
-         //aluno = new com.br.fluencynow.dao.AlunoDAO().searchIdStudentByCpf(aluno.getCpf());
-
-        if(aluno.getId() != 0){
-
-            new com.br.fluencynow.dao.AlunoDAO().updateStudent(aluno);
-            return true;
-        }
-
-        return false;
-    }
 
     /**
      * Pega a quantidade de alunos no banco de dados e mostra na view
