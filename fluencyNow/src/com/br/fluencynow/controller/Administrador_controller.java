@@ -1,6 +1,11 @@
 package com.br.fluencynow.controller;
 
+import com.br.fluencynow.dao.AlunoDAO;
+import com.br.fluencynow.dao.PlanoDAO;
+import com.br.fluencynow.dto.AlunoDTO;
 import com.br.fluencynow.model.Aluno;
+import com.br.fluencynow.model.Plano;
+import com.br.fluencynow.service.AlunoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.SQLException;
 
 @Controller
@@ -38,22 +44,17 @@ public class Administrador_controller {
     }
 
     @RequestMapping("/updateAluno")
-    public String updateAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
-
-
-        String cpf = req.getParameter("cpf");
-        Aluno aluno = new Aluno();
-        aluno.setCpf(cpf);
-        new com.br.fluencynow.service.AlunoService().updateStudent(aluno);
-
+    public String updateAluno() throws SQLException {
         return "updateAluno";
     }
 
-    @RequestMapping("/SaveUpdateAluno")
-    public String saveUpdate(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+    @RequestMapping("/updatePlano")
+    public String updatePlano() throws SQLException {
+        return "updatePlano";
+    }
 
-
-
+    @RequestMapping("/saveUpdateAluno")
+    public void saveUpdate(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         String nome = req.getParameter("nome");
         String cpf = req.getParameter("cpf");
         String datanasc = req.getParameter("datanasc");
@@ -63,13 +64,28 @@ public class Administrador_controller {
         String celular = req.getParameter("celular");
         String email = req.getParameter("email");
 
-        Aluno aluno = new Aluno(nome,cpf,datanasc,endereco,cep,numero,celular,email);
+        Aluno alunoAtualizado = new Aluno(nome, cpf, datanasc, endereco, cep, numero, celular, email);
 
-        new com.br.fluencynow.service.AlunoService().updateStudent(aluno);
+        AlunoDAO alunoService = new AlunoDAO();
+        alunoService.updateStudent(alunoAtualizado);
 
-        return "redirect:cadastrar";
+        resp.sendRedirect("cadastrar");
     }
 
+    @RequestMapping("/saveUpdatePlano")
+    public void saveUpdatePlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+        String id = req.getParameter("id");
+        String descricao = req.getParameter("descricao");
+        String preco = req.getParameter("preco");
+
+
+        Plano planoAtualizado = new Plano(Integer.parseInt(id), descricao, Integer.parseInt(preco));
+
+        PlanoDAO planoService = new PlanoDAO();
+        planoService.updatePlano(planoAtualizado);
+
+        resp.sendRedirect("cadastrar");
+    }
 
 
 
