@@ -118,7 +118,7 @@
                 <div class="card bg-white">
                   <div class="card-body">
                     <h4 class="card-title"><b>Rendimento semanal</b></h4>
-                    <p class="card-text">Conteúdo </p>
+                    <p class="card-text">${rendimentoSemanal}</p>
                   </div>
                 </div>
               </div>

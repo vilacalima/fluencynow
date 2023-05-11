@@ -29,6 +29,7 @@ public class Administrador_controller {
         new com.br.fluencynow.service.AlunoService().quantidadeAluno(model);
         new com.br.fluencynow.service.AlunoService().aulasDisponiveis(model);
         new com.br.fluencynow.service.AlunoService().horasMinistradas(model);
+        new com.br.fluencynow.service.AulaService().getRendimento(model);
 
         return "administrador";
     }

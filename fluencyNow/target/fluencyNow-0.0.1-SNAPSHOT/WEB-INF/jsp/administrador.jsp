@@ -118,12 +118,44 @@
                 <div class="card bg-white">
                   <div class="card-body">
                     <h4 class="card-title"><b>Rendimento semanal</b></h4>
-                    <p class="card-text">Conteúdo </p>
+                    <p class="card-text">${rendimentoSemanal}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+
+        <h3>Controle de Alunos</h3>
+        <div class="container1">
+
+            <div class="bnt-group" aria-label="arial">
+
+                <a class="btn btn8" href="cadastrar">Editar aluno +</a>
+            </div>
+        </div>
+
+        <div class="conteiner">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Dia da semana</th>
+                    <th>Horario</th>
+                </tr>
+                <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
+                    <tr>
+                        <td>${aluno.nome}</td>
+                        <td>${aluno.cpf}</td>
+                        <td>${aluno.email}</td>
+                        <td>${aluno.diaAula}</td>
+                        <td>${aluno.horarioAula}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+
 
          <h1>Procurar Alunos</h1>
                             <div class="container1">
@@ -166,6 +198,7 @@
                                     </c:forEach>
                                 </table>
                             </div>
+
 
         <h3>Controle de Planos</h3>
         <div class="container1">
