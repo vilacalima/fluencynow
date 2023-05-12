@@ -10,6 +10,7 @@
             <spring:url value="resources/css/administrador.css" var="administradorCSS" />
 
 
+
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,7 +22,7 @@
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                 <link rel="stylesheet" href="${allminCSS}">
 
-
+                <link rel="stylesheet" href="../../resources/css/administrador.css">
                 <link rel="stylesheet" href="${administradorCSS}" />
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,11 +53,11 @@
                     <div class="container1">
 
                         <div class="bnt-group" aria-label="arial">
-                            <a class="btn btn3" href="cadastrar">Novo aluno +</a>
+                            <a class="btn btn10" href="cadastrar">Novo aluno +</a>
                         </div>
                     </div>
 
-                    <div class="conteiner">
+                    <div class="container-cad">
                         <table class="table table-striped">
                             <tr>
                                 <th>Nome</th>
@@ -94,12 +95,14 @@
                         </table>
                     </div>
 
-                    <div class="conteiner-cad">
+                    <!-- <div class="conteiner-cad"> -->
                         
                         <h3>Cadastro</h3>
-
-                        <form action="cadastrarAluno" method="post" class="formCadastrar">
+                    <div class="col-md-6">
+                        <form class="formulario-contato">
                             <div class="form-group">
+                        <form action="cadastrarAluno" method="post" class="formCadastrar">
+                            
                                 <label for="nome">Nome</label>
                                 <input class="form-control" type="text" name="nome" placeholder="Nome" autofocus="true" />
                             </div>
@@ -136,8 +139,7 @@
                                 <label for="celular">Celular</label>
                                 <input class="form-control" type="text" name="celular" placeholder="Celular" />
                             </div>
-                            
-                            <h6>Cadastrar Aula</h6>
+                        </form>
 
                             
                             <div class="form-group">
@@ -173,6 +175,8 @@
                                 <input class="btn btn9" type="submit" value="Cadastrar Plano +" class="btn btn7" />
                             </div>
                         </form>
+
+                    </div> 
                     </div>
 
                     <div class="conteiner-cad">
