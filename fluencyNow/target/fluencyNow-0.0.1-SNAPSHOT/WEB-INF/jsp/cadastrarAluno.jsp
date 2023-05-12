@@ -48,13 +48,10 @@
                 </header>
 
                 <body>
-                    <h1>Procurar Alunos</h1>
+                    <h3>Procurar Alunos</h3>
                     <div class="container1">
 
                         <div class="bnt-group" aria-label="arial">
-
-                            <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
-                                style="border-right: none;">
                             <a class="btn btn3" href="cadastrar">Novo aluno +</a>
                         </div>
                     </div>
@@ -97,10 +94,10 @@
                         </table>
                     </div>
 
-                    <div class="container">
+                    <div class="conteiner-cad">
                         
-                        <h1>Cadastro</h1>
-                    
+                        <h3>Cadastro</h3>
+
                         <form action="cadastrarAluno" method="post" class="formCadastrar">
                             <div class="form-group">
                                 <label for="nome">Nome</label>
@@ -173,13 +170,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Cadastrar" class="btn btn7" />
+                                <input class="btn btn9" type="submit" value="Cadastrar Plano +" class="btn btn7" />
                             </div>
                         </form>
                     </div>
 
-                    <div class="conteiner">
+                    <div class="conteiner-cad">
                         <table class="table table-striped">
+                        <h3>Planos Cadastrados</h3>
                             <tr>
                                 <th>ID</th>
                                 <th>Descricao</th>
@@ -209,7 +207,7 @@
                       
                         <div class="container">
 
-                            <h1>Cadastrar Plano</h1>
+                            <h3>Cadastrar Plano</h3>
 
                             <form action="cadastrarPlanos" method="post" class="formCadastrar">
                                 <div class="form-group">
@@ -225,7 +223,7 @@
                                     </div>                        
                                 </div>
                                 <div class="form-group">
-                                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Cadastrar" class="btn btn7" />
+                                    <input class="btn btn9" type="submit" value="Salvar" class="btn btn7" />
                                 </div> 
                             </form>
                         </div>

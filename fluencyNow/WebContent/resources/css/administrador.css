@@ -64,6 +64,9 @@ padding: 0%;
     margin-left: 30%;
 }
 
+.container{
+    margin: auto;
+}
 
 h6{
     margin-top: 10px;
@@ -93,11 +96,18 @@ h6{
     
 }
 
+.btn10{
+    color: #ffffff;
+    background-color: rgb(113, 161, 216);
+    margin-left: 20%;
+    
+}
 
-.formulario-contato{
+
+/* .formulario-contato{
     width: 800px;
     margin-left: 50%;
-}
+} */
 
 .btn4{
     color: #ffffff;
@@ -200,12 +210,16 @@ width: 1000px;
 margin-left: 40%;
 }
 
-.form-group{
+/* .form-group{
 width: 1000px;
 
+} */
+
+.col-md-6{
+    width: 1000px;
+margin: auto !important;
+
 }
-
-
 .campoNome{
     width: 250px;
     margin-right: 10px;
@@ -239,8 +253,15 @@ footer{
 .conteiner{
     width: 900px;
     margin-left: 16%;
-    
+}
 
+.conteiner-cad{
+margin: auto;
+}
+
+.container-cad{
+    width: 90%;
+    margin: auto;
 }
 
 .table th{
@@ -268,6 +289,15 @@ footer{
     color: #fff;
 
 }
+
+.btn9{
+    color: #ffffff;
+    background-color: rgb(113, 161, 216);
+    width: 600px;
+
+
+}
+
 
 
 @media (max-width: 991px) {
