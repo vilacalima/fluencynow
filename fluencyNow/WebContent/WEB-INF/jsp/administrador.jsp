@@ -118,13 +118,12 @@
                 <div class="card bg-white">
                   <div class="card-body">
                     <h4 class="card-title"><b>Rendimento semanal</b></h4>
-                    <p class="card-text">${rendimentoSemanal}</p>
+                    <p class="card-text">Conteúdo </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
 
         <h3>Controle de Alunos</h3>
         <div class="container1">
@@ -155,50 +154,6 @@
                 </c:forEach>
             </table>
         </div>
-
-
-         <h1>Procurar Alunos</h1>
-                            <div class="container1">
-
-                                <div class="bnt-group" aria-label="arial">
-
-                                    <input class="pesquisa" type="search" placeholder="Pesquisar" aria-label="Search"
-                                        style="border-right: none;">
-                                    <a class="btn btn3" href="cadastrar">EDITAR | ADICIONAR | EXCLUIR</a>
-                                </div>
-                            </div>
-
-                            <div class="conteiner">
-                                <table class="table table-striped">
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>CPF</th>
-                                        <th>Data Nascimento</th>
-                                        <th>Endereço</th>
-                                        <th>CEP</th>
-                                        <th>Numero</th>
-                                        <th>Celular</th>
-                                        <th>Email</th>
-                                    </tr>
-                                    <c:forEach items="${Alunos.alunos}" var="aluno" varStatus="tagStatus">
-                                        <tr>
-                                            <td>${aluno.nome}</td>
-                                            <td>${aluno.cpf}</td>
-                                            <td>${aluno.dataNasc}</td>
-                                            <td>${aluno.endereco}</td>
-                                            <td>${aluno.cep}</td>
-                                            <td>${aluno.numero}</td>
-                                            <td>${aluno.celular}</td>
-                                            <td>${aluno.email}</td>
-
-                                        </tr>
-                                        </td>
-
-                                        </tr>
-                                    </c:forEach>
-                                </table>
-                            </div>
-
 
         <h3>Controle de Planos</h3>
         <div class="container1">
