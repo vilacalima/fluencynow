@@ -179,7 +179,8 @@
                     </div> 
                     </div>
 
-                    <div class="conteiner-cad">
+
+                    <div class="container-cad">
                         <table class="table table-striped">
                         <h3>Planos Cadastrados</h3>
                             <tr>
