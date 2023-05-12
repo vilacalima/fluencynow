@@ -15,17 +15,22 @@
 
 <head>
 
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-                <link rel="stylesheet" href="${allminCSS}">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${allminCSS}">
 
-                <link rel="stylesheet" href="${administradorCSS}" />
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../resources/css/administrador.css"> USAR APENAS COM A EXTENSAO HTML
 
+    <link rel="stylesheet" href="${administradorCSS}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
@@ -113,13 +118,12 @@
                 <div class="card bg-white">
                   <div class="card-body">
                     <h4 class="card-title"><b>Rendimento semanal</b></h4>
-                    <p class="card-text">${rendimentoSemanal}</p>
+                    <p class="card-text">Conteúdo </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
 
         <h3>Controle de Alunos</h3>
         <div class="container1">
@@ -150,9 +154,6 @@
                 </c:forEach>
             </table>
         </div>
-
-
-
 
         <h3>Controle de Planos</h3>
         <div class="container1">
