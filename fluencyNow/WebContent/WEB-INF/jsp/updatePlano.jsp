@@ -19,9 +19,9 @@
 
 <form action="saveUpdatePlano" method="post">
     <label>Plano Nome</label>
-    <input type="text" name="id" id="aluno-cpf" value="${param.id}">
-    <input type="text" name="nome" id="aluno-nome" value="${param.descricao}">
-    <input type="text" name="valor" id="aluno-datanasc" value="${param.preco}">
+    <input type="hidden" name="id" id="plano-cpf" value="${param.id}">
+    <input type="text" name="nome" id="plano-nome" value="${param.nome}">
+    <input type="text" name="valor" id="plano-valor" value="${param.valor}">
 
     <button type="submit">Save</button>
 </form>
