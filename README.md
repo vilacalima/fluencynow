@@ -1,64 +1,46 @@
-# Fluency Now
+<p align="center">
+<img src="./fluencyNow/WebContent/resources/images/Logo.png"/>
+</p>
 
-### Projeto do terceiro semestre da turma de ADS do Senac.
+<h1>  
+    Projeto Integrador III
+</h1>
 
-- Composto pelos integrantes:
+<h3>  
+    :construction:  Em construção  :construction:
+</h3>
 
-- Isabela Midori Minami Rodrigues Mesquita
+<h2>
+:notebook: Colaboradores
+</h2>
 
-- Nathalia Aldinar Souza Cerqueira
+<p> 
+    <br>
+    Eduardo Feitosa <br>
+    Isabela Midori Minami Rodrigues Mesquita <br>
+    Nathalia Aldinar Souza Cerqueira <br>
+    Nicolas da Cruz Marques <br>
+    Rennan Rodrigues <br>
+    Robson Vilaça Lima <br>
+</p>
 
-- Nicolas da Cruz Marques
-
-- Robson Vilaça Lima
-
-- Eduardo Feitosa
-
-- Rennan Rodrigues
-
-# Requisitos do Sistema
-
-## RF01 - Entrar no portal
-
-Permite que o professor entre no portal do administrador, utilizando login e senha
-
-## RF02 - Verificar aulas
-
-Permite que o professor verifique as aulas e horários agendados para a semana
-
-## RF03 - Consultar métricas
-
-Disponibiliza ao professor informações sobre total de alunos, horas ministradas, rendimento e horas disponíveis
-
-## RF04 - Listar alunos
-
-Permite que o professor visualize todos os alunos ou filtre por CPF
-
-## RF05 - Alterar Senha
-
-Permite que o usuário faça alteração de senha
-
-## RF06 - Suporte
-
-Link para o suporte do sistema
-
-## RF07 - Cadastrar Alunos
-
-Disponibiliza o formulário para cadastrar novos alunos
-
-## Modelagem de banco de dados
-![Modelagem de banco de dados](Readme/BancoDeDados.png)
-
-## FIGMA
+<h2>
+:camera: FIGMA
+</h2>
 
 Link do projeto no figma: https://www.figma.com/file/1J5gP4EvisUBhhh80GJVwp/FluencyNow?t=3hsNA3CDhbPHmmAn-0
 
-## Prototipação
+### [Inicializando o Projeto](./Readme/ACCESSPAGE.md)
 
-![HomePage](Readme/HomePage.png)
+### [Home Page](./Readme/HOMEPAGE.md)
 
-![Login](Readme/Login.png)
+### [Pagina de Login](./Readme/LOGINPAGE.md)
 
-![Administrativo](Readme/Administrativo.png)
+### [Pagina administrativa](./Readme/BUSINESSPAGE.md)
 
-![Administrativo 2](Readme/Administrativo2.png)
+### [Pagina de Cadastro](./Readme/REGISTERPAGE.md)
+
+### [Requisitos do Sistema](./Readme/REQUIREMENTS.md)
+
+### [Banco de dados](./Readme/DATABASE.md)
+

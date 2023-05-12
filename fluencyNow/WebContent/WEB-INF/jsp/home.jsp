@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -5,14 +8,17 @@
 <spring:url value="resources/css/all.min.css" var="allminCSS" />
 <spring:url value="resources/index.css" var="indexCSS" />
 
- <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
-  <meta charset="UTF-8">
+
+<meta charset="utf-8"/>
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exemplo de cabeçalho responsivo</title>
+  <title>Fluency Now</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="${allminCSS}">
 
@@ -22,26 +28,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <!-- //FONTE NOVA -->
-</head>
+ </head>
 
 <body>
 
   <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
-        <!-- Logotipo na parte esquerda -->
+
         <a class="navbar-brand" href="#">
           <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
         </a>
-        <!-- Nome da página ao meio -->
+
         <div class="navbar-text mx-auto">
           Fluency Now
         </div>
-        <!-- Botão de administrador no canto superior direito -->
+
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="admin-btn" href="#">Administrador</a>
+            <a class="admin-btn" href="login">Administrador</a>
           </li>
         </ul>
       </div>
@@ -53,14 +58,14 @@
         <h2>Porque escolher a Fluency Now?</h2>
         <p>
             <br>A Fluency Now nasceu do amor pela lingua inglesa e pela paixao em ensinar da Helena Carvalho.
-          Após lecionar em escolas particulares por mais de 10 anos, em 2005 Helena decidiu criar seu proprio método de
-          ensino, afinal, cada aluno tem um ritmo de aprendizado diferente, então não é eficaz utilizar o mesmo método
-          para todos. Assim, ela segue
-          ensinando a língua inglesa até hoje, adaptando o ensino aos alunos.
-          A Fluency Now acredita que para o aprendizado não tem limites, então não existe idade certa para iniciar seus
-          estudos, atendemos alunos de todas as idades e todos os niveis, do básico ao avançado.
-          Quer conhecer melhor a Flueny Now? Nos envie uma mensagem que iremos atender e respeitar o seu processo de
-          aprendizado com paciencia e paixão pela língua inglesa.</p>
+                          Após lecionar em escolas particulares por mais de 10 anos, em 2005 Helena decidiu criar seu proprio método de
+                          ensino, afinal, cada aluno tem um ritmo de aprendizado diferente, então não é eficaz utilizar o mesmo método
+                          para todos. Assim, ela segue
+                          ensinando a língua inglesa até hoje, adaptando o ensino aos alunos.
+                          A Fluency Now acredita que para o aprendizado não tem limites, então não existe idade certa para iniciar seus
+                          estudos, atendemos alunos de todas as idades e todos os niveis, do básico ao avançado.
+                          Quer conhecer melhor a Flueny Now? Nos envie uma mensagem que iremos atender e respeitar o seu processo de
+                          aprendizado com paciencia e paixão pela língua inglesa.</p>
       </div>
       <div class="col-md-6">
         <form class="formulario-contato">
@@ -80,7 +85,7 @@
           <div class="form-group">
             <label for="endereco"></label>
             <input type="address" textarea class="form-control" id="endereco"
-              placeholder="Digite seu endereço"></textarea>
+              placeholder="Digite seu endereco"></textarea>
           </div>
           <div class="form-group">
             <label for="telefone"></label>
@@ -116,7 +121,7 @@
         <div class="carousel-item active">
           <div class="col-xs-4 col-sm-4 col-md-4">
             <img src="resources/images/Ingles.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Inglês | Individual</h5>
+            <h5 class="card-title">Ingles | Individual</h5>
             <p class="card-text">5x de R$50,00</p>
             </a>
             <p>Duas aulas de 60 minutos por semana</p>
@@ -125,7 +130,7 @@
 
           <div class="col-xs-4 col-sm-4 col-md-4">
             <img src="resources/images/Ingles.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Inglês | Grupo</h5>
+            <h5 class="card-title">Ingles | Grupo</h5>
             <p class="card-text">5x de R$50,00</p>
             </a>
             <p>Duas aulas de 60 minutos por semana</p>
@@ -133,7 +138,7 @@
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4">
             <img src="resources/images/Ingles.png" class="card-img-top" alt="Imagem do Card 1">
-            <h5 class="card-title">Inglês | Intensivo</h5>
+            <h5 class="card-title">Ingles | Intensivo</h5>
             <p class="card-text">5x de R$70,00</p>
             </a>
             <p>Quatro aulas de 60 minutos por semana</p>
@@ -193,7 +198,7 @@
           <div class="card-title">
             <h2>Julia Andrade, 12 anos:
             </h2>
-            <p>A professora Helena é incrivel! <br>
+            <p>A professora Helena e incrivel! <br>
               Com as aulas online dela consegui melhorar minhas notas na escola, ela tem muita paciencia! </p>
           </div>
 
@@ -204,9 +209,9 @@
           <div class="card-title">
             <h2>Junior Ferreira, 45 anos:</h2>
             <p>
-              Tive um grande avanço em meu ingles! <br> A Helena seguiu um plano de aulas personalizado focando
+              Tive um grande avanco em meu ingles! <br> A Helena seguiu um plano de aulas personalizado focando
               em gramatica. Dentro de 5 meses consegui uma oportunidade de emprego que pedia ingles.
-              A Helena é uma grande profissional que tem muito conhecimento e experiencia. </p>
+              A Helena e uma grande profissional que tem muito conhecimento e experiencia. </p>
           </div>
 
         </div>
@@ -216,7 +221,7 @@
           <div class="card-title">
             <h2>Maria Souza, 33 anos:</h2>
             <p>
-              Meu sonho sempre foi ir para Disney! <br>Mas eu não sabia nada de ingles, entao, comecei as aulas com a
+              Meu sonho sempre foi ir para Disney! <br>Mas eu nao sabia nada de ingles, entao, comecei as aulas com a
               Helena, que criou um plano personalizado focando no ingles para o dia a dia.
               Depois de alguns meses de aula realizei o meu sonho de viajar para a Disney e consegui me comunicar com
               todos!</p>

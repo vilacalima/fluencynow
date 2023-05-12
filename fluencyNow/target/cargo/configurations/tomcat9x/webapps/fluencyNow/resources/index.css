@@ -3,8 +3,8 @@ body {
   }
   
   body::before {
-    content: "";
-    background-image: url('assets/images/img-background.jpg');
+content: "";
+
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.4;
