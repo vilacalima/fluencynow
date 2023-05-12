@@ -17,6 +17,12 @@ public class Login_controller {
         return new ModelAndView("login");
     }
 
+    @RequestMapping("/redefinirSenha")
+    public ModelAndView redefinir() {
+
+        return new ModelAndView("redefinir");
+    }
+
     @RequestMapping("/efetuaLogin")
     public String efetuaLogin(Login login, HttpSession session) throws SQLException {
         if(new com.br.fluencynow.dao.LoginDAO().exists(login)) {
