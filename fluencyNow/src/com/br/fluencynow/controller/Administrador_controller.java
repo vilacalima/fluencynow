@@ -75,11 +75,11 @@ public class Administrador_controller {
     @RequestMapping("/saveUpdatePlano")
     public void saveUpdatePlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         String id = req.getParameter("id");
-        String descricao = req.getParameter("descricao");
-        String preco = req.getParameter("preco");
+        String nome = req.getParameter("nome");
+        String valor = req.getParameter("valor");
 
 
-        Plano planoAtualizado = new Plano(Integer.parseInt(id), descricao, Integer.parseInt(preco));
+        Plano planoAtualizado = new Plano(Integer.parseInt(id), nome, Double.parseDouble(valor));
 
         PlanoDAO planoService = new PlanoDAO();
         planoService.updatePlano(planoAtualizado);

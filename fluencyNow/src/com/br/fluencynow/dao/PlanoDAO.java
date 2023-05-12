@@ -157,7 +157,7 @@ public class PlanoDAO {
 
     public void updatePlano(Plano plano) {
 
-        String SQL = "UPDATE aluno SET id=?, descricao=?, preco=? WHERE id=?";
+        String SQL = "UPDATE plano SET id=?, nome=?, valor=? WHERE id=?";
         try{
             Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
 
@@ -165,6 +165,7 @@ public class PlanoDAO {
             comandoSQL.setInt(1, plano.getId());
             comandoSQL.setString(2, plano.getNome());
             comandoSQL.setDouble(3, plano.getValor());
+            comandoSQL.setInt(4,plano.getId());
 
             comandoSQL.execute();
 
