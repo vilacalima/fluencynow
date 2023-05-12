@@ -8,6 +8,7 @@ com\br\fluencynow\service\AlunoService.class
 com\br\fluencynow\model\Plano.class
 com\br\fluencynow\dto\DiaAulaDTO.class
 com\br\fluencynow\service\DiasdaSemana.class
+com\br\fluencynow\service\LoginService.class
 com\br\fluencynow\controller\Cadastrar_controller.class
 com\br\fluencynow\model\Aluno.class
 com\br\fluencynow\validadores\ValidaEmail.class
