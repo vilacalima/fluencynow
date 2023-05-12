@@ -22,7 +22,7 @@
         Senha: <input type="password" name="senha" placeholder="Digite sua senha" /> <br />
         <input type="submit" value="Entrar" />
 
-          <p> Continuar Conectado | <a href=''>Troque Sua Senha</a>
+        <a href='redefinirSenha'>Troque Sua Senha</a>
         </form>
 
 		  </div>

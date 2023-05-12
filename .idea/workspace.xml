@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfcde537-0bf3-48e8-9e02-136687765f5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/fluencyNow/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/src/main/webapp/WebContent/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/AlunoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/AlunoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/AulaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/AulaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/ConexaoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/ConexaoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/LoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/LoginDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/PlanoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/DAO/PlanoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/controller/Fluency_now_controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/controller/Fluency_now_controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Aluno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Aula.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Aula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Plano.class" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/classes/com/fluency/model/Plano.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/classes/main/webapp/WebContent/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/classes/com/fluency/controller/Fluency_now_controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/fluency-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/jsp/welcome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aop-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-beans-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-core-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-expression-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jcl-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-web-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/lib/spring-webmvc-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/fluency_now-0.0.1-SNAPSHOT/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/m2e-wtp/web-resources/META-INF/maven/fluency_now/fluency_now/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/m2e-wtp/web-resources/META-INF/maven/fluency_now/fluency_now/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fluencyNow/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fluencyNow/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,24 +24,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/eduardo/Documents/senac_3/PI3/git/fluencynow/fluencyNow"
+    "last_opened_file_path": "C:/Users/nicolas.cmarques/Desktop/fluencynow/fluencyNow"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="fluencynow" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="fluencynow" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
