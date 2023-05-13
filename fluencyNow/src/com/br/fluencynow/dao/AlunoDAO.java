@@ -59,11 +59,16 @@ public class AlunoDAO {
     /**
      * Pega um objeto aluno do banco de dados
      * */
-    public List<Aluno> getStudent()  {
+    public List<AlunoDTO> getStudent()  {
 
-        String SQL = "SELECT * FROM aluno ORDER BY nome asc";
+        String SQL = "SELECT a.id, a.nome, a.cpf, a.datanasc, a.endereco, a.cep, a.numero, a.celular, a.email, au.dia, au.horario, p.nome as nomePlano\n" +
+                "FROM plano p\n" +
+                "INNER JOIN plano ap ON ap.id = p.id\n" +
+                "INNER JOIN aluno a ON a.id = au.idAluno\n" +
+                "INNER JOIN aula au ON au.idPlano = p.id\n" +
+                "ORDER BY a.nome asc";
 
-        List<Aluno> listaAlunos = new ArrayList<>();
+        List<AlunoDTO> listaAlunos = new ArrayList<>();
 
         Connection conexao = null;
         PreparedStatement comandoSQL = null;
@@ -80,7 +85,7 @@ public class AlunoDAO {
 
             while (rset.next()) {
 
-                Aluno aluno = new Aluno();
+                AlunoDTO aluno = new AlunoDTO();
 
                 aluno.setNome(rset.getString("nome"));
                 aluno.setCpf(rset.getString("cpf"));
@@ -90,9 +95,11 @@ public class AlunoDAO {
                 aluno.setNumero(rset.getString("numero"));
                 aluno.setCelular(rset.getString("celular"));
                 aluno.setEmail(rset.getString("email"));
-
+                aluno.setId(rset.getInt("id"));
+                aluno.setDiaAula(rset.getString("dia"));
+                aluno.setHorarioAula(rset.getString("horario"));
+                aluno.setPlano(rset.getString("nomePlano"));
                 listaAlunos.add(aluno);
-
             }
 
         } catch (Exception e) {
@@ -119,10 +126,8 @@ public class AlunoDAO {
      * Realiza o update de um objeto aluno no banco de dados
      * @param aluno Aluno
      * */
-    public void updateStudent(Aluno aluno) throws SQLException {
-
-
-
+    public boolean updateStudent(AlunoDTO aluno) throws SQLException {
+        boolean retorno = false;
 
         String SQL = "UPDATE aluno SET nome=?, cpf=?, datanasc=?, endereco=?, cep=?, numero=?, celular=?, email=? WHERE cpf=?";
         try{
@@ -139,11 +144,29 @@ public class AlunoDAO {
             comandoSQL.setString(8, aluno.getEmail());
             comandoSQL.setString(9, aluno.getCpf());
 
-            comandoSQL.execute();
+            int linhasAfetadas = comandoSQL.executeUpdate();
+
+            if(linhasAfetadas > 0){
+                System.out.println("Success Connection");
+                retorno = true;
+
+                Aluno getAluno = searchIdStudentByName(aluno.getNome());
+                Plano plano = PlanoDAO.getPlanoByDescription(aluno.getPlano());
+
+                boolean linhasAfetadasAula = AulaDAO.updateClass(aluno.getDiaAula(), aluno.getHorarioAula(), getAluno.getId(), plano.getId());
+
+                if(linhasAfetadasAula == true){
+                    System.out.println("Success Connection");
+                    retorno = true;
+                }
+
+            }
 
         } catch(ClassCastException ex){
             System.out.println(ex.getMessage());
         }
+
+        return retorno;
     }
 
     /**
@@ -229,6 +252,28 @@ public class AlunoDAO {
             System.out.println(ex.getMessage());
         }
         return aluno;
+    }
+
+    public static boolean existsStudent(String cpf) throws SQLException {
+        boolean retorno = false;
+        String SQL = "SELECT id FROM aluno WHERE cpf=?";
+
+        try{
+            Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+
+            PreparedStatement comandoSQL = connection.prepareStatement(SQL);
+            comandoSQL.setString(1, cpf);
+
+            ResultSet linhasAfetadas = comandoSQL.executeQuery();
+
+            if (linhasAfetadas.next()) {
+                System.out.println("Success Connection");
+                retorno = true;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return retorno;
     }
 
     /**

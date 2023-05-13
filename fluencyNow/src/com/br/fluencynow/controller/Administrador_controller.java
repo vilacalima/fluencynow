@@ -45,7 +45,7 @@ public class Administrador_controller {
 
     @RequestMapping("/updateAluno")
     public String updateAluno() throws SQLException {
-        return "updateAluno";
+        return "redirect:cadastrarAluno";
     }
 
     @RequestMapping("/updatePlano")
@@ -53,24 +53,24 @@ public class Administrador_controller {
         return "updatePlano";
     }
 
-    @RequestMapping("/saveUpdateAluno")
-    public void saveUpdate(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
-        String nome = req.getParameter("nome");
-        String cpf = req.getParameter("cpf");
-        String datanasc = req.getParameter("datanasc");
-        String endereco = req.getParameter("endereco");
-        String cep = req.getParameter("cep");
-        String numero = req.getParameter("numero");
-        String celular = req.getParameter("celular");
-        String email = req.getParameter("email");
-
-        Aluno alunoAtualizado = new Aluno(nome, cpf, datanasc, endereco, cep, numero, celular, email);
-
-        AlunoDAO alunoService = new AlunoDAO();
-        alunoService.updateStudent(alunoAtualizado);
-
-        resp.sendRedirect("cadastrar");
-    }
+//    @RequestMapping("/saveUpdateAluno")
+//    public void saveUpdate(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+//        String nome = req.getParameter("nome");
+//        String cpf = req.getParameter("cpf");
+//        String datanasc = req.getParameter("datanasc");
+//        String endereco = req.getParameter("endereco");
+//        String cep = req.getParameter("cep");
+//        String numero = req.getParameter("numero");
+//        String celular = req.getParameter("celular");
+//        String email = req.getParameter("email");
+//
+//        Aluno alunoAtualizado = new Aluno(nome, cpf, datanasc, endereco, cep, numero, celular, email);
+//
+//        AlunoDAO alunoService = new AlunoDAO();
+//        alunoService.updateStudent(alunoAtualizado);
+//
+//        resp.sendRedirect("cadastrar");
+//    }
 
     @RequestMapping("/saveUpdatePlano")
     public void saveUpdatePlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {

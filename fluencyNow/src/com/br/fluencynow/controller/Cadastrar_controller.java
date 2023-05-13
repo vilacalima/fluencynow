@@ -10,7 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -46,29 +49,46 @@ public class Cadastrar_controller {
     }
 
     @RequestMapping("/cadastrarAluno")
-    public String adicionaAluno(AlunoDTO aluno, HttpSession session) throws SQLException {
+    public void adicionaAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         try{
+            AlunoDTO aluno = new AlunoDTO();
+            //aluno.id = Integer.parseInt(req.getParameter("id"));
+            aluno.nome = req.getParameter("nome");
+            aluno.cpf = req.getParameter("cpf");
+            aluno.dataNasc = req.getParameter("dataNasc");
+            aluno.endereco = req.getParameter("endereco");
+            aluno.cep = req.getParameter("cep");
+            aluno.numero = req.getParameter("numero");
+            aluno.celular = req.getParameter("celular");
+            aluno.email = req.getParameter("email");
+            aluno.plano = req.getParameter("plano");
+            aluno.diaAula = req.getParameter("diaAula");
+            aluno.horarioAula = req.getParameter("horarioAula");
 
-            //continuar daqui esta retornando apenas a exception
-            boolean salvarAluno = new com.br.fluencynow.service.AlunoService().SalvarAluno(aluno);
-            if(salvarAluno == true){
-                session.setAttribute("alunoCadastrado", aluno);
-                return "redirect:administrador";
+            if(new com.br.fluencynow.dao.AlunoDAO().existsStudent(aluno.cpf)){
+                boolean updateAluno = new com.br.fluencynow.service.AlunoService().UpdateAluno(aluno);
+                if(updateAluno == true){
+                    resp.sendRedirect("cadastrar");
+                }
+            } else{
+                boolean salvarAluno = new com.br.fluencynow.service.AlunoService().SalvarAluno(aluno);
+                if(salvarAluno == true){
+                    resp.sendRedirect("cadastrar");
+                }
             }
-
         } catch (Exception ex){
+            resp.sendRedirect("administrador");
             System.out.println(ex.getMessage());
         }
-        return "redirect:home";
     }
 
     @RequestMapping("/cadastrarPlanos")
     public String adicionaPlano(Plano plano, HttpSession session) throws SQLException {
         try{
 
-            //continuar daqui esta retornando apenas a exception
-            boolean salvarAluno = new com.br.fluencynow.service.PlanoService().SalvarPlano(plano);
-            if(salvarAluno == true){
+            //continuar daqui adicionar o id para atualizar plano
+            boolean salvarPlano = new com.br.fluencynow.service.PlanoService().SalvarPlano(plano);
+            if(salvarPlano == true){
                 session.setAttribute("planoCadastrado", plano);
                 return "redirect:administrador";
             }
