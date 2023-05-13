@@ -10,9 +10,14 @@ import java.util.List;
 public class PlanoService {
 
 
-    public boolean SalvarPlano(Plano plano) throws SQLException {
+    public boolean salvarPlano(Plano plano) throws SQLException {
         boolean criarPlano = com.br.fluencynow.dao.PlanoDAO.salvar(plano);
         return criarPlano;
+    }
+
+    public boolean atualizarPlano(Plano plano) throws SQLException {
+        boolean atualizaPlano = com.br.fluencynow.dao.PlanoDAO.updatePlano(plano);
+        return atualizaPlano;
     }
 
     public String getPlano(Model model) throws SQLException {

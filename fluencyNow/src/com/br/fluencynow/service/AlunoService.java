@@ -16,11 +16,11 @@ public class AlunoService {
      * */
     public boolean SalvarAluno(AlunoDTO aluno) throws SQLException {
 
-        if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.cpf) == false) {
+        if(new com.br.fluencynow.validator.ValidaCPF().validarCPF(aluno.cpf) == false) {
             throw new IllegalArgumentException("CPF Invalido!");
         }
 
-        if(new com.br.fluencynow.validadores.ValidaEmail().emailValidator(aluno.email) == false){
+        if(new com.br.fluencynow.validator.ValidaEmail().emailValidator(aluno.email) == false){
             throw new IllegalArgumentException("Email Invalido!");
         }
 
@@ -32,11 +32,11 @@ public class AlunoService {
 
     public boolean UpdateAluno(AlunoDTO aluno) throws SQLException {
 
-        if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.cpf) == false) {
+        if(new com.br.fluencynow.validator.ValidaCPF().validarCPF(aluno.cpf) == false) {
             throw new IllegalArgumentException("CPF Invalido!");
         }
 
-        if(new com.br.fluencynow.validadores.ValidaEmail().emailValidator(aluno.email) == false){
+        if(new com.br.fluencynow.validator.ValidaEmail().emailValidator(aluno.email) == false){
             throw new IllegalArgumentException("Email Invalido!");
         }
 

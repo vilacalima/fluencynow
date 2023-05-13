@@ -129,7 +129,7 @@ public class AlunoDAO {
     public boolean updateStudent(AlunoDTO aluno) throws SQLException {
         boolean retorno = false;
 
-        String SQL = "UPDATE aluno SET nome=?, cpf=?, datanasc=?, endereco=?, cep=?, numero=?, celular=?, email=? WHERE cpf=?";
+        String SQL = "UPDATE aluno SET nome=?, cpf=?, datanasc=?, endereco=?, cep=?, numero=?, celular=?, email=? WHERE id=?";
         try{
             Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
 
@@ -142,7 +142,7 @@ public class AlunoDAO {
             comandoSQL.setString(6, aluno.getNumero());
             comandoSQL.setString(7, aluno.getCelular());
             comandoSQL.setString(8, aluno.getEmail());
-            comandoSQL.setString(9, aluno.getCpf());
+            comandoSQL.setInt(9, aluno.getId());
 
             int linhasAfetadas = comandoSQL.executeUpdate();
 
