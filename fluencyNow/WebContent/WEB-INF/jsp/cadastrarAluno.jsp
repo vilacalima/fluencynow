@@ -148,7 +148,8 @@
                                     </c:forEach>
                                 </select>
                             </div>
-                            
+                            <!-- Campo oculto para o ID da aula -->
+                            <input type="hidden" id="id" name="id" value="${param.id}">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col">
@@ -217,7 +218,7 @@
                             <h3>Cadastrar Plano</h3>
                             <div class="formulario-contato">
                                 <div class="form-group">
-                            <form action="cadastrarPlanos" method="post" class="formCadastrar" value="${param.id}">
+                            <form action="cadastrarPlanos" method="post" class="formCadastrar">
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col">
@@ -228,6 +229,8 @@
                                             <label for="cpf"></label>
                                             <input class="form-control" type="decimal" name="valor" placeholder="valor" value="${param.valor}"/>
                                         </div>
+                                        <!-- Campo oculto para o ID da aula -->
+                                        <input type="hidden" id="idPlano" name="idPlano" value="${param.id}">
                                     </div>                        
                                 </div>
                                 <div class="form-group">

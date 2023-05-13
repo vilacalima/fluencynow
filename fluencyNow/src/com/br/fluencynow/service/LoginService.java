@@ -1,29 +1,33 @@
 package com.br.fluencynow.service;
 
 import com.br.fluencynow.dao.LoginDAO;
+import com.br.fluencynow.dto.AlterarLoginDTO;
 import com.br.fluencynow.model.Login;
 
 import java.sql.SQLException;
 
 public class LoginService {
 
-    public String updatePassword(String user, String oldPassword, String newPassword, String repeatPassworld) throws SQLException {
+    public boolean updatePassword(AlterarLoginDTO alterarLoginDTO) throws SQLException {
+        boolean retorno = false;
         Login login = new Login();
-        login.usuario = user;
-        login.senha = oldPassword;
+        login.usuario = alterarLoginDTO.getUsername();
+        login.senha = alterarLoginDTO.getOldPassworld();
 
         LoginDAO loginDAO = new com.br.fluencynow.dao.LoginDAO();
 
         if(!loginDAO.exists(login))
             new IllegalArgumentException("Login ou senha invalido!");
 
-        if(newPassword.equals(repeatPassworld)){
-            int id = loginDAO.getId(user, oldPassword);
+        if(alterarLoginDTO.getNewPassworld().equals(alterarLoginDTO.getNewPassworldValidate())){
+            int id = loginDAO.getId(alterarLoginDTO.getUsername(), alterarLoginDTO.getOldPassworld());
 
-            if(!loginDAO.updateLogin(id, newPassword))
+            if(!loginDAO.updateLogin(id, alterarLoginDTO.getNewPassworld()))
                 new IllegalArgumentException("Falha ao trocar a senha tente novamente");
+
+            retorno = true;
         }
 
-        return "login";
+        return retorno;
     }
 }

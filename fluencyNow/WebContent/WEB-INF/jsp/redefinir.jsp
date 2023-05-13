@@ -15,17 +15,16 @@
 <body>
 	<div class ="container">
 		<div class='card'>
-		<form action="efetuaLogin" method="post" class="formLogin">
+		<form action="alterarSenha" method="post" class="formLogin">
 		  <h1> Redefinir Senha ! </h1>
-		 Usuario: <input type="text" name="usuario" placeholder="Digite seu usuario" autofocus="true" /> <br />
-		Senha atual : <input type="password" name="senhaAtual" placeholder="Digite a senha"<br />
-        Nova senha : <input type="password" name="novaSenha" placeholder="Digite a nova senha"<br />
-        Confirmar senha: <input type="password" name="confirmarSenha" placeholder="Confirmar senha" /> <br />
+		 Usuario: <input type="text" name="username" placeholder="Digite seu usuario" autofocus="true" /> <br />
+		Senha atual : <input type="password" name="oldPassworld" placeholder="Digite a senha"<br />
+        Nova senha : <input type="password" name="newPassworld" placeholder="Digite a nova senha"<br />
+        Confirmar senha: <input type="password" name="newPassworldValidate" placeholder="Confirmar senha" /> <br />
         <input type="submit" value="Alterar"/>
 
-         <a href='login'>Voltar</a>
         </form>
-
+<       a href='login'>Voltar</a>
 		  </div>
 		 </div>
 </body>

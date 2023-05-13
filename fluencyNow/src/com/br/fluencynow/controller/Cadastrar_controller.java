@@ -37,22 +37,13 @@ public class Cadastrar_controller {
         return new ModelAndView("cadastrarAluno");
     }
 
-    @RequestMapping("/cadastrarPlano")
-    public ModelAndView cadastrarPlano(Model model) {
-
-        List<Plano> planos = new PlanoDAO().getPlano();
-        Plano.Lista_container planoList = new Plano.Lista_container();
-        planoList.setPlanos(planos);
-        model.addAttribute("Planos", planoList);
-
-        return new ModelAndView("cadastrarPlano");
-    }
-
     @RequestMapping("/cadastrarAluno")
     public void adicionaAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         try{
             AlunoDTO aluno = new AlunoDTO();
-            //aluno.id = Integer.parseInt(req.getParameter("id"));
+            if(req.getParameter("id") != ""){
+                aluno.id = Integer.parseInt(req.getParameter("id"));
+            }
             aluno.nome = req.getParameter("nome");
             aluno.cpf = req.getParameter("cpf");
             aluno.dataNasc = req.getParameter("dataNasc");
@@ -65,7 +56,7 @@ public class Cadastrar_controller {
             aluno.diaAula = req.getParameter("diaAula");
             aluno.horarioAula = req.getParameter("horarioAula");
 
-            if(new com.br.fluencynow.dao.AlunoDAO().existsStudent(aluno.cpf)){
+            if(aluno.id > 0){
                 boolean updateAluno = new com.br.fluencynow.service.AlunoService().UpdateAluno(aluno);
                 if(updateAluno == true){
                     resp.sendRedirect("cadastrar");
@@ -83,20 +74,49 @@ public class Cadastrar_controller {
     }
 
     @RequestMapping("/cadastrarPlanos")
-    public String adicionaPlano(Plano plano, HttpSession session) throws SQLException {
+    public void adicionaPlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         try{
 
-            //continuar daqui adicionar o id para atualizar plano
-            boolean salvarPlano = new com.br.fluencynow.service.PlanoService().SalvarPlano(plano);
-            if(salvarPlano == true){
-                session.setAttribute("planoCadastrado", plano);
-                return "redirect:administrador";
+            Plano plano = new Plano();
+            if(req.getParameter("idPlano") != ""){
+                plano.id = Integer.parseInt(req.getParameter("idPlano"));
             }
+            plano.nome = req.getParameter("nome");
+            plano.valor = Double.parseDouble(req.getParameter("valor"));
 
+            if(plano.id > 0){
+                boolean atualizarPlano = new com.br.fluencynow.service.PlanoService().atualizarPlano(plano);
+                if(atualizarPlano == true){
+                    resp.sendRedirect("cadastrar");
+                }
+            } else{
+                boolean salvarPlano = new com.br.fluencynow.service.PlanoService().salvarPlano(plano);
+                if(salvarPlano == true){
+                    resp.sendRedirect("cadastrar");
+                }
+            }
         } catch (Exception ex){
+            resp.sendRedirect("home");
             System.out.println(ex.getMessage());
         }
-        return "redirect:home";
+    }
+
+    @RequestMapping("/deletarAluno")
+    public String deletaAluno(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+
+        String cpf = req.getParameter("cpf");
+        new com.br.fluencynow.service.AlunoService().DeletarAluno(cpf);
+
+        return "redirect:administrador";
+    }
+
+    @RequestMapping("/deletarPlano")
+    public String deletarPlano(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+
+        int id = Integer.parseInt(req.getParameter("id"));
+        new com.br.fluencynow.dao.PlanoDAO().deletePlano(id);
+
+        return "redirect:administrador";
     }
 }
 

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="${allminCSS}">
 
-    <link rel="stylesheet" href="../../resources/css/administrador.css"> USAR APENAS COM A EXTENSAO HTML
+    <link rel="stylesheet" href="../../resources/css/administrador.css">
 
     <link rel="stylesheet" href="${administradorCSS}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="home">
                     <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
                 </a>
 

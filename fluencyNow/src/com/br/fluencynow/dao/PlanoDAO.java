@@ -155,23 +155,28 @@ public class PlanoDAO {
         return retorno;
     }
 
-    public void updatePlano(Plano plano) {
-
-        String SQL = "UPDATE plano SET id=?, nome=?, valor=? WHERE id=?";
+    public static boolean updatePlano(Plano plano) {
+        boolean retorno = false;
+        String SQL = "UPDATE plano SET nome=?, valor=? WHERE id=?";
         try{
             Connection connection =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
 
             PreparedStatement comandoSQL = connection.prepareStatement(SQL);
-            comandoSQL.setInt(1, plano.getId());
-            comandoSQL.setString(2, plano.getNome());
-            comandoSQL.setDouble(3, plano.getValor());
-            comandoSQL.setInt(4,plano.getId());
+            comandoSQL.setString(1, plano.getNome());
+            comandoSQL.setDouble(2, plano.getValor());
+            comandoSQL.setInt(3,plano.getId());
 
-            comandoSQL.execute();
+            int linhasAfetadas = comandoSQL.executeUpdate();
+
+            if(linhasAfetadas > 0){
+                System.out.println("Success Connection");
+                retorno = true;
+            }
 
         } catch(ClassCastException | SQLException ex){
             System.out.println(ex.getMessage());
         }
+        return retorno;
     }
-    }
+}
 

@@ -1,5 +1,6 @@
 package com.br.fluencynow.controller;
 
+import com.br.fluencynow.dto.AlterarLoginDTO;
 import com.br.fluencynow.model.Login;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +31,21 @@ public class Login_controller {
             return "redirect:administrador";
         }
         return "redirect:login";
+    }
+
+    @RequestMapping("/alterarSenha")
+    public String alterarLogin(AlterarLoginDTO alterarLoginDTO, HttpSession session) throws SQLException {
+        try{
+
+            boolean alterarSenha = new com.br.fluencynow.service.LoginService().updatePassword(alterarLoginDTO);
+            if(alterarSenha == true){
+                session.setAttribute("SenhaAlterada", alterarLoginDTO);
+                return "redirect:home";
+            }
+
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return "redirect:redefinir";
     }
 }
