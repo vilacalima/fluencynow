@@ -42,6 +42,33 @@ public class AulaDAO {
         return retorno;
     }
 
+    public static boolean updateClass(String dia, String horario, int aluno, int plano) throws SQLException {
+        boolean retorno = false;
+
+        String SQLAula = "UPDATE aula SET dia=?, horario=?, idPlano=? WHERE idAluno=?";
+
+        try {
+
+            Connection conexao =  DriverManager.getConnection(ConexaoDAO.url, ConexaoDAO.login, ConexaoDAO.senha);
+            PreparedStatement comandoSQLAula = conexao.prepareStatement(SQLAula);
+            comandoSQLAula.setString(1, dia );
+            comandoSQLAula.setString(2, horario );
+            comandoSQLAula.setInt(3, plano );
+            comandoSQLAula.setInt(4, aluno );
+
+            int linhasAfetadasAula = comandoSQLAula.executeUpdate();
+
+            if(linhasAfetadasAula > 0){
+                System.out.println("Success Connection");
+                retorno = true;
+            }
+
+        } catch(ClassCastException ex){
+            System.out.println(ex.getMessage());
+        }
+        return retorno;
+    }
+
     /**
      * Inner Join para pegar informações do aluno e Aula
      * */

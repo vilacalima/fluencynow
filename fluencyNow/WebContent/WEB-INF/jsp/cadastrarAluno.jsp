@@ -86,7 +86,7 @@
 
                                         </form>
                                         <a class="btn btn2"
-                                            href="updateAluno?nome=${aluno.nome}&cpf=${aluno.cpf}&datanasc=${aluno.dataNasc}&endereco=${aluno.endereco}&cep=${aluno.cep}&numero=${aluno.numero}&celular=${aluno.celular}&email=${aluno.email}">Update</a>
+                                            href="cadastrar?id=${aluno.id}&nome=${aluno.nome}&cpf=${aluno.cpf}&datanasc=${aluno.dataNasc}&endereco=${aluno.endereco}&cep=${aluno.cep}&numero=${aluno.numero}&celular=${aluno.celular}&email=${aluno.email}&plano=${aluno.plano}&dia=${aluno.diaAula}&horario=${aluno.horarioAula}">Update</a>
                                 </tr>
                                 </td>
 
@@ -99,52 +99,50 @@
                         
                         <h3>Cadastro</h3>
                     <div class="col-md-6">
-                        <form class="formulario-contato">
+                        <div class="formulario-contato">
                             <div class="form-group">
                         <form action="cadastrarAluno" method="post" class="formCadastrar">
-                            
                                 <label for="nome">Nome</label>
-                                <input class="form-control" type="text" name="nome" placeholder="Nome" autofocus="true" />
+                                <input class="form-control" type="text" name="nome" placeholder="Nome" autofocus="true" value="${param.nome}" />
                             </div>
                             <div class="form-group">
                                 <label for="cpf">CPF</label>
-                                <input class="form-control" type="text" name="cpf" placeholder="CPF" />
+                                <input class="form-control" type="text" name="cpf" placeholder="CPF" value="${param.cpf}"/>
                             </div>
                             <div class="form-group">
                                 <label for="data-nascimento">Data de nascimento</label>
-                                <input class="form-control" type="date" name="dataNasc" placeholder="Data de nascimento" />
+                                <input class="form-control" type="date" name="dataNasc" placeholder="Data de nascimento" value="${param.dataNasc}"/>
                             </div>
                             <div class="form-group">
                                 <label for="endereco">Endereco</label>
-                                <input class="form-control" type="text" name="endereco" placeholder="Endereço" />
+                                <input class="form-control" type="text" name="endereco" placeholder="Endereço" value="${param.endereco}"/>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col">
                                         <label for="cep">CEP</label>
-                                        <input class="form-control" type="text" name="cep" placeholder="CEP" /> <br />
+                                        <input class="form-control" type="text" name="cep" placeholder="CEP" value="${param.cep}"/> <br />
                                     </div>
                                     <div class="col">
                                         <label for="numero">Numero</label>
-                                        <input class="form-control" type="text" name="numero" placeholder="Numero da casa" />
+                                        <input class="form-control" type="text" name="numero" placeholder="Numero da casa" value="${param.numero}"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input class="form-control" type="text" name="email" placeholder="E-mail" />
+                                <input class="form-control" type="text" name="email" placeholder="E-mail" value="${param.email}"/>
                             </div>
 
                             <div class="form-group">
                                 <label for="celular">Celular</label>
-                                <input class="form-control" type="text" name="celular" placeholder="Celular" />
+                                <input class="form-control" type="text" name="celular" placeholder="Celular" value="${param.celular}"/>
                             </div>
-                        </form>
 
-                            
                             <div class="form-group">
                                 <h6>Plano</h6>
                                 <select class="form-control" aria-label="Default select example" type="text" name="plano">
+                                    <option>${param.plano}</option>
                                     <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
                                         <option>${plano.nome}</option>
                                     </c:forEach>
@@ -156,6 +154,7 @@
                                     <div class="col">
                                         <h6>Dia</h6>
                                         <select class="form-control" aria-label="Default select example" type="text" name="diaAula">
+                                            <option>${param.dia}</option>
                                             <c:forEach items="${diasDaSemana}" var="diasDaSemana" varStatus="tagStatus">
                                                 <option>${diasDaSemana}</option>
                                             </c:forEach>
@@ -164,6 +163,7 @@
                                     <div class="col">
                                         <h6>Horário</h6>
                                         <select class="form-control" aria-label="Default select example" type="text" name="horarioAula">
+                                            <option>${param.horario}</option>
                                             <c:forEach items="${horaAula}" var="horaAula" varStatus="tagStatus">
                                                 <option>${horaAula}</option>
                                             </c:forEach>
@@ -172,15 +172,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input class="btn btn9" type="submit" value="Cadastrar Plano +" class="btn btn7" />
+                                <input class="btn btn9" type="submit" value="Cadastrar +" />
                             </div>
                         </form>
 
                     </div> 
                     </div>
-
+                    </div>
+                                        </div>
 
                     <div class="container-cad">
+
                         <table class="table table-striped">
                         <h3>Planos Cadastrados</h3>
                             <tr>
@@ -201,7 +203,7 @@
                                         <button type="submit" class="btn btn1">Delete</button>
 
                                       </form>
-                                        <a class="btn btn2" href="updatePlano?id=${plano.id}&nome=${plano.nome}&valor=${plano.valor}">Update</a>
+                                        <a class="btn btn2" href="cadastrar?id=${plano.id}&nome=${plano.nome}&valor=${plano.valor}">Update</a>
                                    </td>
                   
                                 </tr>
@@ -213,17 +215,18 @@
                         <div class="container">
 
                             <h3>Cadastrar Plano</h3>
-
-                            <form action="cadastrarPlanos" method="post" class="formCadastrar">
+                            <div class="formulario-contato">
+                                <div class="form-group">
+                            <form action="cadastrarPlanos" method="post" class="formCadastrar" value="${param.id}">
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col">
                                             <label for="nome"></label>
-                                            <input class="form-control" type="text" name="nome" placeholder="Nome" autofocus="true" />
+                                            <input class="form-control" type="text" name="nome" placeholder="Nome" autofocus="true" value="${param.nome}" />
                                         </div>
                                         <div class="col">
                                             <label for="cpf"></label>
-                                            <input class="form-control" type="decimal" name="valor" placeholder="valor" />
+                                            <input class="form-control" type="decimal" name="valor" placeholder="valor" value="${param.valor}"/>
                                         </div>
                                     </div>                        
                                 </div>
@@ -231,6 +234,8 @@
                                     <input class="btn btn9" type="submit" value="Salvar" class="btn btn7" />
                                 </div> 
                             </form>
+                        </div>
+                        </div>
                         </div>
 
                     <footer class="footer" style="background-color: #8CB3FD;">

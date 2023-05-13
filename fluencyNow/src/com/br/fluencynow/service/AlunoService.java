@@ -30,9 +30,25 @@ public class AlunoService {
         return criarAluno;
     }
 
+    public boolean UpdateAluno(AlunoDTO aluno) throws SQLException {
+
+        if(new com.br.fluencynow.validadores.ValidaCPF().validarCPF(aluno.cpf) == false) {
+            throw new IllegalArgumentException("CPF Invalido!");
+        }
+
+        if(new com.br.fluencynow.validadores.ValidaEmail().emailValidator(aluno.email) == false){
+            throw new IllegalArgumentException("Email Invalido!");
+        }
+
+
+        boolean atualizarAluno = new com.br.fluencynow.dao.AlunoDAO().updateStudent(aluno);
+
+        return atualizarAluno;
+    }
+
     public String getAluno(Model model) throws SQLException{
-        List<Aluno> alunos = new AlunoDAO().getStudent();
-        Aluno.Lista_container alunoList = new Aluno.Lista_container();
+        List<AlunoDTO> alunos = new AlunoDAO().getStudent();
+        AlunoDTO.Lista_container alunoList = new AlunoDTO.Lista_container();
         alunoList.setAlunos(alunos);
         model.addAttribute("Alunos", alunoList);
 
