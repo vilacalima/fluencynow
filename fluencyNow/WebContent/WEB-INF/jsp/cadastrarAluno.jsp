@@ -181,15 +181,17 @@
                     </div>
                     </div>
                                         </div>
+                    <h3>Planos Cadastrados</h3>
+                    <div class="container-cad2">
+                    <div class="col-md-6">
+                        <table class="table table">
 
-                    <div class="container-cad">
-
-                        <table class="table table-striped">
-                        <h3>Planos Cadastrados</h3>
                             <tr>
                                 <th>ID</th>
                                 <th>Descricao</th>
                                 <th>Valor</th>
+                                <th></th>
+
 
                             </tr>
                             <c:forEach items="${Planos.planos}" var="plano" varStatus="tagStatus">
@@ -199,23 +201,26 @@
                                     <td>${plano.valor}</td>
                   
                                    <td>
+                                   <div class="d-flex justify-content-start">
                                       <form action="deletarPlano" method="post">
                                         <input type="hidden" id="id" name="id" value="${plano.id}">
                                         <button type="submit" class="btn btn1">Delete</button>
 
                                       </form>
                                         <a class="btn btn2" href="cadastrar?id=${plano.id}&nome=${plano.nome}&valor=${plano.valor}">Update</a>
+                                  </div>
                                    </td>
                   
                                 </tr>
                             </c:forEach>
                         </table>
                       </div>
-                  
+                  </div>
                       
                         <div class="container">
 
                             <h3>Cadastrar Plano</h3>
+                            <div class="col-md-6">
                             <div class="formulario-contato">
                                 <div class="form-group">
                             <form action="cadastrarPlanos" method="post" class="formCadastrar">
@@ -235,7 +240,8 @@
                                 </div>
                                 <div class="form-group">
                                     <input class="btn btn9" type="submit" value="Salvar" class="btn btn7" />
-                                </div> 
+                                </div>
+                                </div>
                             </form>
                         </div>
                         </div>
