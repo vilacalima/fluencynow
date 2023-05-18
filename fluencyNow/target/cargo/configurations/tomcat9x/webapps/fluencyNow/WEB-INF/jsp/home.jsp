@@ -124,7 +124,7 @@
             <h5 class="card-title">Ingles | Individual</h5>
             <p class="card-text">5x de R$50,00</p>
             </a>
-            <p>Duas aulas de 60 minutos por semana</p>
+            <p>Uma aula de 60 minutos por semana</p>
 
           </div>
 
@@ -133,7 +133,7 @@
             <h5 class="card-title">Ingles | Grupo</h5>
             <p class="card-text">5x de R$50,00</p>
             </a>
-            <p>Duas aulas de 60 minutos por semana</p>
+            <p>Uma aula de 60 minutos por semana</p>
 
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4">
@@ -141,7 +141,7 @@
             <h5 class="card-title">Ingles | Intensivo</h5>
             <p class="card-text">5x de R$70,00</p>
             </a>
-            <p>Quatro aulas de 60 minutos por semana</p>
+            <p>Uma aula de 60 minutos por semana</p>
 
           </div>
         </div>
@@ -153,7 +153,7 @@
             <h5 class="card-title">Espanhol | Individual </h5>
             <p class="card-text">5x de R$50,00</p>
             </a>
-            <p>Duas aulas de 60 minutos por semana</p>
+            <p>Uma aula de 60 minutos por semana</p>
 
 
           </div>
@@ -162,7 +162,7 @@
             <h5 class="card-title">Espanhol | Grupo</h5>
             <p class="card-text">5x de R$50,00</p>
             </a>
-            <p>Duas aulas de 60 minutos por semana</p>
+            <p>Uma aula de 60 minutos por semana</p>
 
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4">
@@ -171,7 +171,7 @@
             <h5 class="card-title">Espanhol | Intensivo</h5>
             <p class="card-text">5x de R$70,00</p>
             </a>
-            <p>Quatro aulas de 60 minutos por semana</p>
+            <p>Uma aula de 60 minutos por semana</p>
 
           </div>
         </div>
