@@ -16,7 +16,9 @@ content: "";
     z-index: -1;
   }
 
-
+.navbar-brand1{
+margin-bottom:0px;
+}
 
 .navbar-light .navbar-brand,
 .navbar-light .navbar-text {
