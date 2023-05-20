@@ -39,7 +39,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
 
-                <a class="navbar-brand" href="home">
+                <a class="navbar-brand1" href="home">
                     <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
                 </a>
 
@@ -48,11 +48,10 @@
                         <a class="admin-btn" href="home">Pagina Inicial</a>
                     </li>
                 </ul> -->
-                <div class="text-boasvindas ml-auto text-right">
-                    <p>Cadastro Aluno</p>
-                    <p>Olá, Helena!</p>
-                </div>
-            </div>
+<div class="text-boasvindas ml-auto text-right">
+    <p class="bem-vindo">Cadastro Aluno</p>
+    <p>Olá, Helena!</p>
+</div>
             
         </nav>
     </header>
