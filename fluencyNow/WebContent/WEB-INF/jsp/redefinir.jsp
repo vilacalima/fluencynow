@@ -13,6 +13,13 @@
 	  <link href="${redefinirCSS}" rel="stylesheet" />
 </head>
 <body>
+    <c:if test="${not empty mensagem}">
+        <div class="alert alert-success">${mensagem}</div>
+    </c:if>
+    <c:if test="${not empty mensagemErro}">
+        <div class="alert alert-danger">${mensagemErro}</div>
+    </c:if>
+
 	<div class ="container">
 		<div class='card'>
 		<form action="alterarSenha" method="post" class="formLogin">

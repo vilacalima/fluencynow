@@ -33,8 +33,6 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
-<body>
-
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
@@ -56,6 +54,12 @@
         </nav>
     </header>
 
+    <c:if test="${not empty mensagem}">
+        <div class="alert alert-success">${mensagem}</div>
+    </c:if>
+    <c:if test="${not empty mensagemErro}">
+        <div class="alert alert-danger">${mensagemErro}</div>
+    </c:if>
     <body>
         <h3>Calendário de Aulas</h3>
         <div class="calendario">
