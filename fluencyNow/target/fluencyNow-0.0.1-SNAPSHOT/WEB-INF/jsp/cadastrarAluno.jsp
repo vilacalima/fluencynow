@@ -28,25 +28,29 @@
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
             </head>
+            <c:if test="${not empty mensagem}">
+                <div class="alert alert-success">${mensagem}</div>
+            </c:if>
+            <c:if test="${not empty mensagemErro}">
+                <div class="alert alert-danger">${mensagemErro}</div>
+            </c:if>
 
-            <body>
+            <header>
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container-fluid">
 
-                <header>
-                    <nav class="navbar navbar-expand-md navbar-light bg-light">
-                        <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
+                        </a>
 
-                            <a class="navbar-brand" href="#">
-                                <img src="resources/images/Logo.png" alt="Logo" style="height: 150px;">
-                            </a>
-
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a class="admin-btn" href="administrador">Administrador</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="admin-btn" href="administrador">Administrador</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
 
                 <body>
                     <h3>Procurar Alunos</h3>

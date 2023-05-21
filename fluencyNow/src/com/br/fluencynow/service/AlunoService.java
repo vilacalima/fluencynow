@@ -4,6 +4,7 @@ import com.br.fluencynow.dao.AlunoDAO;
 import com.br.fluencynow.dto.AlunoDTO;
 import com.br.fluencynow.model.Aluno;
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -13,30 +14,43 @@ public class AlunoService {
     /**
      * Salva aluno no banco de dados
      * @param aluno AlunoDTO
+     * @param redirectAttributes
      * */
-    public boolean SalvarAluno(AlunoDTO aluno) throws SQLException {
+    public boolean SalvarAluno(AlunoDTO aluno, RedirectAttributes redirectAttributes) throws SQLException {
 
         if(new com.br.fluencynow.validator.ValidaCPF().validarCPF(aluno.cpf) == false) {
+            redirectAttributes.addFlashAttribute("mensagemErro", "O CPF é invalido.");
             throw new IllegalArgumentException("CPF Invalido!");
         }
 
         if(new com.br.fluencynow.validator.ValidaEmail().emailValidator(aluno.email) == false){
+            redirectAttributes.addFlashAttribute("mensagemErro", "O email é invalido.");
             throw new IllegalArgumentException("Email Invalido!");
         }
 
 
         boolean criarAluno = new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno);
 
+        if(criarAluno == true)
+            redirectAttributes.addFlashAttribute("mensagem", "Aluno inserido com Sucesso");
+
         return criarAluno;
     }
 
-    public boolean UpdateAluno(AlunoDTO aluno) throws SQLException {
+    /**
+     * Atualiza aluno no banco de dados
+     * @param aluno AlunoDTO
+     * @param redirectAttributes
+     * */
+    public boolean UpdateAluno(AlunoDTO aluno, RedirectAttributes redirectAttributes) throws SQLException {
 
         if(new com.br.fluencynow.validator.ValidaCPF().validarCPF(aluno.cpf) == false) {
+            redirectAttributes.addFlashAttribute("mensagemErro", "O CPF é invalido.");
             throw new IllegalArgumentException("CPF Invalido!");
         }
 
         if(new com.br.fluencynow.validator.ValidaEmail().emailValidator(aluno.email) == false){
+            redirectAttributes.addFlashAttribute("mensagemErro", "O email é invalido.");
             throw new IllegalArgumentException("Email Invalido!");
         }
 
@@ -46,6 +60,9 @@ public class AlunoService {
         return atualizarAluno;
     }
 
+    /**
+     * Pega Lista de Alunos no banco de dados
+     * */
     public String getAluno(Model model) throws SQLException{
         List<AlunoDTO> alunos = new AlunoDAO().getStudent();
         AlunoDTO.Lista_container alunoList = new AlunoDTO.Lista_container();
@@ -54,24 +71,26 @@ public class AlunoService {
 
         return "cadastrarAluno";
     }
+
     /**
      * Deleta um aluno do banco de dados
-     * Deleta uma aula do banco de dados
      * @param cpf String
      * */
-    public boolean DeletarAluno(String cpf) throws SQLException {
+    public boolean DeletarAluno(String cpf, RedirectAttributes redirectAttributes) throws SQLException {
 
         Aluno aluno = new com.br.fluencynow.dao.AlunoDAO().searchIdStudentByCpf(cpf);
 
         if(aluno.id != 0){
             new com.br.fluencynow.dao.AulaDAO().deleteClass(aluno.id);
             new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
+
+            redirectAttributes.addFlashAttribute("mensagem", "Aluno Deletado com Sucesso");
             return true;
         }
 
+        redirectAttributes.addFlashAttribute("mensagemErro", "Houve um erro ao deletar o aluno");
         return false;
     }
-
 
     /**
      * Pega a quantidade de alunos no banco de dados e mostra na view

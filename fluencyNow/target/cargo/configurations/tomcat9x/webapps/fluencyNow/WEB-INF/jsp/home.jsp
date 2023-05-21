@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -30,8 +31,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
  </head>
 
-<body>
-
   <header>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
@@ -52,6 +51,15 @@
       </div>
     </nav>
   </header>
+
+   <c:if test="${not empty mensagem}">
+       <div class="alert alert-success">${mensagem}</div>
+   </c:if>
+   <c:if test="${not empty mensagemErro}">
+       <div class="alert alert-danger">${mensagemErro}</div>
+   </c:if>
+<body>
+
   <div class="container">
     <div class="row">
       <div class="col-md-6">

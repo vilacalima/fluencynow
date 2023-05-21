@@ -1,25 +1,16 @@
 package com.br.fluencynow.controller;
 
-import com.br.fluencynow.dao.AlunoDAO;
-import com.br.fluencynow.dao.PlanoDAO;
-import com.br.fluencynow.dto.AlunoDTO;
-import com.br.fluencynow.model.Aluno;
-import com.br.fluencynow.model.Plano;
-import com.br.fluencynow.service.AlunoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.SQLException;
-
 @Controller
 public class Administrador_controller {
 
-
+    /**
+     * View da página de Administrador
+     * */
     @RequestMapping(value = "/administrador", method = RequestMethod.GET)
     public String getUsers(Model model) throws Exception{
 
