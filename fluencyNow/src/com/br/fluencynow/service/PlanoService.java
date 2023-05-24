@@ -1,6 +1,7 @@
 package com.br.fluencynow.service;
 
 import com.br.fluencynow.dao.PlanoDAO;
+import com.br.fluencynow.dto.MensagemDTO;
 import com.br.fluencynow.model.Aluno;
 import com.br.fluencynow.model.Plano;
 import org.springframework.ui.Model;
@@ -16,9 +17,14 @@ public class PlanoService {
      * @param plano
      * @param redirectAttributes
      * */
-    public boolean salvarPlano(Plano plano, RedirectAttributes redirectAttributes) throws SQLException {
-        boolean criarPlano = com.br.fluencynow.dao.PlanoDAO.salvar(plano);
-        return criarPlano;
+    public MensagemDTO salvarPlano(Plano plano, RedirectAttributes redirectAttributes) throws SQLException {
+        MensagemDTO mensagem;
+
+        if(com.br.fluencynow.dao.PlanoDAO.salvar(plano)){
+            return mensagem = new MensagemDTO("Plano salvo com sucesso.",true);
+        } else{
+            return mensagem = new MensagemDTO("Houve um erro desconhecido ao tentar salvar um plano.",false);
+        }
     }
 
     /**
@@ -26,9 +32,14 @@ public class PlanoService {
      * @param plano
      * @param redirectAttributes
      * */
-    public boolean atualizarPlano(Plano plano, RedirectAttributes redirectAttributes) throws SQLException {
-        boolean atualizaPlano = com.br.fluencynow.dao.PlanoDAO.updatePlano(plano);
-        return atualizaPlano;
+    public MensagemDTO atualizarPlano(Plano plano, RedirectAttributes redirectAttributes) throws SQLException {
+        MensagemDTO mensagem;
+
+        if(com.br.fluencynow.dao.PlanoDAO.updatePlano(plano)){
+            return mensagem = new MensagemDTO("Plano atualizado com sucesso.",true);
+        } else{
+            return mensagem = new MensagemDTO("Houve um erro desconhecido ao tentar atualizar um plano.",false);
+        }
     }
 
     /**
@@ -49,12 +60,12 @@ public class PlanoService {
      * @param id
      * @param redirectAttributes
      * */
-    public void DeletarPlano(int id, RedirectAttributes redirectAttributes) throws SQLException {
-
+    public MensagemDTO DeletarPlano(int id, RedirectAttributes redirectAttributes) throws SQLException {
+        MensagemDTO mensagem;
         if(new com.br.fluencynow.dao.PlanoDAO().deletePlano(id)){
-            redirectAttributes.addFlashAttribute("mensagem", "Plano Deletado com Sucesso");
+            return mensagem = new MensagemDTO("Plano Deletado com Sucesso.",true);
         } else{
-            redirectAttributes.addFlashAttribute("mensagemErro", "Houve um erro ao deletar o Plano");
+            return mensagem = new MensagemDTO("Houve um erro ao deletar o Plano",false);
         }
     }
 }

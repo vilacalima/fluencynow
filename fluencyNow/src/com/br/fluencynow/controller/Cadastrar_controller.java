@@ -1,6 +1,7 @@
 package com.br.fluencynow.controller;
 
 import com.br.fluencynow.dto.AlunoDTO;
+import com.br.fluencynow.dto.MensagemDTO;
 import com.br.fluencynow.model.Plano;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,10 @@ import java.sql.SQLException;
 
 @Controller
 public class Cadastrar_controller {
+    private String sucesso = "mensagem";
+    private String erro = "mensagemErro";
+    private final String pageAdm = "redirect:administrador";
+    private final String pageCadastro = "redirect:cadastrar";
 
     /**
      * View da tela de cadastro
@@ -43,7 +48,7 @@ public class Cadastrar_controller {
      * @param redirectAttributes
      * */
     @RequestMapping("/cadastrarAluno")
-    public void adicionaAluno(HttpServletRequest req, HttpServletResponse resp, RedirectAttributes redirectAttributes) throws SQLException, IOException {
+    public String adicionaAluno(HttpServletRequest req, HttpServletResponse resp, RedirectAttributes redirectAttributes) throws SQLException, IOException {
         try{
             AlunoDTO aluno = new AlunoDTO();
             if(req.getParameter("id") != ""){
@@ -62,20 +67,16 @@ public class Cadastrar_controller {
             aluno.horarioAula = req.getParameter("horarioAula");
 
             if(aluno.id > 0){
-                boolean updateAluno = new com.br.fluencynow.service.AlunoService().UpdateAluno(aluno, redirectAttributes);
-                if(updateAluno == true){
-                    resp.sendRedirect("cadastrar");
-                }
+                MensagemDTO updateClass = new com.br.fluencynow.service.AlunoService().UpdateAluno(aluno, redirectAttributes);
+                return retornoMensage(updateClass, redirectAttributes);
             } else{
-                boolean salvarAluno = new com.br.fluencynow.service.AlunoService().SalvarAluno(aluno, redirectAttributes);
-                if(salvarAluno == true){
-                    resp.sendRedirect("cadastrar");
-                }
+                MensagemDTO saveClass = new com.br.fluencynow.service.AlunoService().SalvarAluno(aluno, redirectAttributes);
+                return retornoMensage(saveClass, redirectAttributes);
             }
         } catch (Exception ex){
-            resp.sendRedirect("administrador");
-            redirectAttributes.addFlashAttribute("mensagemErro", ex.getMessage());
+            redirectAttributes.addFlashAttribute(erro, ex.getMessage());
             System.out.println(ex.getMessage());
+            return pageCadastro;
         }
     }
 
@@ -86,7 +87,7 @@ public class Cadastrar_controller {
      * @param redirectAttributes
      * */
     @RequestMapping("/cadastrarPlanos")
-    public void adicionaPlano(HttpServletRequest req, HttpServletResponse resp, RedirectAttributes redirectAttributes) throws SQLException, IOException {
+    public String adicionaPlano(HttpServletRequest req, HttpServletResponse resp, RedirectAttributes redirectAttributes) throws SQLException, IOException {
         try{
 
             Plano plano = new Plano();
@@ -97,22 +98,16 @@ public class Cadastrar_controller {
             plano.valor = Double.parseDouble(req.getParameter("valor"));
 
             if(plano.id > 0){
-                boolean atualizarPlano = new com.br.fluencynow.service.PlanoService().atualizarPlano(plano, redirectAttributes);
-                if(atualizarPlano == true){
-                    redirectAttributes.addFlashAttribute("mensagem", "Plano atualizado com Sucesso");
-                    resp.sendRedirect("cadastrar");
-                }
+                MensagemDTO atualizarPlano = new com.br.fluencynow.service.PlanoService().atualizarPlano(plano, redirectAttributes);
+                return retornoMensage(atualizarPlano, redirectAttributes);
             } else{
-                boolean salvarPlano = new com.br.fluencynow.service.PlanoService().salvarPlano(plano, redirectAttributes);
-                if(salvarPlano == true){
-                    redirectAttributes.addFlashAttribute("mensagem", "Plano criado com Sucesso");
-                    resp.sendRedirect("cadastrar");
-                }
+                MensagemDTO salvarPlano = new com.br.fluencynow.service.PlanoService().salvarPlano(plano, redirectAttributes);
+                return retornoMensage(salvarPlano, redirectAttributes);
             }
         } catch (Exception ex){
+            redirectAttributes.addFlashAttribute(erro, ex.getMessage());
             System.out.println(ex.getMessage());
-            redirectAttributes.addFlashAttribute("mensagemErro", ex.getMessage());
-            resp.sendRedirect("administrador");
+            return pageCadastro;
         }
     }
 
@@ -124,12 +119,16 @@ public class Cadastrar_controller {
      * */
     @RequestMapping("/deletarAluno")
     public String deletaAluno(HttpServletRequest req, HttpServletResponse resp, RedirectAttributes redirectAttributes) throws SQLException {
+        try{
+            String cpf = req.getParameter("cpf");
+            MensagemDTO deletar = new com.br.fluencynow.service.AlunoService().DeletarAluno(cpf, redirectAttributes);
 
-        String cpf = req.getParameter("cpf");
-
-        new com.br.fluencynow.service.AlunoService().DeletarAluno(cpf, redirectAttributes);
-
-        return "redirect:administrador";
+            return retornoMensage(deletar, redirectAttributes);
+        } catch (Exception ex){
+            redirectAttributes.addFlashAttribute(erro, ex.getMessage());
+            System.out.println(ex.getMessage());
+            return pageCadastro;
+        }
     }
 
     /**
@@ -140,11 +139,26 @@ public class Cadastrar_controller {
      * */
     @RequestMapping("/deletarPlano")
     public String deletarPlano(HttpServletRequest req, HttpServletResponse resp, RedirectAttributes redirectAttributes) throws SQLException {
+        try {
+            int id = Integer.parseInt(req.getParameter("id"));
+            MensagemDTO deletar = new com.br.fluencynow.service.PlanoService().DeletarPlano(id, redirectAttributes);
 
-        int id = Integer.parseInt(req.getParameter("id"));
-        new com.br.fluencynow.service.PlanoService().DeletarPlano(id, redirectAttributes);
+            return retornoMensage(deletar, redirectAttributes);
+        } catch (Exception ex){
+            redirectAttributes.addFlashAttribute(erro, ex.getMessage());
+            System.out.println(ex.getMessage());
+            return pageCadastro;
+        }
+    }
 
-        return "redirect:administrador";
+    public String retornoMensage(MensagemDTO mensagem, RedirectAttributes redirectAttributes){
+        if(mensagem.isSuccess == true){
+            redirectAttributes.addFlashAttribute(sucesso, mensagem.message);
+            return pageAdm;
+        } else{
+            redirectAttributes.addFlashAttribute(erro, mensagem.message);
+            return pageAdm;
+        }
     }
 }
 
