@@ -2,6 +2,7 @@ package com.br.fluencynow.service;
 
 import com.br.fluencynow.dao.AlunoDAO;
 import com.br.fluencynow.dto.AlunoDTO;
+import com.br.fluencynow.dto.MensagemDTO;
 import com.br.fluencynow.model.Aluno;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -16,25 +17,26 @@ public class AlunoService {
      * @param aluno AlunoDTO
      * @param redirectAttributes
      * */
-    public boolean SalvarAluno(AlunoDTO aluno, RedirectAttributes redirectAttributes) throws SQLException {
+    public MensagemDTO SalvarAluno(AlunoDTO aluno, RedirectAttributes redirectAttributes) throws SQLException {
 
+        MensagemDTO mensagem;
         if(new com.br.fluencynow.validator.ValidaCPF().validarCPF(aluno.cpf) == false) {
-            redirectAttributes.addFlashAttribute("mensagemErro", "O CPF é invalido.");
-            throw new IllegalArgumentException("CPF Invalido!");
+            mensagem = new MensagemDTO("O CPF é invalido.",false);
+            return mensagem;
         }
 
         if(new com.br.fluencynow.validator.ValidaEmail().emailValidator(aluno.email) == false){
-            redirectAttributes.addFlashAttribute("mensagemErro", "O email é invalido.");
-            throw new IllegalArgumentException("Email Invalido!");
+            mensagem = new MensagemDTO("O email é invalido.",false);
+            return mensagem;
         }
 
-
-        boolean criarAluno = new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno);
-
-        if(criarAluno == true)
-            redirectAttributes.addFlashAttribute("mensagem", "Aluno inserido com Sucesso");
-
-        return criarAluno;
+        if(new com.br.fluencynow.dao.AlunoDAO().saveStudent(aluno)){
+            mensagem = new MensagemDTO("Aluno inserido com Sucesso",true);
+            return mensagem;
+        } else{
+            mensagem = new MensagemDTO("Houve algum erro desconhecido ao salvar aluno.",false);
+            return mensagem;
+        }
     }
 
     /**
@@ -42,22 +44,26 @@ public class AlunoService {
      * @param aluno AlunoDTO
      * @param redirectAttributes
      * */
-    public boolean UpdateAluno(AlunoDTO aluno, RedirectAttributes redirectAttributes) throws SQLException {
+    public MensagemDTO UpdateAluno(AlunoDTO aluno, RedirectAttributes redirectAttributes) throws SQLException {
 
+        MensagemDTO mensagem;
         if(new com.br.fluencynow.validator.ValidaCPF().validarCPF(aluno.cpf) == false) {
-            redirectAttributes.addFlashAttribute("mensagemErro", "O CPF é invalido.");
-            throw new IllegalArgumentException("CPF Invalido!");
+            mensagem = new MensagemDTO("O CPF é invalido.",false);
+            return mensagem;
         }
 
         if(new com.br.fluencynow.validator.ValidaEmail().emailValidator(aluno.email) == false){
-            redirectAttributes.addFlashAttribute("mensagemErro", "O email é invalido.");
-            throw new IllegalArgumentException("Email Invalido!");
+            mensagem = new MensagemDTO("O email é invalido.",false);
+            return mensagem;
         }
 
-
-        boolean atualizarAluno = new com.br.fluencynow.dao.AlunoDAO().updateStudent(aluno);
-
-        return atualizarAluno;
+        if(new com.br.fluencynow.dao.AlunoDAO().updateStudent(aluno)){
+            mensagem = new MensagemDTO("Cadastro do Aluno atualizado com Sucesso",true);
+            return mensagem;
+        } else{
+            mensagem = new MensagemDTO("Houve algum erro desconhecido ao salvar aluno.",false);
+            return mensagem;
+        }
     }
 
     /**
@@ -76,20 +82,19 @@ public class AlunoService {
      * Deleta um aluno do banco de dados
      * @param cpf String
      * */
-    public boolean DeletarAluno(String cpf, RedirectAttributes redirectAttributes) throws SQLException {
+    public MensagemDTO DeletarAluno(String cpf, RedirectAttributes redirectAttributes) throws SQLException {
 
         Aluno aluno = new com.br.fluencynow.dao.AlunoDAO().searchIdStudentByCpf(cpf);
 
+        MensagemDTO mensagem;
         if(aluno.id != 0){
             new com.br.fluencynow.dao.AulaDAO().deleteClass(aluno.id);
             new com.br.fluencynow.dao.AlunoDAO().deleteStudent(cpf);
 
-            redirectAttributes.addFlashAttribute("mensagem", "Aluno Deletado com Sucesso");
-            return true;
+            return mensagem = new MensagemDTO("Aluno Deletado com Sucesso",true);
+        } else{
+            return mensagem = new MensagemDTO("Houve um erro ao deletar o aluno",false);
         }
-
-        redirectAttributes.addFlashAttribute("mensagemErro", "Houve um erro ao deletar o aluno");
-        return false;
     }
 
     /**

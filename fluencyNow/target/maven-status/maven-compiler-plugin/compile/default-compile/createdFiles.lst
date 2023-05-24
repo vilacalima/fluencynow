@@ -15,6 +15,7 @@ com\br\fluencynow\controller\Cadastrar_controller.class
 com\br\fluencynow\model\Aluno.class
 com\br\fluencynow\controller\Login_controller.class
 com\br\fluencynow\dao\AulaDAO.class
+com\br\fluencynow\dto\MensagemDTO.class
 com\br\fluencynow\model\Plano$Lista_container.class
 com\br\fluencynow\dao\LoginDAO.class
 com\br\fluencynow\service\AulaService.class

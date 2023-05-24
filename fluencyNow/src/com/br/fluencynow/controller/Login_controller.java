@@ -1,6 +1,7 @@
 package com.br.fluencynow.controller;
 
 import com.br.fluencynow.dto.AlterarLoginDTO;
+import com.br.fluencynow.dto.MensagemDTO;
 import com.br.fluencynow.model.Login;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,11 @@ import java.sql.SQLException;
 
 @Controller
 public class Login_controller {
+
+    private String sucesso = "mensagem";
+    private String erro = "mensagemErro";
+    private String pageAdm = "redirect:administrador";
+    private String pageLogin = "redirect:login";
 
     /**
      * View da página de login
@@ -39,10 +45,10 @@ public class Login_controller {
     public String efetuaLogin(Login login, HttpSession session, RedirectAttributes redirectAttributes) throws SQLException {
         if(new com.br.fluencynow.dao.LoginDAO().exists(login)) {
             session.setAttribute("usuarioLogado", login);
-            return "redirect:administrador";
+            return pageAdm;
         }
-        redirectAttributes.addFlashAttribute("mensagemErro", "Usuário ou senha errado!");
-        return "redirect:login";
+        redirectAttributes.addFlashAttribute(erro, "Usuário ou senha errado!");
+        return pageLogin;
     }
 
     /**
@@ -53,12 +59,21 @@ public class Login_controller {
     @RequestMapping("/alterarSenha")
     public String alterarLogin(AlterarLoginDTO alterarLoginDTO, HttpSession session, RedirectAttributes redirectAttributes) throws SQLException {
         try{
-            new com.br.fluencynow.service.LoginService().updatePassword(alterarLoginDTO, redirectAttributes);
+            MensagemDTO login = new com.br.fluencynow.service.LoginService().updatePassword(alterarLoginDTO, redirectAttributes);
+            return retornoMensage(login, redirectAttributes);
         } catch (Exception ex){
-            redirectAttributes.addFlashAttribute("mensagemErro", ex.getMessage());
+            redirectAttributes.addFlashAttribute(erro, ex.getMessage());
             System.out.println(ex.getMessage());
-            return "redirect:redefinir";
+            return pageLogin;
         }
-        return "redirect:login";
+    }
+
+    public String retornoMensage(MensagemDTO mensagem, RedirectAttributes redirectAttributes){
+        if(mensagem.isSuccess == true){
+            redirectAttributes.addFlashAttribute(sucesso, mensagem.message);
+        } else{
+            redirectAttributes.addFlashAttribute(erro, mensagem.message);
+        }
+        return pageLogin;
     }
 }
