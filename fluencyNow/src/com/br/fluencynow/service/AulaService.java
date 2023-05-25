@@ -10,19 +10,30 @@ import java.util.List;
 
 public class AulaService {
 
-
+    /**
+     * Serviço que recebe os dias da semana e envia para a view da controller
+     * @param model
+     * */
     public String getDia(Model model) {
 
         model.addAttribute("diasDaSemana", DiasdaSemana.values());
         return "cadastrarAluno";
     }
 
+    /**
+     * Serviço que recebe as horas de aula para a view da controller
+     * @param model
+     * */
     public String getHora(Model model) {
 
         model.addAttribute("horaAula", HorarioAula.values());
         return "cadastrarAluno";
     }
 
+    /**
+     * Serviço que recebe alunos do banco de dados paara a view da controller
+     * @param model
+     * */
     public String getAluno(Model model){
 
         List<AlunoDTO> alunos = new AulaDAO().getStudentAndClass();
@@ -33,6 +44,10 @@ public class AulaService {
         return "administrador";
     }
 
+    /**
+     * Serviço que recebe aula e aluno do banco de dados e envia para para a view do calendario
+     * @param model
+     * */
     public String getAulaEAluno(Model model){
 
         List<DiaAulaDTO> listDiaAulaDTO = new ArrayList<>();
@@ -116,6 +131,9 @@ public class AulaService {
         return "administrador";
     }
 
+    /**
+     * Serviço que recebe o rendimento no banco de dados e envia para o view para a controller
+     * */
     public String getRendimento(Model model){
         double valorRendimento = 0;
         List<Double> listaRendimento = new AulaDAO().getPrice();

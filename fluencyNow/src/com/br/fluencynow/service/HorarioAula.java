@@ -1,5 +1,8 @@
 package com.br.fluencynow.service;
 
+/**
+ * Enum para cadastro de hora da aula
+ * */
 public enum HorarioAula {
     Aula_08h00("08h00"),
     Aula_09h00("09h00"),
