@@ -10,4 +10,4 @@
     <br> Podemos acessar a página de login pelo botão administrador da Home Page, para acesso imediato disponibilizamos esse link<br>
 </p>
 
-![Login](images/login.png)
+![Login](images/Login.png)
