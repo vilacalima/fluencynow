@@ -243,7 +243,7 @@
                                     </div>                        
                                 </div>
                                 <div class="form-group">
-                                    <input class="btn btn9" type="submit" value="Salvar" class="btn btn7" />
+                                    <input class="btn btn9" type="submit" value="Salvar"  />
                                 </div>
                                 </div>
                             </form>
