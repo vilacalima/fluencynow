@@ -251,19 +251,21 @@ footer{
 }
 
 .calendario{
-    width: 900px;
-    margin-left: 10%;
+
+    width: 80%;
+    margin: auto;
 
 }
 
 .conteiner{
     width: 900px;
-    margin-left: 16%;
+    margin: auto;
 }
 
 .conteiner-cad{
 margin: auto;
 }
+
 
 .container-cad{
     width: 80%;
