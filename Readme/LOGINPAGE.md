@@ -10,4 +10,7 @@
     <br> Podemos acessar a página de login pelo botão administrador da Home Page, para acesso imediato disponibilizamos esse link<br>
 </p>
 
+<p>É disponibilizada também a opção de redefinição de senha</p>
+
 ![Login](images/Login.png)
+
