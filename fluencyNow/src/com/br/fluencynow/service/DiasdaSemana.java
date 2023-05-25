@@ -5,9 +5,8 @@ public enum DiasdaSemana {
     TERCA_FEIRA("Terça-Feira"),
     QUARTA_FEIRA("Quarta-Feira"),
     QUINTA_FEIRA("Quinta-Feira"),
-    SEXTA_FEIRA("Sexta-Feira"),
-    SABADO("Sabado"),
-    DOMINGO("Domingo");
+    SEXTA_FEIRA("Sexta-Feira");
+
 
     private final String dia;
 
