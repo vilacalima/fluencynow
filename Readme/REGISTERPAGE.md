@@ -1,6 +1,6 @@
 <h1 align="center"> Fluency Now </h1>
 
-![Administrativo 2](images/Cad_geral.png)
+![Administrativo 2](images/cad_geral.png)
 
 Na página admnistrativa, a professora tem em uma só página as informações mais relevantes do negócio:
 
