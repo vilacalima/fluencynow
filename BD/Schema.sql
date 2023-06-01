@@ -37,4 +37,4 @@ create table login(
     usuario varchar(30) unique
 );
 
-INSERT INTO Login (email, senha, usuario) VALUES('teste@fluencynow', 'sa', 'sa')
+INSERT INTO Login (email, usuario, senha) VALUES('helena@fluencynow.com', 'profhelena', '12345');
