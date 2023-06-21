@@ -20,7 +20,6 @@
     Isabela Midori Minami Rodrigues Mesquita <br>
     Nathalia Aldinar Souza Cerqueira <br>
     Nicolas da Cruz Marques <br>
-    Rennan Rodrigues <br>
     Robson Vilaça Lima <br>
 </p>
 
